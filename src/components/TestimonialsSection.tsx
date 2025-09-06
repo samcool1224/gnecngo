@@ -15,27 +15,27 @@ interface Testimonial {
 const testimonials: Testimonial[] = [
   {
     id: 1,
-    name: "Sophia Martinez",
-    location: "New York, USA",
+    name: "Ambassador Patricia O'Brien",
+    location: "Former UN Under-Secretary-General",
     avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop&crop=faces",
-    content: "My family and I had the most wonderful stay at MareSereno. The apartment was immaculate, with breathtaking sea views. The staff went above and beyond to make our vacation special.",
+    content: "GNEC has been instrumental in facilitating meaningful dialogue between the UN and civil society organizations. Their strategic guidance helps NGOs maximize their impact on global issues.",
     rating: 5
   },
   {
     id: 2,
-    name: "Marco Rossi",
-    location: "Rome, Italy",
-    avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop&crop=faces",
-    content: "Absolutely perfect location, steps away from the beach. The apartment had everything we needed and more. The modern amenities combined with the traditional coastal charm created a truly magical experience.",
+    name: "Dr. Ediola Pashollari",
+    location: "President of GNEC",
+    avatar: "https://images.unsplash.com/photo-1569913486515-b74bf7751574?w=150&h=150&fit=crop&crop=faces",
+    content: "For over 60 years, GNEC has empowered NGOs worldwide to have a voice at the UN decision-making table. Our communication workshops and conferences create lasting partnerships that advance the SDGs.",
     rating: 5
   },
   {
     id: 3,
-    name: "Emma Johnson",
-    location: "London, UK",
-    avatar: "https://images.unsplash.com/photo-1569913486515-b74bf7751574?w=150&h=150&fit=crop&crop=faces",
-    content: "We spent a wonderful week at this beachfront paradise. The sunrise views from our terrace were worth the trip alone. Exceptionally clean and beautifully designed spaces.",
-    rating: 4
+    name: "Rev. Brian Keenan Muzás, Ph.D.",
+    location: "Seton Hall University Representative",
+    avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop&crop=faces",
+    content: "Through GNEC's initiatives, academic institutions and NGOs can effectively collaborate with the UN system. The annual Civil Society Conference is a cornerstone of global cooperation.",
+    rating: 5
   },
 ];
 

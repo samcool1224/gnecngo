@@ -1,45 +1,45 @@
 export const it = {
   nav: {
     home: "Home",
-    apartments: "Appartamenti",
-    amenities: "Servizi",
-    gallery: "Galleria",
+    apartments: "Programmi",
+    amenities: "Chi Siamo", 
+    gallery: "Podcast",
     contact: "Contatti",
-    bookNow: "Prenota Ora"
+    bookNow: "Partecipa"
   },
   hero: {
-    subtitle: "ALLOGGI DI LUSSO SUL MARE",
-    title: "Vivi la Tranquillità del Mare",
-    description: "Scopri la nostra esclusiva collezione di appartamenti di lusso e camere d'albergo sul mare, che offrono comfort impareggiabile e viste mozzafiato sul mare.",
-    bookStay: "Prenota il tuo Soggiorno",
-    exploreApartments: "Esplora gli Appartamenti",
+    subtitle: "IN PARTNERSHIP CON L'ONU DAL 1962",
+    title: "Comitato Esecutivo Globale delle ONG",
+    description: "GNEC ha collaborato per oltre 60 anni con le Nazioni Unite per garantire una voce al tavolo decisionale per le ONG di tutto il mondo.",
+    bookStay: "Scopri la Nostra Missione",
+    exploreApartments: "Esplora i Nostri Programmi",
     scrollDown: "Scorri Giù"
   },
   footer: {
-    description: "Appartamenti di lusso sul mare e camere d'albergo con splendide viste sul mare, che offrono il perfetto connubio di comfort ed eleganza per la tua vacanza da sogno.",
+    description: "Il Comitato Esecutivo Globale delle ONG collabora con le Nazioni Unite per promuovere relazioni di lavoro più strette tra l'ONU e le ONG di tutto il mondo.",
     quickLinks: "Link Rapidi",
     contact: "Contatti",
-    newsletter: "Newsletter",
-    newsletterDesc: "Iscriviti alla nostra newsletter per offerte speciali e aggiornamenti.",
+    newsletter: "NGO Reporter",
+    newsletterDesc: "Iscriviti al nostro NGO Reporter per aggiornamenti e approfondimenti.",
     yourEmail: "Il tuo indirizzo email",
     subscribe: "Iscriviti",
     allRights: "Tutti i diritti riservati."
   },
   bookingForm: {
-    title: "Prenota il tuo Soggiorno",
-    checkIn: "Data di Check-in",
-    checkOut: "Data di Check-out",
-    adults: "Adulti",
-    children: "Bambini",
-    adult: "Adulto",
-    child: "Bambino",
-    selectDate: "Seleziona data",
-    checkAvailability: "Verifica Disponibilità",
-    bookingConfirmed: "Prenotazione Confermata!"
+    title: "Contatta GNEC",
+    checkIn: "Tipo di Richiesta",
+    checkOut: "Livello di Priorità",
+    adults: "Dimensioni Organizzazione",
+    children: "Anni di Attività",
+    adult: "Grande",
+    child: "Nuova",
+    selectDate: "Seleziona opzione",
+    checkAvailability: "Invia Richiesta",
+    bookingConfirmed: "Messaggio Inviato con Successo!"
   },
   testimonials: {
-    title: "Cosa Dicono i Nostri Ospiti",
-    description: "Scopri perché i nostri ospiti continuano a tornare a MareSereno per le loro fughe al mare."
+    title: "Cosa Dicono i Nostri Partner",
+    description: "Ascolta i funzionari ONU e i leader delle ONG sull'impatto di GNEC sull'impegno della società civile globale."
   },
   notFound: {
     title: "Pagina Non Trovata",
@@ -218,59 +218,59 @@ export const it = {
   },
   home: {
     welcome: {
-      subtitle: "Benvenuti a MareSereno",
-      title: "Alloggi di Lusso sul Mare",
-      description1: "Situato sulla incontaminata costa mediterranea, MareSereno offre una squisita collezione di appartamenti di lusso e camere d'albergo. I nostri alloggi fronte mare combinano un design elegante con comfort moderni, creando l'ambientazione perfetta per una indimenticabile fuga al mare.",
-      description2: "Che tu stia cercando una fuga romantica, una vacanza in famiglia o un ritiro tranquillo, la nostra vasta gamma di alloggi si adatta a ogni preferenza ed esigenza. Ogni spazio è progettato con cura per fornire viste panoramiche sul mare e accesso diretto alla spiaggia.",
+      subtitle: "Su GNEC",
+      title: "Oltre 60 Anni di Partnership ONU",
+      description1: "Il Comitato Esecutivo Globale delle ONG è stato fondato nel 1962 per promuovere una relazione di lavoro più stretta tra le Nazioni Unite e le organizzazioni non governative ad esse affiliate. GNEC funge da collegamento tra la comunità delle ONG e il Dipartimento delle Comunicazioni Globali dell'ONU.",
+      description2: "La nostra missione è fornire orientamento strategico per aiutare le ONG a diventare partner più efficaci dell'ONU, servendo oltre 1.500 ONG affiliate UNDGC in tutto il mondo attraverso workshop, conferenze e iniziative di advocacy.",
       learnMore: "Scopri di Più"
     },
     booking: {
-      subtitle: "Prenota il tuo Soggiorno",
-      title: "Prenota la tua Vacanza Perfetta",
-      description: "Fai il primo passo verso la tua vacanza da sogno verificando la disponibilità e assicurandoti le date preferite. Il nostro semplice processo di prenotazione garantisce un'esperienza senza interruzioni dalla prenotazione all'arrivo.",
-      benefits: ["Conferma istantanea", "Miglior tariffa garantita", "Opzioni di cancellazione flessibili", "Pagamento sicuro"]
+      subtitle: "Partecipa",
+      title: "Unisciti al Dialogo Globale",
+      description: "Connettiti con GNEC per migliorare la partnership della tua organizzazione con le Nazioni Unite e amplificare la tua voce nei processi decisionali globali.",
+      benefits: ["Orientamento strategico", "Sviluppo partnership ONU", "Opportunità di networking globale", "Workshop di capacity building"]
     },
-    featuredApartments: {
-      subtitle: "I Nostri Alloggi",
-      title: "Appartamenti in Evidenza",
-      description: "Scopri le nostre opzioni di alloggio più popolari, ognuna che offre un perfetto equilibrio di comfort, stile e viste mozzafiato sul mare.",
-      viewAll: "Visualizza Tutti gli Appartamenti"
+    featuredPrograms: {
+      subtitle: "I Nostri Programmi",
+      title: "Iniziative Chiave", 
+      description: "Scopri i nostri programmi di punta progettati per rafforzare le partnership ONG-ONU e far progredire gli Obiettivi di Sviluppo Sostenibile.",
+      viewAll: "Visualizza Tutti i Programmi"
     },
-    amenities: {
-      subtitle: "Servizi dell'Hotel",
-      title: "Vivi il Meglio",
-      description: "Goditi le nostre strutture e servizi premium progettati per rendere il tuo soggiorno eccezionale.",
+    services: {
+      subtitle: "I Nostri Servizi",
+      title: "Come Sosteniamo le ONG",
+      description: "GNEC fornisce supporto completo per aiutare le ONG a massimizzare il loro impatto attraverso partnership ONU efficaci.",
       features: {
-        beachfront: {
-          title: "Posizione Fronte Mare",
-          description: "Accesso diretto a spiagge incontaminate con acque cristalline."
+        liaison: {
+          title: "Collegamento ONU-ONG",
+          description: "Canale di comunicazione diretta tra la comunità delle ONG e il Dipartimento delle Comunicazioni Globali dell'ONU."
         },
-        pools: {
-          title: "Piscine",
-          description: "Rilassati accanto alle nostre piscine a sfioro con vista mozzafiato sul mare."
+        guidance: {
+          title: "Orientamento Strategico",
+          description: "Consulenza esperta per aiutare le organizzazioni a utilizzare più efficacemente la loro affiliazione UNDGC."
         },
-        restaurant: {
-          title: "Ristorante Gourmet",
-          description: "Goditi squisita cucina locale e internazionale."
+        workshops: {
+          title: "Workshop di Comunicazione",
+          description: "Sessioni di formazione regolari per migliorare la conoscenza delle ONG delle operazioni e partnership ONU."
         },
-        wifi: {
-          title: "Wi-Fi ad Alta Velocità",
-          description: "Rimani connesso con internet ad alta velocità gratuito."
+        networking: {
+          title: "Networking Globale",
+          description: "Facilitare la collaborazione tra ONG di tutto il mondo attraverso eventi e piattaforme."
         },
-        bar: {
-          title: "Bar & Caffè sulla Spiaggia",
-          description: "Bevande rinfrescanti e snack serviti direttamente sulla spiaggia."
+        advocacy: {
+          title: "Advocacy della Società Civile",
+          description: "Potenziare le organizzazioni per aumentare la comprensione pubblica degli sforzi ONU su SDG e diritti umani."
         },
-        location: {
-          title: "Posizione Privilegiata",
-          description: "Vicino alle attrazioni locali, negozi e ristoranti."
+        global: {
+          title: "Portata Mondiale",
+          description: "Servendo oltre 1.500 ONG affiliate in tutti i continenti e settori."
         }
       }
     },
     cta: {
-      title: "Pronto per la tua Vacanza da Sogno?",
-      description: "Prenota il tuo soggiorno oggi e vivi il perfetto connubio di lusso, comfort e viste mozzafiato sul mare.",
-      bookNow: "Prenota Ora"
+      title: "Pronto a Rafforzare la Tua Partnership ONU?",
+      description: "Unisciti a GNEC oggi e diventa parte di una rete globale impegnata nel far progredire l'impegno della società civile con le Nazioni Unite.",
+      bookNow: "Partecipa"
     }
   },
   amenitiesPage: {

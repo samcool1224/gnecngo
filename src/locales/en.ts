@@ -1,45 +1,45 @@
 export const en = {
   nav: {
     home: "Home",
-    apartments: "Apartments",
-    amenities: "Amenities",
-    gallery: "Gallery",
+    apartments: "Programs", 
+    amenities: "Who We Are",
+    gallery: "Podcast",
     contact: "Contact",
-    bookNow: "Book Now"
+    bookNow: "Get Involved"
   },
   hero: {
-    subtitle: "BEACHFRONT LUXURY ACCOMMODATION",
-    title: "Experience Seaside Tranquility",
-    description: "Discover our exclusive collection of luxury beachfront apartments and hotel rooms, offering unparalleled comfort and breathtaking sea views.",
-    bookStay: "Book Your Stay",
-    exploreApartments: "Explore Apartments",
+    subtitle: "PARTNERING WITH THE UN SINCE 1962",
+    title: "Global NGO Executive Committee",
+    description: "GNEC has, for 60+ years, partnered with the United Nations to guarantee a voice at the decision-making table for NGOs worldwide.",
+    bookStay: "Learn About Our Mission",
+    exploreApartments: "Explore Our Programs",
     scrollDown: "Scroll Down"
   },
   footer: {
-    description: "Luxurious beachfront apartments and hotel rooms with stunning sea views, offering the perfect blend of comfort and elegance for your dream vacation.",
+    description: "The Global NGO Executive Committee partners with the United Nations to promote closer working relationships between the UN and NGOs worldwide.",
     quickLinks: "Quick Links",
     contact: "Contact",
-    newsletter: "Newsletter",
-    newsletterDesc: "Subscribe to our newsletter for special deals and updates.",
+    newsletter: "NGO Reporter",
+    newsletterDesc: "Subscribe to our NGO Reporter for updates and insights.",
     yourEmail: "Your email address",
     subscribe: "Subscribe",
     allRights: "All rights reserved."
   },
   bookingForm: {
-    title: "Book Your Stay",
-    checkIn: "Check-in Date",
-    checkOut: "Check-out Date",
-    adults: "Adults",
-    children: "Children",
-    adult: "Adult",
-    child: "Child",
-    selectDate: "Select date",
-    checkAvailability: "Check Availability",
-    bookingConfirmed: "Booking Confirmed!"
+    title: "Contact GNEC",
+    checkIn: "Inquiry Type",
+    checkOut: "Priority Level",
+    adults: "Organization Size",
+    children: "Years Active",
+    adult: "Large",
+    child: "New",
+    selectDate: "Select option",
+    checkAvailability: "Send Inquiry",
+    bookingConfirmed: "Message Sent Successfully!"
   },
   testimonials: {
-    title: "What Our Guests Say",
-    description: "Discover why our guests keep coming back to MareSereno for their seaside getaways."
+    title: "What Our Partners Say",
+    description: "Hear from UN officials and NGO leaders about GNEC's impact on global civil society engagement."
   },
   notFound: {
     title: "Page Not Found",
@@ -48,93 +48,93 @@ export const en = {
   },
   home: {
     welcome: {
-      subtitle: "Welcome to MareSereno",
-      title: "Luxury Seaside Accommodations",
-      description1: "Nestled on the pristine Mediterranean coastline, MareSereno offers an exquisite collection of luxury apartments and hotel rooms. Our beachfront accommodations combine elegant design with modern comfort, creating the perfect setting for an unforgettable seaside getaway.",
-      description2: "Whether you're seeking a romantic escape, a family vacation, or a peaceful retreat, our diverse range of accommodations caters to every preference and need. Each space is thoughtfully designed to provide panoramic sea views and direct beach access.",
+      subtitle: "About GNEC",
+      title: "60+ Years of UN Partnership",
+      description1: "The Global NGO Executive Committee was founded in 1962 to promote a closer working relationship between the United Nations and non-governmental organizations affiliated with it. GNEC acts as a liaison between the NGO community and the UN's Department of Global Communications.",
+      description2: "Our mission is to provide strategic guidance to help NGOs become more effective partners of the UN, serving more than 1,500 UNDGC affiliated NGOs worldwide through workshops, conferences, and advocacy initiatives.",
       learnMore: "Learn More"
     },
     booking: {
-      subtitle: "Book Your Stay",
-      title: "Reserve Your Perfect Getaway",
-      description: "Take the first step towards your dream vacation by checking availability and securing your preferred dates. Our simple booking process ensures a seamless experience from reservation to arrival.",
-      benefits: ["Instant confirmation", "Best rate guarantee", "Flexible cancellation options", "Secure payment"]
+      subtitle: "Get Involved",
+      title: "Join the Global Dialogue",
+      description: "Connect with GNEC to enhance your organization's partnership with the United Nations and amplify your voice in global decision-making processes.",
+      benefits: ["Strategic guidance", "UN partnership development", "Global networking opportunities", "Capacity building workshops"]
     },
-    featuredApartments: {
-      subtitle: "Our Accommodations",
-      title: "Featured Apartments",
-      description: "Discover our most popular accommodation options, each offering a perfect blend of comfort, style, and breathtaking sea views.",
-      viewAll: "View All Apartments"
+    featuredPrograms: {
+      subtitle: "Our Programs", 
+      title: "Key Initiatives",
+      description: "Discover our flagship programs designed to strengthen NGO-UN partnerships and advance the Sustainable Development Goals.",
+      viewAll: "View All Programs"
     },
-    amenities: {
-      subtitle: "Hotel Amenities",
-      title: "Experience The Best",
-      description: "Enjoy our premium facilities and services designed to make your stay exceptional.",
+    services: {
+      subtitle: "Our Services",
+      title: "How We Support NGOs",
+      description: "GNEC provides comprehensive support to help NGOs maximize their impact through effective UN partnerships.",
       features: {
-        beachfront: {
-          title: "Beachfront Location",
-          description: "Direct access to pristine beaches with crystal clear waters."
+        liaison: {
+          title: "UN-NGO Liaison",
+          description: "Direct communication channel between NGO community and UN Department of Global Communications."
         },
-        pools: {
-          title: "Swimming Pools",
-          description: "Relax by our infinity pools with stunning sea views."
+        guidance: {
+          title: "Strategic Guidance", 
+          description: "Expert advice to help organizations make more effective use of their UNDGC affiliation."
         },
-        restaurant: {
-          title: "Gourmet Restaurant",
-          description: "Enjoy exquisite local and international cuisine."
+        workshops: {
+          title: "Communication Workshops",
+          description: "Regular training sessions to enhance NGO knowledge of UN operations and partnerships."
         },
-        wifi: {
-          title: "High-Speed Wi-Fi",
-          description: "Stay connected with complimentary high-speed internet."
+        networking: {
+          title: "Global Networking",
+          description: "Facilitate collaboration among NGOs worldwide through events and platforms."
         },
-        bar: {
-          title: "Beach Bar & Café",
-          description: "Refreshing drinks and snacks served right on the beach."
+        advocacy: {
+          title: "Civil Society Advocacy",
+          description: "Empower organizations to increase public understanding of UN efforts on SDGs and human rights."
         },
-        location: {
-          title: "Prime Location",
-          description: "Close to local attractions, shops, and restaurants."
+        global: {
+          title: "Worldwide Reach",
+          description: "Serving 1,500+ affiliated NGOs across all continents and sectors."
         }
       }
     },
     cta: {
-      title: "Ready for Your Dream Vacation?",
-      description: "Book your stay today and experience the perfect blend of luxury, comfort, and stunning sea views.",
-      bookNow: "Book Now"
+      title: "Ready to Strengthen Your UN Partnership?",
+      description: "Join GNEC today and become part of a global network committed to advancing civil society engagement with the United Nations.",
+      bookNow: "Get Involved"
     }
   },
   apartments: {
-    title: "Our Apartments & Rooms",
-    subtitle: "Discover our selection of premium accommodations, ranging from cozy studios to luxurious penthouses.",
+    title: "Our Programs & Initiatives",
+    subtitle: "Explore our comprehensive programs designed to strengthen NGO-UN partnerships and advance global civil society engagement.",
     filters: {
-      guests: "Guests",
-      anyGuests: "Any number of guests",
-      onePlus: "1+ guests",
-      twoPlus: "2+ guests",
-      threePlus: "3+ guests",
-      fourPlus: "4+ guests",
-      location: "Location",
-      allLocations: "All locations",
-      priceRange: "Price Range",
+      guests: "Participants",
+      anyGuests: "Any number of participants",
+      onePlus: "1+ participants", 
+      twoPlus: "2+ participants",
+      threePlus: "3+ participants",
+      fourPlus: "4+ participants",
+      location: "Scope",
+      allLocations: "All scopes",
+      priceRange: "Year Range",
       showing: "Showing",
-      of: "of",
-      accommodations: "accommodations",
+      of: "of", 
+      accommodations: "programs",
       resetFilters: "Reset Filters",
-      noMatch: "No apartments match your filters",
+      noMatch: "No programs match your filters",
       adjustFilters: "Try adjusting your filter criteria to see more options.",
       viewDetails: "View Details",
-      features: "features",
+      features: "focus areas",
       more: "more"
     }
   },
   gallery: {
-    title: "Photo Gallery",
-    subtitle: "Explore our seaside paradise through captivating imagery.",
+    title: "On The Ground Podcast",
+    subtitle: "Featuring one amazing NGO per episode, showcasing critical social good work toward SDG achievement.",
     filters: {
-      all: "All",
-      exterior: "Exterior",
-      rooms: "Rooms",
-      amenities: "Amenities"
+      all: "All Episodes",
+      exterior: "Recent",
+      rooms: "Featured",
+      amenities: "Popular"
     }
   },
   booking: {
@@ -226,16 +226,16 @@ export const en = {
     }
   },
   contact: {
-    title: "Contact Us",
-    subtitle: "We're here to help make your stay unforgettable. Reach out with any questions or special requests.",
+    title: "Contact GNEC",
+    subtitle: "Connect with us to strengthen your organization's UN partnership and join our global network of civil society organizations.",
     getInTouch: "Get In Touch",
-    address: "Address",
+    address: "Headquarters",
     phone: "Phone",
     email: "Email",
-    receptionHours: "Reception Hours",
-    checkInTime: "Check-in: After 3:00 PM",
-    checkOutTime: "Check-out: Before 11:00 AM",
-    sendMessage: "Send Us a Message",
+    receptionHours: "Office Hours",
+    checkInTime: "Meetings: By appointment",
+    checkOutTime: "Inquiries: 24/7 online",
+    sendMessage: "Send Us a Message", 
     fullName: "Full Name",
     phoneNumber: "Phone Number",
     subject: "Subject",
@@ -245,31 +245,31 @@ export const en = {
     messageSent: "Message Sent!",
     thankYou: "Thank you for reaching out. We'll respond to your message as soon as possible.",
     faq: "Frequently Asked Questions",
-    faqSubtitle: "Find quick answers to commonly asked questions about our accommodations and services.",
+    faqSubtitle: "Find quick answers to commonly asked questions about GNEC and our services.",
     questions: {
       checkInOut: {
-        question: "What are your check-in and check-out times?",
-        answer: "Check-in is from 3:00 PM onwards, and check-out is until 11:00 AM. Early check-in or late check-out may be arranged based on availability."
+        question: "How can my NGO get involved with GNEC?",
+        answer: "Organizations with UNDGC affiliation can participate in our workshops, conferences, and initiatives. Contact us at president@gnec.ngo to learn more about engagement opportunities."
       },
       parking: {
-        question: "Is parking available at the property?",
-        answer: "Yes, we offer complimentary parking for all guests. Valet parking service is also available for an additional fee."
+        question: "What is the annual UN Civil Society Conference?",
+        answer: "Our flagship event facilitating global NGO collaboration and promoting understanding of UN's SDG efforts. It's held annually at UN Headquarters or abroad."
       },
       pets: {
-        question: "Are pets allowed in the apartments?",
-        answer: "We welcome pets in designated pet-friendly apartments. Please inform us in advance if you plan to bring a pet, as additional charges may apply."
+        question: "How does GNEC support NGO capacity building?", 
+        answer: "We provide regular communication workshops, strategic guidance, and networking opportunities to help NGOs become more effective UN partners."
       },
       breakfast: {
-        question: "Is breakfast included in the room rate?",
-        answer: "Breakfast is included in select room packages. You can check the inclusion during the booking process or add it to your reservation at any time."
+        question: "What is the GNEC Hackathon?",
+        answer: "A technology solutions contest for UN Sustainable Development Goals with global participation, focusing on innovation-driven approaches to SDG challenges."
       },
       transfers: {
-        question: "Do you offer airport transfers?",
-        answer: "Yes, we offer airport transfers for an additional fee. Please contact our concierge at least 48 hours before your arrival to arrange transportation."
+        question: "How can I listen to the 'On The Ground' podcast?",
+        answer: "Our podcast featuring amazing NGOs is available on major podcast platforms. Contact president@gnec.ngo for featuring opportunities."
       },
       amenities: {
-        question: "What amenities are available at the property?",
-        answer: "Our property features swimming pools, a spa, restaurants, a beach bar, fitness center, and direct beach access. All apartments include Wi-Fi, air conditioning, and modern appliances."
+        question: "What services does GNEC provide to affiliated NGOs?",
+        answer: "We offer liaison services with UN DGC, strategic guidance, communication workshops, networking events, and advocacy support to enhance NGO-UN partnerships."
       }
     }
   },
