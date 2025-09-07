@@ -1,7 +1,7 @@
 
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
 import ThemeToggle from "./ThemeToggle";
 import LanguageSelector from "./LanguageSelector";
@@ -12,13 +12,42 @@ export default function Navbar() {
   const { t } = useLanguage();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   
   const navLinks = [
-    { name: t.nav.home, path: "/" },
-    { name: t.nav.apartments, path: "/apartments" },
-    { name: t.nav.amenities, path: "/amenities" },
-    { name: t.nav.gallery, path: "/gallery" },
-    { name: t.nav.contact, path: "/contact" }
+    { name: "Home", path: "/" },
+    { 
+      name: "About Us", 
+      path: "/about",
+      dropdown: [
+        { name: "Who We Are", path: "/about/who-we-are" },
+        { name: "2025 – 2027 GNEC Subcommittees", path: "/about/subcommittees" },
+        { name: "About UNDGC", path: "/about/undgc" },
+        { name: "By-Laws and Procedures", path: "/about/bylaws" },
+        { name: "Message from the Presidents", path: "/about/message" }
+      ]
+    },
+    { 
+      name: "Services & Events", 
+      path: "/services",
+      dropdown: [
+        { name: "Upcoming Events", path: "/services/upcoming-events" },
+        { name: "Past Events", path: "/services/past-events" },
+        { name: "GNEC Hackathon", path: "/services/hackathon" },
+        { name: "Elections", path: "/services/elections" },
+        { name: "GNEC LMS", path: "/services/lms" }
+      ]
+    },
+    { 
+      name: "News & Media", 
+      path: "/news",
+      dropdown: [
+        { name: "Podcast", path: "/news/podcast" },
+        { name: "NGO Reporter", path: "/news/ngo-reporter" },
+        { name: "Media", path: "/news/media" }
+      ]
+    },
+    { name: "Contact", path: "/contact" }
   ];
 
   useEffect(() => {
@@ -31,6 +60,14 @@ export default function Navbar() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, [scrolled]);
+
+  useEffect(() => {
+    const handleClickOutside = () => {
+      setActiveDropdown(null);
+    };
+    document.addEventListener("click", handleClickOutside);
+    return () => document.removeEventListener("click", handleClickOutside);
+  }, []);
   
   return <header className={cn("fixed top-0 left-0 right-0 z-50 transition-all duration-300", scrolled ? "bg-white/80 dark:bg-card/80 backdrop-blur-lg py-3 shadow-md" : "bg-transparent py-5")}>
       <nav className="container flex justify-between items-center">
@@ -40,17 +77,50 @@ export default function Navbar() {
 
         {/* Desktop Navigation */}
         <ul className="hidden md:flex space-x-8">
-          {navLinks.map(link => <li key={link.name} className="relative">
-              <Link to={link.path} className="font-medium transition-colors hover:text-primary after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:w-0 after:bg-primary after:transition-all hover:after:w-full">
-                {link.name}
-              </Link>
-            </li>)}
+          {navLinks.map(link => (
+            <li key={link.name} className="relative">
+              {link.dropdown ? (
+                <div 
+                  className="relative group"
+                  onMouseEnter={() => setActiveDropdown(link.name)}
+                  onMouseLeave={() => setActiveDropdown(null)}
+                >
+                  <button className="font-medium transition-colors hover:text-primary flex items-center gap-1 py-2">
+                    {link.name}
+                    <ChevronDown className="h-4 w-4" />
+                  </button>
+                  {activeDropdown === link.name && (
+                    <div className="absolute top-full left-0 w-64 z-50">
+                      {/* Invisible bridge to prevent gap */}
+                      <div className="h-2 w-full"></div>
+                      <div className="bg-white dark:bg-card shadow-lg rounded-lg border border-gray-200 dark:border-gray-700 py-2">
+                        {link.dropdown.map(subLink => (
+                          <Link
+                            key={subLink.name}
+                            to={subLink.path}
+                            className="block px-4 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+                            onClick={() => setActiveDropdown(null)}
+                          >
+                            {subLink.name}
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                </div>
+              ) : (
+                <Link to={link.path} className="font-medium transition-colors hover:text-primary after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:w-0 after:bg-primary after:transition-all hover:after:w-full">
+                  {link.name}
+                </Link>
+              )}
+            </li>
+          ))}
         </ul>
 
         <div className="hidden md:flex items-center space-x-2">
           <ThemeToggle />
           <Button asChild className="btn-primary">
-            <Link to="/booking">{t.nav.bookNow}</Link>
+            <Link to="/donate">Donate</Link>
           </Button>
         </div>
 
@@ -74,18 +144,39 @@ export default function Navbar() {
                   <X className="h-6 w-6" />
                 </Button>
               </div>
-              <ul className="space-y-6">
-                {navLinks.map(link => <li key={link.name}>
-                    <Link to={link.path} className="text-lg font-medium transition-colors hover:text-primary" onClick={() => setMobileMenuOpen(false)}>
-                      {link.name}
-                    </Link>
-                  </li>)}
+              <ul className="space-y-4">
+                {navLinks.map(link => (
+                  <li key={link.name}>
+                    {link.dropdown ? (
+                      <div>
+                        <div className="text-lg font-medium mb-2">{link.name}</div>
+                        <ul className="ml-4 space-y-2">
+                          {link.dropdown.map(subLink => (
+                            <li key={subLink.name}>
+                              <Link 
+                                to={subLink.path} 
+                                className="text-sm text-muted-foreground hover:text-primary transition-colors" 
+                                onClick={() => setMobileMenuOpen(false)}
+                              >
+                                {subLink.name}
+                              </Link>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    ) : (
+                      <Link to={link.path} className="text-lg font-medium transition-colors hover:text-primary" onClick={() => setMobileMenuOpen(false)}>
+                        {link.name}
+                      </Link>
+                    )}
+                  </li>
+                ))}
               </ul>
             </div>
             
             <Button asChild className="w-full btn-primary mt-6">
-              <Link to="/booking" onClick={() => setMobileMenuOpen(false)}>
-                {t.nav.bookNow}
+              <Link to="/donate" onClick={() => setMobileMenuOpen(false)}>
+                Donate
               </Link>
             </Button>
           </div>

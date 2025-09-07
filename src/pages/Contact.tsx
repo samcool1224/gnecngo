@@ -2,14 +2,14 @@
 import { useState, useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { MapPin, Phone, Mail, Clock, Send, Check } from "lucide-react";
+import { MapPin, Phone, Mail, Clock, Send, Check, Globe, Users, Award } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { useLanguage } from "@/contexts/LanguageContext";
+import { Card, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 
 export default function Contact() {
-  const { t } = useLanguage();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -21,7 +21,6 @@ export default function Contact() {
   const [isSubmitted, setIsSubmitted] = useState(false);
   
   useEffect(() => {
-    // Scroll to top when component mounts
     window.scrollTo(0, 0);
   }, []);
   
@@ -32,13 +31,9 @@ export default function Contact() {
   
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    
-    // In a real app, this would send the form data to a server
     console.log("Form submitted:", formData);
-    
     setIsSubmitted(true);
     
-    // Reset form after 3 seconds
     setTimeout(() => {
       setIsSubmitted(false);
       setFormData({
@@ -50,250 +45,295 @@ export default function Contact() {
       });
     }, 3000);
   };
-  
+  const contactMethods = [
+    {
+      icon: <Mail className="h-6 w-6" />,
+      title: "General Inquiries",
+      description: "For general questions about GNEC and our services",
+      contact: "info@gnec.ngo"
+    },
+    {
+      icon: <Users className="h-6 w-6" />,
+      title: "Board & Leadership",
+      description: "Contact our presidents and board members",
+      contact: "president@gnec.ngo"
+    },
+    {
+      icon: <Award className="h-6 w-6" />,
+      title: "Communications",
+      description: "Media inquiries, NGO Reporter, and communications",
+      contact: "communications@gnec.ngo"
+    },
+    {
+      icon: <Globe className="h-6 w-6" />,
+      title: "Events & Conferences",
+      description: "Information about workshops, conferences, and events",
+      contact: "events@gnec.ngo"
+    }
+  ];
+
+  const faqItems = [
+    {
+      question: "How can my NGO get involved with GNEC?",
+      answer: "Organizations with UNDGC affiliation can participate in our workshops, conferences, and initiatives. Contact us at president@gnec.ngo to learn more about engagement opportunities."
+    },
+    {
+      question: "What is the annual UN Civil Society Conference?",
+      answer: "Our flagship event facilitating global NGO collaboration and promoting understanding of UN's SDG efforts. It's held annually at UN Headquarters or abroad."
+    },
+    {
+      question: "How does GNEC support NGO capacity building?",
+      answer: "We provide regular communication workshops, strategic guidance, and networking opportunities to help NGOs become more effective UN partners."
+    },
+    {
+      question: "What is the GNEC Hackathon?",
+      answer: "A technology solutions contest for UN Sustainable Development Goals with global participation, focusing on innovation-driven approaches to SDG challenges."
+    },
+    {
+      question: "How can I listen to the 'On The Ground' podcast?",
+      answer: "Our podcast featuring amazing NGOs is available on major podcast platforms. Contact president@gnec.ngo for featuring opportunities."
+    },
+    {
+      question: "What services does GNEC provide to affiliated NGOs?",
+      answer: "We offer liaison services with UN DGC, strategic guidance, communication workshops, networking events, and advocacy support to enhance NGO-UN partnerships."
+    }
+  ];
+
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen bg-gradient-to-b from-background to-muted/20">
       <Navbar />
       
-      <main className="flex-1 pt-20">
-        {/* Header Section */}
-        <section className="relative py-20 bg-gradient-to-r from-sea-light to-white dark:from-sea-dark dark:to-background overflow-hidden">
-          <div className="container relative z-10">
-            <div className="max-w-3xl mx-auto text-center animate-fade-in">
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
-                {t.contact.title}
-              </h1>
-              <p className="text-muted-foreground text-lg mb-6">
-                {t.contact.subtitle}
+      {/* Hero Section */}
+      <section className="pt-32 pb-16">
+        <div className="container">
+          <div className="max-w-4xl mx-auto text-center">
+            <Badge className="mb-4">Get In Touch</Badge>
+            <h1 className="text-4xl md:text-6xl font-bold mb-6">
+              Contact GNEC
+            </h1>
+            <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
+              Connect with us to strengthen your organization's UN partnership and join our global network of civil society organizations.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Methods */}
+      <section className="py-16">
+        <div className="container">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold mb-4">How to Reach Us</h2>
+              <p className="text-lg text-muted-foreground">
+                Choose the best contact method for your specific needs
               </p>
             </div>
-          </div>
-          
-          {/* Decorative elements */}
-          <div className="absolute top-0 right-0 w-1/3 h-full opacity-10">
-            <div className="absolute top-10 right-10 w-64 h-64 rounded-full bg-primary/50 blur-3xl" />
-            <div className="absolute bottom-10 right-40 w-48 h-48 rounded-full bg-sea-light blur-3xl" />
-          </div>
-        </section>
-        
-        {/* Contact Information & Form */}
-        <section className="section">
-          <div className="container">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-              {/* Contact Information */}
-              <div className="animate-fade-in [animation-delay:100ms]">
-                <h2 className="text-2xl font-bold mb-6">{t.contact.getInTouch}</h2>
-                
-                <div className="glass-card p-6 space-y-6 mb-8">
-                  <div className="flex items-start">
-                    <div className="flex-shrink-0 h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center mr-4">
-                      <MapPin className="h-5 w-5 text-primary" />
-                    </div>
-                    <div>
-                      <h3 className="font-semibold mb-1">{t.contact.address}</h3>
-                      <p className="text-muted-foreground">
-                        123 Seaside Boulevard<br />
-                        Costa Bella, 12345<br />
-                        Italy
-                      </p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-start">
-                    <div className="flex-shrink-0 h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center mr-4">
-                      <Phone className="h-5 w-5 text-primary" />
-                    </div>
-                    <div>
-                      <h3 className="font-semibold mb-1">{t.contact.phone}</h3>
-                      <p className="text-muted-foreground">+39 123 4567 890</p>
-                      <p className="text-muted-foreground">+39 098 7654 321 (Reservations)</p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-start">
-                    <div className="flex-shrink-0 h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center mr-4">
-                      <Mail className="h-5 w-5 text-primary" />
-                    </div>
-                    <div>
-                      <h3 className="font-semibold mb-1">{t.contact.email}</h3>
-                      <p className="text-muted-foreground">info@maresereno.com</p>
-                      <p className="text-muted-foreground">reservations@maresereno.com</p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-start">
-                    <div className="flex-shrink-0 h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center mr-4">
-                      <Clock className="h-5 w-5 text-primary" />
-                    </div>
-                    <div>
-                      <h3 className="font-semibold mb-1">{t.contact.receptionHours}</h3>
-                      <p className="text-muted-foreground">
-                        Monday - Sunday: 24 hours<br />
-                        {t.contact.checkInTime}<br />
-                        {t.contact.checkOutTime}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                
-                <div className="aspect-video rounded-xl overflow-hidden">
-                  <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d387191.03606358136!2d14.165818971864153!3d40.85529294646443!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x133b0a3c328d896b%3A0x309e11f99628150!2sGulf%20of%20Naples!5e0!3m2!1sen!2sus!4v1628613152777!5m2!1sen!2sus" 
-                    width="100%" 
-                    height="100%" 
-                    style={{ border: 0 }} 
-                    allowFullScreen 
-                    loading="lazy"
-                    title="Location Map"
-                  />
-                </div>
-              </div>
-              
-              {/* Contact Form */}
-              <div className="animate-fade-in [animation-delay:300ms]">
-                <h2 className="text-2xl font-bold mb-6">{t.contact.sendMessage}</h2>
-                
-                <div className="glass-card p-6">
-                  {!isSubmitted ? (
-                    <form onSubmit={handleSubmit} className="space-y-6">
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        <div className="space-y-2">
-                          <Label htmlFor="name">{t.contact.fullName}</Label>
-                          <Input 
-                            id="name" 
-                            name="name"
-                            value={formData.name}
-                            onChange={handleInputChange}
-                            placeholder="John Doe" 
-                            required 
-                          />
-                        </div>
-                        
-                        <div className="space-y-2">
-                          <Label htmlFor="email">{t.contact.email}</Label>
-                          <Input 
-                            id="email" 
-                            name="email"
-                            type="email"
-                            value={formData.email}
-                            onChange={handleInputChange}
-                            placeholder="john@example.com" 
-                            required 
-                          />
-                        </div>
+            
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {contactMethods.map((method, index) => (
+                <Card key={index} className="p-6 text-center hover:shadow-lg transition-shadow">
+                  <CardContent className="p-0">
+                    <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <div className="text-primary">
+                        {method.icon}
                       </div>
-                      
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        <div className="space-y-2">
-                          <Label htmlFor="phone">{t.contact.phoneNumber}</Label>
-                          <Input 
-                            id="phone" 
-                            name="phone"
-                            value={formData.phone}
-                            onChange={handleInputChange}
-                            placeholder="+1 234 567 8900" 
-                          />
-                        </div>
-                        
-                        <div className="space-y-2">
-                          <Label htmlFor="subject">{t.contact.subject}</Label>
-                          <Input 
-                            id="subject" 
-                            name="subject"
-                            value={formData.subject}
-                            onChange={handleInputChange}
-                            placeholder="Reservation Inquiry" 
-                            required 
-                          />
-                        </div>
-                      </div>
-                      
+                    </div>
+                    <h3 className="text-lg font-bold mb-2">{method.title}</h3>
+                    <p className="text-sm text-muted-foreground mb-4 leading-relaxed">
+                      {method.description}
+                    </p>
+                    <Button variant="outline" size="sm" className="w-full" asChild>
+                      <a href={`mailto:${method.contact}`}>{method.contact}</a>
+                    </Button>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Form */}
+      <section className="py-16 bg-muted/30">
+        <div className="container">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold mb-4">Send Us a Message</h2>
+              <p className="text-lg text-muted-foreground">
+                Have a specific question or want to discuss partnership opportunities? We'd love to hear from you.
+              </p>
+            </div>
+            
+            <Card className="p-8">
+              <CardContent className="p-0">
+                {!isSubmitted ? (
+                  <form onSubmit={handleSubmit} className="space-y-6">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div className="space-y-2">
-                        <Label htmlFor="message">{t.contact.message}</Label>
-                        <textarea 
-                          id="message" 
-                          name="message"
-                          value={formData.message}
+                        <Label htmlFor="name">Full Name</Label>
+                        <Input 
+                          id="name" 
+                          name="name"
+                          value={formData.name}
                           onChange={handleInputChange}
-                          placeholder={t.contact.howCanWeHelp} 
-                          className="w-full min-h-[150px] p-3 rounded-md border border-input bg-background"
+                          placeholder="Your full name" 
                           required 
                         />
                       </div>
                       
-                      <Button type="submit" className="w-full btn-primary">
-                        <Send className="mr-2 h-4 w-4" />
-                        {t.contact.send}
-                      </Button>
-                    </form>
-                  ) : (
-                    <div className="text-center py-12">
-                      <div className="w-16 h-16 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <Check className="h-8 w-8 text-green-600 dark:text-green-400" />
+                      <div className="space-y-2">
+                        <Label htmlFor="email">Email Address</Label>
+                        <Input 
+                          id="email" 
+                          name="email"
+                          type="email"
+                          value={formData.email}
+                          onChange={handleInputChange}
+                          placeholder="your.email@organization.org" 
+                          required 
+                        />
                       </div>
-                      <h3 className="text-xl font-semibold mb-2">{t.contact.messageSent}</h3>
-                      <p className="text-muted-foreground mb-6">
-                        {t.contact.thankYou}
-                      </p>
                     </div>
-                  )}
-                </div>
-              </div>
-            </div>
+                    
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                      <div className="space-y-2">
+                        <Label htmlFor="phone">Phone Number (Optional)</Label>
+                        <Input 
+                          id="phone" 
+                          name="phone"
+                          value={formData.phone}
+                          onChange={handleInputChange}
+                          placeholder="+1 234 567 8900" 
+                        />
+                      </div>
+                      
+                      <div className="space-y-2">
+                        <Label htmlFor="subject">Subject</Label>
+                        <Input 
+                          id="subject" 
+                          name="subject"
+                          value={formData.subject}
+                          onChange={handleInputChange}
+                          placeholder="Partnership Inquiry" 
+                          required 
+                        />
+                      </div>
+                    </div>
+                    
+                    <div className="space-y-2">
+                      <Label htmlFor="message">Message</Label>
+                      <textarea 
+                        id="message" 
+                        name="message"
+                        value={formData.message}
+                        onChange={handleInputChange}
+                        placeholder="How can GNEC help strengthen your organization's UN partnership?" 
+                        className="w-full min-h-[150px] p-3 rounded-md border border-input bg-background"
+                        required 
+                      />
+                    </div>
+                    
+                    <Button type="submit" className="w-full">
+                      <Send className="mr-2 h-4 w-4" />
+                      Send Message
+                    </Button>
+                  </form>
+                ) : (
+                  <div className="text-center py-12">
+                    <div className="w-16 h-16 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center mx-auto mb-6">
+                      <Check className="h-8 w-8 text-green-600 dark:text-green-400" />
+                    </div>
+                    <h3 className="text-xl font-semibold mb-2">Message Sent Successfully!</h3>
+                    <p className="text-muted-foreground mb-6">
+                      Thank you for reaching out. We'll respond to your message as soon as possible.
+                    </p>
+                  </div>
+                )}
+              </CardContent>
+            </Card>
           </div>
-        </section>
-        
-        {/* FAQ Section */}
-        <section className="section bg-muted">
-          <div className="container">
-            <div className="max-w-3xl mx-auto text-center mb-12 animate-fade-in">
-              <h2 className="text-3xl font-bold mb-4">{t.contact.faq}</h2>
-              <p className="text-muted-foreground">
-                {t.contact.faqSubtitle}
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-16">
+        <div className="container">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold mb-4">Frequently Asked Questions</h2>
+              <p className="text-lg text-muted-foreground">
+                Find quick answers to commonly asked questions about GNEC and our services
               </p>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 animate-fade-in [animation-delay:200ms]">
-              {[
-                {
-                  questionKey: "checkInOut",
-                  icon: <Clock className="h-5 w-5 text-primary" />
-                },
-                {
-                  questionKey: "parking",
-                  icon: <MapPin className="h-5 w-5 text-primary" />
-                },
-                {
-                  questionKey: "pets",
-                  icon: <MapPin className="h-5 w-5 text-primary" />
-                },
-                {
-                  questionKey: "breakfast",
-                  icon: <MapPin className="h-5 w-5 text-primary" />
-                },
-                {
-                  questionKey: "transfers",
-                  icon: <MapPin className="h-5 w-5 text-primary" />
-                },
-                {
-                  questionKey: "amenities",
-                  icon: <MapPin className="h-5 w-5 text-primary" />
-                },
-              ].map((faq, index) => (
-                <div key={index} className="glass-card p-6">
-                  <h3 className="font-semibold text-lg mb-2">
-                    {t.contact.questions[faq.questionKey].question}
-                  </h3>
-                  <p className="text-muted-foreground">
-                    {t.contact.questions[faq.questionKey].answer}
-                  </p>
-                </div>
+            <div className="grid md:grid-cols-2 gap-6">
+              {faqItems.map((faq, index) => (
+                <Card key={index} className="p-6">
+                  <CardContent className="p-0">
+                    <h3 className="text-lg font-bold mb-3">{faq.question}</h3>
+                    <p className="text-muted-foreground leading-relaxed">
+                      {faq.answer}
+                    </p>
+                  </CardContent>
+                </Card>
               ))}
             </div>
           </div>
-        </section>
-      </main>
-      
+        </div>
+      </section>
+
+      {/* Office Information */}
+      <section className="py-16 bg-muted/30">
+        <div className="container">
+          <div className="max-w-4xl mx-auto">
+            <Card className="p-8">
+              <CardContent className="p-0">
+                <div className="text-center mb-8">
+                  <h2 className="text-3xl font-bold mb-4">GNEC Headquarters</h2>
+                  <p className="text-lg text-muted-foreground">
+                    Based in New York, serving the global NGO community
+                  </p>
+                </div>
+                
+                <div className="grid md:grid-cols-3 gap-8 text-center">
+                  <div>
+                    <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-3">
+                      <MapPin className="h-6 w-6 text-primary" />
+                    </div>
+                    <h3 className="font-bold mb-2">Location</h3>
+                    <p className="text-sm text-muted-foreground">
+                      New York, United States of America
+                    </p>
+                  </div>
+                  
+                  <div>
+                    <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-3">
+                      <Clock className="h-6 w-6 text-primary" />
+                    </div>
+                    <h3 className="font-bold mb-2">Office Hours</h3>
+                    <p className="text-sm text-muted-foreground">
+                      Meetings: By appointment<br />
+                      Inquiries: 24/7 online
+                    </p>
+                  </div>
+                  
+                  <div>
+                    <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-3">
+                      <Globe className="h-6 w-6 text-primary" />
+                    </div>
+                    <h3 className="font-bold mb-2">Global Reach</h3>
+                    <p className="text-sm text-muted-foreground">
+                      Serving 1,500+ NGOs<br />
+                      Across all continents
+                    </p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
       <Footer />
     </div>
   );

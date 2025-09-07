@@ -29,7 +29,7 @@ export default function HeroSection() {
       <div
         className="absolute inset-0 bg-cover bg-center"
         style={{
-          backgroundImage: "url('https://gnec.ngo/wp-content/uploads/2024/05/1-1024x273.png')",
+          backgroundImage: "url('/herosec.png')",
           transform: `translateY(${backgroundY}px)`,
           backgroundPosition: `center ${50 + scrollY * 0.05}%`
         }}

@@ -2,23 +2,35 @@ import { useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import HeroSection from "@/components/HeroSection";
-import BookingForm from "@/components/BookingForm";
 import TestimonialsSection from "@/components/TestimonialsSection";
-import ApartmentCard, { ApartmentProps } from "@/components/ApartmentCard";
 import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 import { Link } from "react-router-dom";
-import { ArrowRight, Wifi, Utensils, Waves, LifeBuoy, MapPin, Coffee } from "lucide-react";
+import { ArrowRight, Wifi, Utensils, Waves, LifeBuoy, MapPin, Coffee, Calendar, Users, Award } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 // Featured programs data
-const featuredPrograms: ApartmentProps[] = [
+interface ProgramProps {
+  id: string;
+  name: string;
+  description: string;
+  year: number;
+  participants: number;
+  duration: string;
+  image: string;
+  location: string;
+  features: string[];
+}
+
+const featuredPrograms: ProgramProps[] = [
   {
     id: "1",
     name: "UN Civil Society Conference",
     description: "Annual flagship event facilitating global NGO collaboration and promoting understanding of UN's SDG efforts.",
-    price: 2024,
-    capacity: 1500,
-    size: 60,
+    year: 2024,
+    participants: 1500,
+    duration: "3 days",
     image: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&h=600&fit=crop",
     location: "UN Headquarters",
     features: ["Global Collaboration", "SDG Focus", "Networking", "Workshops", "Panel Discussions", "Youth Participation"]
@@ -27,9 +39,9 @@ const featuredPrograms: ApartmentProps[] = [
     id: "2",
     name: "Communication Workshops",
     description: "Regular training sessions throughout the year to help NGOs become more effective UN partners.",
-    price: 1962,
-    capacity: 200,
-    size: 12,
+    year: 1962,
+    participants: 200,
+    duration: "Ongoing",
     image: "https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=800&h=600&fit=crop",
     location: "Various Locations",
     features: ["Training", "Best Practices", "UN Operations", "Partnership Development", "Capacity Building", "Strategic Guidance"]
@@ -38,9 +50,9 @@ const featuredPrograms: ApartmentProps[] = [
     id: "3", 
     name: "GNEC Hackathon",
     description: "Technology solutions contest for UN Sustainable Development Goals with global participation encouraged.",
-    price: 2023,
-    capacity: 500,
-    size: 3,
+    year: 2023,
+    participants: 500,
+    duration: "48 hours",
     image: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=800&h=600&fit=crop",
     location: "Global/Virtual",
     features: ["Innovation", "SDG Solutions", "Technology", "Youth Focus", "Global Participation", "Impact Measurement"]
@@ -115,8 +127,8 @@ export default function Index() {
                   {t.home.welcome.description2}
                 </p>
                 <Button asChild className="btn-primary">
-                  <Link to="/about">
-                    {t.home.welcome.learnMore} <ArrowRight className="ml-2 h-4 w-4" />
+                  <Link to="/about/who-we-are">
+                    Learn More <ArrowRight className="ml-2 h-4 w-4" />
                   </Link>
                 </Button>
               </div>
@@ -148,33 +160,83 @@ export default function Index() {
           </div>
         </section>
         
-        {/* Booking Form Section */}
+        {/* Partnership Section */}
         <section className="relative py-20 bg-gradient-to-r from-sea-light to-white dark:from-sea-dark dark:to-background overflow-hidden">
           <div className="container relative z-10">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div className="animate-fade-in">
                 <span className="text-sm text-primary font-medium uppercase tracking-wider">
-                  {t.home.booking.subtitle}
+                  Join Our Network
                 </span>
                 <h2 className="text-3xl md:text-4xl font-bold mt-2 mb-6">
-                  {t.home.booking.title}
+                  Strengthen Your UN Partnership
                 </h2>
                 <p className="text-muted-foreground mb-6">
-                  {t.home.booking.description}
+                  Connect with GNEC to enhance your organization's impact through strategic UN partnerships and collaborative initiatives.
                 </p>
                 <ul className="space-y-3 mb-8">
-                  {t.home.booking.benefits.map((item, index) => (
-                    <li key={index} className="flex items-center">
-                      <div className="h-5 w-5 rounded-full bg-primary/10 text-primary flex items-center justify-center mr-3">
-                        <ArrowRight className="h-3 w-3" />
-                      </div>
-                      {item}
-                    </li>
-                  ))}
+                  <li className="flex items-center">
+                    <div className="h-5 w-5 rounded-full bg-primary/10 text-primary flex items-center justify-center mr-3">
+                      <ArrowRight className="h-3 w-3" />
+                    </div>
+                    Access to UN Department of Global Communications
+                  </li>
+                  <li className="flex items-center">
+                    <div className="h-5 w-5 rounded-full bg-primary/10 text-primary flex items-center justify-center mr-3">
+                      <ArrowRight className="h-3 w-3" />
+                    </div>
+                    Strategic guidance and capacity building
+                  </li>
+                  <li className="flex items-center">
+                    <div className="h-5 w-5 rounded-full bg-primary/10 text-primary flex items-center justify-center mr-3">
+                      <ArrowRight className="h-3 w-3" />
+                    </div>
+                    Global networking opportunities
+                  </li>
+                  <li className="flex items-center">
+                    <div className="h-5 w-5 rounded-full bg-primary/10 text-primary flex items-center justify-center mr-3">
+                      <ArrowRight className="h-3 w-3" />
+                    </div>
+                    Participation in flagship events
+                  </li>
                 </ul>
               </div>
               
-              <BookingForm />
+              <div className="animate-fade-in [animation-delay:200ms]">
+                <Card className="p-8">
+                  <CardContent className="p-0">
+                    <div className="text-center mb-6">
+                      <h3 className="text-2xl font-bold mb-2">Get Involved Today</h3>
+                      <p className="text-muted-foreground">
+                        Ready to strengthen your organization's UN partnership?
+                      </p>
+                    </div>
+                    
+                    <div className="space-y-4">
+                      <Button asChild className="w-full">
+                        <Link to="/contact">
+                          <Users className="mr-2 h-4 w-4" />
+                          Contact Us
+                        </Link>
+                      </Button>
+                      
+                      <Button asChild variant="outline" className="w-full">
+                        <Link to="/about/who-we-are">
+                          <Award className="mr-2 h-4 w-4" />
+                          Learn About GNEC
+                        </Link>
+                      </Button>
+                      
+                      <Button asChild variant="outline" className="w-full">
+                        <Link to="/services/upcoming-events">
+                          <Calendar className="mr-2 h-4 w-4" />
+                          View Events
+                        </Link>
+                      </Button>
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
             </div>
           </div>
           
@@ -203,15 +265,61 @@ export default function Index() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {featuredPrograms.map((program, index) => (
                 <div key={program.id} className="animate-fade-in" style={{ animationDelay: `${(index + 1) * 100}ms` }}>
-                  <ApartmentCard apartment={program} />
+                  <Card className="overflow-hidden hover:shadow-lg transition-shadow">
+                    <div className="aspect-video overflow-hidden">
+                      <img 
+                        src={program.image} 
+                        alt={program.name}
+                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                      />
+                    </div>
+                    <CardContent className="p-6">
+                      <div className="flex items-center justify-between mb-2">
+                        <Badge variant="secondary">{program.location}</Badge>
+                        <span className="text-sm text-muted-foreground">{program.year}</span>
+                      </div>
+                      <h3 className="text-xl font-bold mb-2">{program.name}</h3>
+                      <p className="text-muted-foreground mb-4 line-clamp-2">{program.description}</p>
+                      
+                      <div className="flex items-center justify-between mb-4 text-sm text-muted-foreground">
+                        <div className="flex items-center">
+                          <Users className="h-4 w-4 mr-1" />
+                          {program.participants} participants
+                        </div>
+                        <div className="flex items-center">
+                          <Calendar className="h-4 w-4 mr-1" />
+                          {program.duration}
+                        </div>
+                      </div>
+                      
+                      <div className="flex flex-wrap gap-1 mb-4">
+                        {program.features.slice(0, 3).map((feature, idx) => (
+                          <Badge key={idx} variant="outline" className="text-xs">
+                            {feature}
+                          </Badge>
+                        ))}
+                        {program.features.length > 3 && (
+                          <Badge variant="outline" className="text-xs">
+                            +{program.features.length - 3} more
+                          </Badge>
+                        )}
+                      </div>
+                      
+                      <Button asChild className="w-full">
+                        <Link to="/services/upcoming-events">
+                          Learn More <ArrowRight className="ml-2 h-4 w-4" />
+                        </Link>
+                      </Button>
+                    </CardContent>
+                  </Card>
                 </div>
               ))}
             </div>
             
             <div className="text-center mt-12">
               <Button asChild className="btn-primary">
-                <Link to="/apartments">
-                  {t.home.featuredPrograms.viewAll} <ArrowRight className="ml-2 h-4 w-4" />
+                <Link to="/services/upcoming-events">
+                  View All Programs <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
               </Button>
             </div>
@@ -259,14 +367,19 @@ export default function Index() {
           <div className="container">
             <div className="max-w-3xl mx-auto text-center animate-fade-in">
               <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                {t.home.cta.title}
+                Ready to Strengthen Your UN Partnership?
               </h2>
               <p className="text-muted-foreground mb-8">
-                {t.home.cta.description}
+                Join GNEC today and become part of a global network of civil society organizations working together to advance the UN's Sustainable Development Goals.
               </p>
-              <Button asChild size="lg" className="btn-primary">
-                <Link to="/booking">{t.home.cta.bookNow}</Link>
-              </Button>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Button asChild size="lg" className="btn-primary">
+                  <Link to="/contact">Get Started Today</Link>
+                </Button>
+                <Button asChild size="lg" variant="outline">
+                  <Link to="/about/who-we-are">Learn More About GNEC</Link>
+                </Button>
+              </div>
             </div>
           </div>
           
