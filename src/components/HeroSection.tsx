@@ -54,11 +54,11 @@ export default function HeroSection() {
             {t.hero.description}
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Button asChild size="lg" variant="heroSolid" className="min-w-[200px] rounded-full transform transition-all duration-300 hover:translate-y-[-2px]">
-              <Link to="/booking">{t.hero.bookStay}</Link>
+            <Button asChild size="lg" className="min-w-[200px] bg-brand-green text-white hover:bg-brand-blue transition-all duration-300 hover:translate-y-[-2px] rounded-full px-8 py-3 font-medium">
+              <Link to="/contact">Get Involved</Link>
             </Button>
-            <Button asChild variant="hero" size="lg" className="min-w-[200px] rounded-full transform transition-all duration-300 hover:translate-y-[-2px]">
-              <Link to="/apartments">{t.hero.exploreApartments}</Link>
+            <Button asChild size="lg" className="min-w-[200px] border-2 border-white text-white hover:bg-white hover:text-brand-dark-gray transition-all duration-300 hover:translate-y-[-2px] rounded-full px-8 py-3 font-medium bg-transparent">
+              <Link to="/about/who-we-are">Learn More</Link>
             </Button>
           </div>
         </div>
@@ -78,7 +78,7 @@ export default function HeroSection() {
       {/* Animated wave */}
       <div className="absolute bottom-0 left-0 right-0 h-24 overflow-hidden">
         <svg 
-          className="absolute bottom-0 w-full h-24 fill-white dark:fill-background"
+          className="absolute bottom-0 w-full h-24 fill-white"
           preserveAspectRatio="none"
           viewBox="0 0 1440 74"
           xmlns="http://www.w3.org/2000/svg"

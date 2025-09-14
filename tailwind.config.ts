@@ -62,6 +62,15 @@ export default {
 					light: '#F5F5DC',
 					DEFAULT: '#E6D2B5',
 					dark: '#D2B48C'
+				},
+				brand: {
+					green: '#8bb440',
+					blue: '#1c75bc',
+					'light-blue-gray': '#e0ebf5',
+					white: '#ffffff',
+					'light-green-gray': '#e0ebd2',
+					'dark-gray': '#474849',
+					charcoal: '#1a2228'
 				}
 			},
 			borderRadius: {

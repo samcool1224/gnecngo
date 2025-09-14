@@ -100,7 +100,7 @@ export default function Contact() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-background to-muted/20">
+    <div className="min-h-screen bg-gradient-to-b from-white to-brand-light-blue-gray/20">
       <Navbar />
       
       {/* Hero Section */}
@@ -133,8 +133,8 @@ export default function Contact() {
               {contactMethods.map((method, index) => (
                 <Card key={index} className="p-6 text-center hover:shadow-lg transition-shadow">
                   <CardContent className="p-0">
-                    <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                      <div className="text-primary">
+                    <div className="w-16 h-16 bg-brand-green/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <div className="text-brand-green">
                         {method.icon}
                       </div>
                     </div>
@@ -142,7 +142,7 @@ export default function Contact() {
                     <p className="text-sm text-muted-foreground mb-4 leading-relaxed">
                       {method.description}
                     </p>
-                    <Button variant="outline" size="sm" className="w-full" asChild>
+                    <Button size="sm" className="w-full border border-brand-blue text-brand-blue hover:bg-brand-blue hover:text-white transition-colors rounded-full px-4 py-2 font-medium bg-transparent" asChild>
                       <a href={`mailto:${method.contact}`}>{method.contact}</a>
                     </Button>
                   </CardContent>
@@ -154,7 +154,7 @@ export default function Contact() {
       </section>
 
       {/* Contact Form */}
-      <section className="py-16 bg-muted/30">
+      <section className="py-16 bg-brand-light-green-gray/30">
         <div className="container">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
@@ -233,15 +233,15 @@ export default function Contact() {
                       />
                     </div>
                     
-                    <Button type="submit" className="w-full">
+                    <Button type="submit" className="w-full bg-brand-green text-white hover:bg-brand-blue transition-colors rounded-full px-6 py-2.5 font-medium">
                       <Send className="mr-2 h-4 w-4" />
                       Send Message
                     </Button>
                   </form>
                 ) : (
                   <div className="text-center py-12">
-                    <div className="w-16 h-16 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center mx-auto mb-6">
-                      <Check className="h-8 w-8 text-green-600 dark:text-green-400" />
+                    <div className="w-16 h-16 bg-brand-green/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                      <Check className="h-8 w-8 text-brand-green" />
                     </div>
                     <h3 className="text-xl font-semibold mb-2">Message Sent Successfully!</h3>
                     <p className="text-muted-foreground mb-6">
@@ -283,7 +283,7 @@ export default function Contact() {
       </section>
 
       {/* Office Information */}
-      <section className="py-16 bg-muted/30">
+      <section className="py-16 bg-brand-light-blue-gray/30">
         <div className="container">
           <div className="max-w-4xl mx-auto">
             <Card className="p-8">
@@ -297,8 +297,8 @@ export default function Contact() {
                 
                 <div className="grid md:grid-cols-3 gap-8 text-center">
                   <div>
-                    <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-3">
-                      <MapPin className="h-6 w-6 text-primary" />
+                    <div className="w-12 h-12 bg-brand-green/10 rounded-full flex items-center justify-center mx-auto mb-3">
+                      <MapPin className="h-6 w-6 text-brand-green" />
                     </div>
                     <h3 className="font-bold mb-2">Location</h3>
                     <p className="text-sm text-muted-foreground">
@@ -307,8 +307,8 @@ export default function Contact() {
                   </div>
                   
                   <div>
-                    <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-3">
-                      <Clock className="h-6 w-6 text-primary" />
+                    <div className="w-12 h-12 bg-brand-blue/10 rounded-full flex items-center justify-center mx-auto mb-3">
+                      <Clock className="h-6 w-6 text-brand-blue" />
                     </div>
                     <h3 className="font-bold mb-2">Office Hours</h3>
                     <p className="text-sm text-muted-foreground">
@@ -318,8 +318,8 @@ export default function Contact() {
                   </div>
                   
                   <div>
-                    <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-3">
-                      <Globe className="h-6 w-6 text-primary" />
+                    <div className="w-12 h-12 bg-brand-green/10 rounded-full flex items-center justify-center mx-auto mb-3">
+                      <Globe className="h-6 w-6 text-brand-green" />
                     </div>
                     <h3 className="font-bold mb-2">Global Reach</h3>
                     <p className="text-sm text-muted-foreground">

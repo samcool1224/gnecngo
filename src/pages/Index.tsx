@@ -70,32 +70,32 @@ export default function Index() {
   // Service features
   const features = [
     {
-      icon: <Waves className="h-8 w-8 text-primary" />,
+      icon: <Waves className="h-8 w-8 text-brand-green" />,
       title: t.home.services.features.liaison.title,
       description: t.home.services.features.liaison.description
     },
     {
-      icon: <LifeBuoy className="h-8 w-8 text-primary" />,
+      icon: <LifeBuoy className="h-8 w-8 text-brand-blue" />,
       title: t.home.services.features.guidance.title,
       description: t.home.services.features.guidance.description
     },
     {
-      icon: <Utensils className="h-8 w-8 text-primary" />,
+      icon: <Utensils className="h-8 w-8 text-brand-green" />,
       title: t.home.services.features.workshops.title,
       description: t.home.services.features.workshops.description
     },
     {
-      icon: <Wifi className="h-8 w-8 text-primary" />,
+      icon: <Wifi className="h-8 w-8 text-brand-blue" />,
       title: t.home.services.features.networking.title,
       description: t.home.services.features.networking.description
     },
     {
-      icon: <Coffee className="h-8 w-8 text-primary" />,
+      icon: <Coffee className="h-8 w-8 text-brand-green" />,
       title: t.home.services.features.advocacy.title,
       description: t.home.services.features.advocacy.description
     },
     {
-      icon: <MapPin className="h-8 w-8 text-primary" />,
+      icon: <MapPin className="h-8 w-8 text-brand-blue" />,
       title: t.home.services.features.global.title,
       description: t.home.services.features.global.description
     }
@@ -126,7 +126,7 @@ export default function Index() {
                 <p className="text-muted-foreground mb-8">
                   {t.home.welcome.description2}
                 </p>
-                <Button asChild className="btn-primary">
+                <Button asChild className="bg-brand-green text-white hover:bg-brand-blue transition-colors rounded-full px-6 py-2.5 font-medium">
                   <Link to="/about/who-we-are">
                     Learn More <ArrowRight className="ml-2 h-4 w-4" />
                   </Link>
@@ -161,7 +161,7 @@ export default function Index() {
         </section>
         
         {/* Partnership Section */}
-        <section className="relative py-20 bg-gradient-to-r from-sea-light to-white dark:from-sea-dark dark:to-background overflow-hidden">
+        <section className="relative py-20 bg-gradient-to-r from-brand-light-blue-gray to-white overflow-hidden">
           <div className="container relative z-10">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div className="animate-fade-in">
@@ -176,25 +176,25 @@ export default function Index() {
                 </p>
                 <ul className="space-y-3 mb-8">
                   <li className="flex items-center">
-                    <div className="h-5 w-5 rounded-full bg-primary/10 text-primary flex items-center justify-center mr-3">
+                    <div className="h-5 w-5 rounded-full bg-brand-green/10 text-brand-green flex items-center justify-center mr-3">
                       <ArrowRight className="h-3 w-3" />
                     </div>
                     Access to UN Department of Global Communications
                   </li>
                   <li className="flex items-center">
-                    <div className="h-5 w-5 rounded-full bg-primary/10 text-primary flex items-center justify-center mr-3">
+                    <div className="h-5 w-5 rounded-full bg-brand-green/10 text-brand-green flex items-center justify-center mr-3">
                       <ArrowRight className="h-3 w-3" />
                     </div>
                     Strategic guidance and capacity building
                   </li>
                   <li className="flex items-center">
-                    <div className="h-5 w-5 rounded-full bg-primary/10 text-primary flex items-center justify-center mr-3">
+                    <div className="h-5 w-5 rounded-full bg-brand-green/10 text-brand-green flex items-center justify-center mr-3">
                       <ArrowRight className="h-3 w-3" />
                     </div>
                     Global networking opportunities
                   </li>
                   <li className="flex items-center">
-                    <div className="h-5 w-5 rounded-full bg-primary/10 text-primary flex items-center justify-center mr-3">
+                    <div className="h-5 w-5 rounded-full bg-brand-green/10 text-brand-green flex items-center justify-center mr-3">
                       <ArrowRight className="h-3 w-3" />
                     </div>
                     Participation in flagship events
@@ -213,21 +213,21 @@ export default function Index() {
                     </div>
                     
                     <div className="space-y-4">
-                      <Button asChild className="w-full">
+                      <Button asChild className="w-full bg-brand-blue text-white hover:bg-brand-green transition-colors rounded-full px-6 py-2.5 font-medium">
                         <Link to="/contact">
                           <Users className="mr-2 h-4 w-4" />
                           Contact Us
                         </Link>
                       </Button>
                       
-                      <Button asChild variant="outline" className="w-full">
+                      <Button asChild className="w-full border border-brand-blue text-brand-blue hover:bg-brand-blue hover:text-white transition-colors rounded-full px-6 py-2.5 font-medium bg-transparent">
                         <Link to="/about/who-we-are">
                           <Award className="mr-2 h-4 w-4" />
                           Learn About GNEC
                         </Link>
                       </Button>
                       
-                      <Button asChild variant="outline" className="w-full">
+                      <Button asChild className="w-full border border-brand-green text-brand-green hover:bg-brand-green hover:text-white transition-colors rounded-full px-6 py-2.5 font-medium bg-transparent">
                         <Link to="/services/upcoming-events">
                           <Calendar className="mr-2 h-4 w-4" />
                           View Events
@@ -242,8 +242,8 @@ export default function Index() {
           
           {/* Decorative elements */}
           <div className="absolute top-0 right-0 w-1/3 h-full opacity-10">
-            <div className="absolute top-10 right-10 w-64 h-64 rounded-full bg-primary/50 blur-3xl" />
-            <div className="absolute bottom-10 right-40 w-48 h-48 rounded-full bg-sea-light blur-3xl" />
+            <div className="absolute top-10 right-10 w-64 h-64 rounded-full bg-brand-green/30 blur-3xl" />
+            <div className="absolute bottom-10 right-40 w-48 h-48 rounded-full bg-brand-blue/30 blur-3xl" />
           </div>
         </section>
         
@@ -305,7 +305,7 @@ export default function Index() {
                         )}
                       </div>
                       
-                      <Button asChild className="w-full">
+                      <Button asChild className="w-full bg-brand-green text-white hover:bg-brand-blue transition-colors rounded-full px-6 py-2.5 font-medium">
                         <Link to="/services/upcoming-events">
                           Learn More <ArrowRight className="ml-2 h-4 w-4" />
                         </Link>
@@ -317,7 +317,7 @@ export default function Index() {
             </div>
             
             <div className="text-center mt-12">
-              <Button asChild className="btn-primary">
+              <Button asChild className="bg-brand-green text-white hover:bg-brand-blue transition-colors rounded-full px-6 py-2.5 font-medium">
                 <Link to="/services/upcoming-events">
                   View All Programs <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
@@ -330,7 +330,7 @@ export default function Index() {
         <TestimonialsSection />
         
         {/* Services Section */}
-        <section className="section bg-card">
+        <section className="section bg-brand-light-green-gray">
           <div className="container">
             <div className="text-center max-w-3xl mx-auto mb-12 animate-fade-in">
               <span className="text-sm text-primary font-medium uppercase tracking-wider">
@@ -351,7 +351,7 @@ export default function Index() {
                   className="glass-card p-6 rounded-xl animate-fade-in flex flex-col items-center text-center"
                   style={{ animationDelay: `${(index + 1) * 100}ms` }}
                 >
-                  <div className="mb-4 p-3 rounded-full bg-primary/10">
+                  <div className="mb-4 p-3 rounded-full bg-brand-green/10">
                     {feature.icon}
                   </div>
                   <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
@@ -363,7 +363,7 @@ export default function Index() {
         </section>
         
         {/* CTA Section */}
-        <section className="relative py-24 bg-primary/5">
+        <section className="relative py-24 bg-brand-light-blue-gray">
           <div className="container">
             <div className="max-w-3xl mx-auto text-center animate-fade-in">
               <h2 className="text-3xl md:text-4xl font-bold mb-6">
@@ -373,10 +373,10 @@ export default function Index() {
                 Join GNEC today and become part of a global network of civil society organizations working together to advance the UN's Sustainable Development Goals.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button asChild size="lg" className="btn-primary">
+                <Button asChild size="lg" className="bg-brand-green text-white hover:bg-brand-blue transition-colors rounded-full px-8 py-3 font-medium">
                   <Link to="/contact">Get Started Today</Link>
                 </Button>
-                <Button asChild size="lg" variant="outline">
+                <Button asChild size="lg" className="border border-brand-blue text-brand-blue hover:bg-brand-blue hover:text-white transition-colors rounded-full px-8 py-3 font-medium bg-transparent">
                   <Link to="/about/who-we-are">Learn More About GNEC</Link>
                 </Button>
               </div>

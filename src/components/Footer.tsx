@@ -8,24 +8,24 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
   
   return (
-    <footer className="bg-card text-card-foreground pt-16 pb-8 border-t">
+    <footer className="bg-brand-charcoal text-white pt-16 pb-8 border-t border-brand-dark-gray">
       <div className="container">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           <div className="animate-fade-in [animation-delay:100ms]">
-            <h4 className="text-xl font-bold mb-4">MareSereno</h4>
-            <p className="text-muted-foreground mb-4">
+            <h4 className="text-xl font-bold mb-4 text-white">GNEC</h4>
+            <p className="text-white/70 mb-4">
               {t.footer.description}
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
+              <a href="#" className="text-white/70 hover:text-brand-green transition-colors">
                 <Facebook size={20} />
                 <span className="sr-only">Facebook</span>
               </a>
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
+              <a href="#" className="text-white/70 hover:text-brand-green transition-colors">
                 <Instagram size={20} />
                 <span className="sr-only">Instagram</span>
               </a>
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
+              <a href="#" className="text-white/70 hover:text-brand-green transition-colors">
                 <Twitter size={20} />
                 <span className="sr-only">Twitter</span>
               </a>
@@ -46,7 +46,7 @@ export default function Footer() {
                 <li key={link.name}>
                   <Link 
                     to={link.path} 
-                    className="text-muted-foreground hover:text-primary transition-colors"
+                    className="text-white/70 hover:text-brand-green transition-colors"
                   >
                     {link.name}
                   </Link>
@@ -59,39 +59,39 @@ export default function Footer() {
             <h4 className="text-xl font-bold mb-4">{t.footer.contact}</h4>
             <ul className="space-y-3">
               <li className="flex items-start">
-                <MapPin className="w-5 h-5 mr-2 mt-0.5 text-primary" />
-                <span className="text-muted-foreground">
-                  123 Seaside Boulevard<br />
-                  Costa Bella, 12345<br />
-                  Italy
+                <MapPin className="w-5 h-5 mr-2 mt-0.5 text-brand-green" />
+                <span className="text-white/70">
+                  UN Headquarters<br />
+                  New York, NY 10017<br />
+                  United States
                 </span>
               </li>
               <li className="flex items-center">
-                <Phone className="w-5 h-5 mr-2 text-primary" />
-                <span className="text-muted-foreground">+39 123 4567 890</span>
+                <Phone className="w-5 h-5 mr-2 text-brand-green" />
+                <span className="text-white/70">+1 (212) 963-1234</span>
               </li>
               <li className="flex items-center">
-                <Mail className="w-5 h-5 mr-2 text-primary" />
-                <span className="text-muted-foreground">info@maresereno.com</span>
+                <Mail className="w-5 h-5 mr-2 text-brand-green" />
+                <span className="text-white/70">info@gnec.org</span>
               </li>
             </ul>
           </div>
           
           <div className="animate-fade-in [animation-delay:400ms]">
             <h4 className="text-xl font-bold mb-4">{t.footer.newsletter}</h4>
-            <p className="text-muted-foreground mb-4">
+            <p className="text-white/70 mb-4">
               {t.footer.newsletterDesc}
             </p>
             <form className="flex flex-col space-y-2">
               <input 
                 type="email" 
                 placeholder={t.footer.yourEmail} 
-                className="rounded-md px-4 py-2 bg-muted text-foreground"
+                className="rounded-md px-4 py-2 bg-brand-dark-gray text-white border border-brand-dark-gray focus:border-brand-green focus:outline-none"
                 required 
               />
               <button 
                 type="submit" 
-                className="btn-primary mt-2"
+                className="bg-brand-green text-white hover:bg-brand-blue transition-colors rounded-full px-6 py-2.5 font-medium mt-2"
               >
                 {t.footer.subscribe}
               </button>
@@ -99,8 +99,8 @@ export default function Footer() {
           </div>
         </div>
         
-        <div className="border-t border-border pt-8 mt-8 text-center text-muted-foreground">
-          <p>&copy; {currentYear} MareSereno. {t.footer.allRights}</p>
+        <div className="border-t border-brand-dark-gray pt-8 mt-8 text-center text-white/70">
+          <p>&copy; {currentYear} GNEC. {t.footer.allRights}</p>
         </div>
       </div>
     </footer>
