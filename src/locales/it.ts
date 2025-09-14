@@ -276,7 +276,7 @@ export const it = {
   amenitiesPage: {
     title: "I Nostri Servizi",
     subtitle: "Scopri i servizi e le comodità di lusso che rendono il tuo soggiorno indimenticabile.",
-    description: "A MareSereno, ci dedichiamo a fornire un'esperienza di soggiorno completa e lussuosa. Dai nostri servizi sulla spiaggia alle strutture di benessere, ogni dettaglio è stato curato per garantire il massimo comfort e piacere.",
+    description: "Al GNEC, ci dedichiamo a rafforzare le partnership con le Nazioni Unite e a promuovere gli obiettivi di sviluppo sostenibile attraverso la collaborazione della società civile. Dai nostri workshop alle conferenze globali, ogni iniziativa è stata curata per migliorare l'efficacia delle ONG.",
     categories: {
       wellness: {
         title: "Benessere e Relax",

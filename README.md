@@ -1,6 +1,8 @@
-# Welcome to your Lovable project
+# GNEC - Global NGO Executive Committee Website
 
 ## Project info
+
+This is the official website for the Global NGO Executive Committee (GNEC), dedicated to strengthening UN partnerships and advancing sustainable development goals through civil society collaboration.
 
 **URL**: https://lovable.dev/projects/96f629c9-6031-4f68-8bd0-680a3c64b6e3
 
@@ -52,13 +54,14 @@ npm run dev
 
 ## What technologies are used for this project?
 
-This project is built with .
+This project is built with modern web technologies to provide a professional, accessible, and responsive experience for NGOs and civil society organizations.
 
 - Vite
 - TypeScript
 - React
 - shadcn-ui
 - Tailwind CSS
+- Brand colors optimized for WCAG AA compliance
 
 ## How can I deploy this project?
 

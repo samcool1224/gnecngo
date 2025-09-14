@@ -302,7 +302,7 @@ export const en = {
   amenitiesPage: {
     title: "Our Amenities",
     subtitle: "Discover the luxury amenities and services that make your stay unforgettable.",
-    description: "At MareSereno, we are dedicated to providing a comprehensive and luxurious stay experience. From our beachfront services to wellness facilities, every detail has been curated to ensure maximum comfort and pleasure.",
+    description: "At GNEC, we are dedicated to strengthening UN partnerships and advancing sustainable development goals through civil society collaboration. From our workshops to global conferences, every initiative has been curated to enhance NGO effectiveness.",
     categories: {
       wellness: {
         title: "Wellness & Relaxation",
