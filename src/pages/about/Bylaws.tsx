@@ -79,7 +79,11 @@ export default function Bylaws() {
                   <p className="text-muted-foreground mb-6 leading-relaxed">
                     The official by-laws adopted in June 2024 that establish the fundamental governance structure, membership requirements, and operational procedures of the Global NGO Executive Committee.
                   </p>
-                  <Button className="w-full" variant="outline">
+                  <Button 
+                    className="w-full" 
+                    variant="outline"
+                    onClick={() => window.open('https://gnec.ngo/wp-content/uploads/2021/03/FINAL-Bylaws-June-2020.pdf', '_blank')}
+                  >
                     <Download className="h-4 w-4 mr-2" />
                     Download By-Laws (PDF)
                   </Button>
@@ -97,7 +101,11 @@ export default function Bylaws() {
                   <p className="text-muted-foreground mb-6 leading-relaxed">
                     Detailed policies and procedures that complement the by-laws, providing specific guidance on how the Executive Committee carries out its obligations to NGOs affiliated with UNDGC.
                   </p>
-                  <Button className="w-full" variant="outline">
+                  <Button 
+                    className="w-full" 
+                    variant="outline"
+                    onClick={() => window.open('https://gnec.ngo/wp-content/uploads/2021/03/FINAL-Bylaws-June-2020.pdf', '_blank')}
+                  >
                     <Download className="h-4 w-4 mr-2" />
                     Download Policies (PDF)
                   </Button>

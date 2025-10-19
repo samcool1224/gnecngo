@@ -38,8 +38,8 @@ export default function Message() {
               <Card className="p-6">
                 <CardContent className="p-0">
                   <div className="text-center mb-4">
-                    <div className="w-24 h-24 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                      <Users className="h-12 w-12 text-primary" />
+                    <div className="w-32 h-32 rounded-full overflow-hidden mx-auto mb-4 border-4 border-primary/20">
+                      <img src="/officers/uwemrobert.png" alt="Uwem Robert OTU" className="w-full h-full object-cover" />
                     </div>
                     <h3 className="text-xl font-bold">Uwem Robert OTU</h3>
                     <p className="text-primary font-medium">International President</p>
@@ -51,8 +51,8 @@ export default function Message() {
               <Card className="p-6">
                 <CardContent className="p-0">
                   <div className="text-center mb-4">
-                    <div className="w-24 h-24 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                      <Globe className="h-12 w-12 text-primary" />
+                    <div className="w-32 h-32 rounded-full overflow-hidden mx-auto mb-4 border-4 border-primary/20">
+                      <img src="/officers/ediolapashollari.png" alt="Ediola Pashollari" className="w-full h-full object-cover" />
                     </div>
                     <h3 className="text-xl font-bold">Ediola Pashollari</h3>
                     <p className="text-primary font-medium">New York President</p>
@@ -69,12 +69,9 @@ export default function Message() {
       <section className="py-16 bg-muted/30">
         <div className="container">
           <div className="max-w-4xl mx-auto">
-            <Card className="p-8">
+            <Card className="p-8 relative">
               <CardContent className="p-0">
-                <div className="flex items-center gap-3 mb-6">
-                  <Quote className="h-8 w-8 text-primary" />
-                  <h2 className="text-3xl font-bold">Our Joint Message</h2>
-                </div>
+                <Quote className="h-12 w-12 text-primary mb-4 rotate-180" />
                 
                 <div className="space-y-6 text-lg leading-relaxed">
                   <p>
@@ -104,6 +101,10 @@ export default function Message() {
                   <p className="font-medium text-right mt-8">
                     Thank you.
                   </p>
+                </div>
+                
+                <div className="flex justify-end mt-4">
+                  <Quote className="h-12 w-12 text-primary" />
                 </div>
               </CardContent>
             </Card>

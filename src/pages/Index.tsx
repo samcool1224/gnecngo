@@ -31,7 +31,7 @@ const featuredPrograms: ProgramProps[] = [
     year: 2024,
     participants: 1500,
     duration: "3 days",
-    image: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&h=600&fit=crop",
+    image: "/homepage/civilsociety.jpg",
     location: "UN Headquarters",
     features: ["Global Collaboration", "SDG Focus", "Networking", "Workshops", "Panel Discussions", "Youth Participation"]
   },
@@ -42,7 +42,7 @@ const featuredPrograms: ProgramProps[] = [
     year: 1962,
     participants: 200,
     duration: "Ongoing",
-    image: "https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=800&h=600&fit=crop",
+    image: "/homepage/workshops.jpg",
     location: "Various Locations",
     features: ["Training", "Best Practices", "UN Operations", "Partnership Development", "Capacity Building", "Strategic Guidance"]
   },
@@ -53,7 +53,7 @@ const featuredPrograms: ProgramProps[] = [
     year: 2023,
     participants: 500,
     duration: "48 hours",
-    image: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=800&h=600&fit=crop",
+    image: "/homepage/hackathonlogo.png",
     location: "Global/Virtual",
     features: ["Innovation", "SDG Solutions", "Technology", "Youth Focus", "Global Participation", "Impact Measurement"]
   }
@@ -136,22 +136,22 @@ export default function Index() {
               <div className="relative animate-fade-in [animation-delay:300ms]">
                 <div className="aspect-[4/3] rounded-2xl overflow-hidden">
                   <img 
-                    src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&h=600&fit=crop"
-                    alt="UN Headquarters view" 
+                    src="/homepage/section2img1.jpg"
+                    alt="GNEC program image 1" 
                     className="w-full h-full object-cover"
                   />
                 </div>
                 <div className="absolute -bottom-6 -left-6 w-2/3 rounded-2xl overflow-hidden shadow-xl">
                   <img 
-                    src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=400&h=300&fit=crop"
-                    alt="NGO conference meeting" 
+                    src="/homepage/section2img2.jpg"
+                    alt="GNEC program image 2" 
                     className="w-full h-full object-cover"
                   />
                 </div>
                 <div className="absolute -top-6 -right-6 w-1/2 rounded-2xl overflow-hidden shadow-xl">
                   <img 
-                    src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=400&h=300&fit=crop"
-                    alt="Global collaboration" 
+                    src="/homepage/section2img3.jpg"
+                    alt="GNEC program image 3" 
                     className="w-full h-full object-cover"
                   />
                 </div>
@@ -165,36 +165,36 @@ export default function Index() {
           <div className="container relative z-10">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div className="animate-fade-in">
-                <span className="text-sm text-primary font-medium uppercase tracking-wider">
+                <span className="text-sm font-semibold uppercase tracking-wider text-brand-blue">
                   Join Our Network
                 </span>
-                <h2 className="text-3xl md:text-4xl font-bold mt-2 mb-6">
+                <h2 className="text-3xl md:text-4xl font-extrabold mt-2 mb-6 text-brand-blue">
                   Strengthen Your UN Partnership
                 </h2>
-                <p className="text-muted-foreground mb-6">
+                <p className="text-brand-dark-gray mb-6">
                   Connect with GNEC to enhance your organization's impact through strategic UN partnerships and collaborative initiatives.
                 </p>
                 <ul className="space-y-3 mb-8">
                   <li className="flex items-center">
-                    <div className="h-5 w-5 rounded-full bg-brand-green/10 text-brand-green flex items-center justify-center mr-3">
+                    <div className="h-5 w-5 rounded-full bg-brand-green/20 text-brand-green flex items-center justify-center mr-3">
                       <ArrowRight className="h-3 w-3" />
                     </div>
                     Access to UN Department of Global Communications
                   </li>
                   <li className="flex items-center">
-                    <div className="h-5 w-5 rounded-full bg-brand-green/10 text-brand-green flex items-center justify-center mr-3">
+                    <div className="h-5 w-5 rounded-full bg-brand-green/20 text-brand-green flex items-center justify-center mr-3">
                       <ArrowRight className="h-3 w-3" />
                     </div>
                     Strategic guidance and capacity building
                   </li>
                   <li className="flex items-center">
-                    <div className="h-5 w-5 rounded-full bg-brand-green/10 text-brand-green flex items-center justify-center mr-3">
+                    <div className="h-5 w-5 rounded-full bg-brand-green/20 text-brand-green flex items-center justify-center mr-3">
                       <ArrowRight className="h-3 w-3" />
                     </div>
                     Global networking opportunities
                   </li>
                   <li className="flex items-center">
-                    <div className="h-5 w-5 rounded-full bg-brand-green/10 text-brand-green flex items-center justify-center mr-3">
+                    <div className="h-5 w-5 rounded-full bg-brand-green/20 text-brand-green flex items-center justify-center mr-3">
                       <ArrowRight className="h-3 w-3" />
                     </div>
                     Participation in flagship events
@@ -363,13 +363,13 @@ export default function Index() {
         </section>
         
         {/* CTA Section */}
-        <section className="relative py-24 bg-brand-light-blue-gray">
+        <section className="relative py-24 bg-gradient-to-r from-brand-light-blue-gray to-white">
           <div className="container">
             <div className="max-w-3xl mx-auto text-center animate-fade-in">
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">
+              <h2 className="text-3xl md:text-4xl font-extrabold mb-6 text-brand-blue">
                 Ready to Strengthen Your UN Partnership?
               </h2>
-              <p className="text-muted-foreground mb-8">
+              <p className="text-brand-dark-gray mb-8">
                 Join GNEC today and become part of a global network of civil society organizations working together to advance the UN's Sustainable Development Goals.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
