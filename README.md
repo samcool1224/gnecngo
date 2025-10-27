@@ -4,7 +4,7 @@
 
 This is the official website for the Global NGO Executive Committee (GNEC), dedicated to strengthening UN partnerships and advancing sustainable development goals through civil society collaboration.
 
-**URL**: https://lovable.dev/projects/96f629c9-6031-4f68-8bd0-680a3c64b6e3
+**URL**:
 
 ## How can I edit this code?
 
