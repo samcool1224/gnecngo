@@ -6,13 +6,49 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { Mic, Play, Calendar, Clock, ExternalLink, Award, Users, Search } from "lucide-react";
+import { supabase } from "@/lib/supabase";
+
+interface SupabaseEpisode {
+  id: string;
+  episode_number: number;
+  title: string;
+  description: string;
+  features: string;
+  tags: string[];
+  audio_file_path: string;
+  publication_date: string;
+  category: string;
+  created_at: string;
+}
 
 export default function Podcast() {
   const [searchQuery, setSearchQuery] = useState("");
+  const [supabaseEpisodes, setSupabaseEpisodes] = useState<SupabaseEpisode[]>([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     window.scrollTo(0, 0);
+    fetchSupabaseEpisodes();
   }, []);
+
+  const fetchSupabaseEpisodes = async () => {
+    try {
+      const { data, error } = await supabase
+        .from('podcast_episodes')
+        .select('*')
+        .order('episode_number', { ascending: false });
+
+      if (error) {
+        console.error('Error fetching episodes:', error);
+      } else {
+        setSupabaseEpisodes(data || []);
+      }
+    } catch (error) {
+      console.error('Error fetching episodes:', error);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   const featuredEpisodes = [
     {
@@ -23,6 +59,7 @@ export default function Podcast() {
       date: "October 2025",
       audioUrl: "https://gnec.ngo/wp-content/uploads/2025/10/On-the-Ground-Episode-32-Lorraine-Final.mp3",
       category: "Voluntourism",
+      tags: ["voluntourism", "volunteers", "fundraising", "training"],
       featured: true
     },
     {
@@ -32,7 +69,8 @@ export default function Podcast() {
       description: "Discover how artificial intelligence intersects with the human rights of older persons. Topics include data privacy, digital equity, scams and risks, long-term care solutions, and systemic ageism in AI.",
       date: "September 2025",
       audioUrl: "https://gnec.ngo/wp-content/uploads/2025/09/GNEC-On-the-Ground-Episode-31.mp3",
-      category: "Technology & Rights"
+      category: "Technology & Rights",
+      tags: ["AI", "artificial intelligence", "human rights", "older persons", "data privacy", "digital equity"]
     },
     {
       episode: 30,
@@ -41,7 +79,8 @@ export default function Podcast() {
       description: "Julie shares insights on aging, gender equality, and the importance of the United Nations treaty on the human rights of older persons. Discover how the longevity dividend can shape our understanding of aging and the social fabric of communities.",
       date: "August 2025",
       audioUrl: "https://gnec.ngo/wp-content/uploads/2025/08/On-the-Ground-Episode-30-Guest-Julie-Byles.mp3",
-      category: "Aging & Society"
+      category: "Aging & Society",
+      tags: ["aging", "gender equality", "longevity", "UN treaty", "human rights", "older persons"]
     },
     {
       episode: 29,
@@ -50,7 +89,8 @@ export default function Podcast() {
       description: "Bernard Siegel shares insights on making healthy longevity a universal right through stem cell research and advocacy. The Health Span Action Coalition comprises over 275 organizations working to democratize access to health technologies.",
       date: "July 2025",
       audioUrl: "https://gnec.ngo/wp-content/uploads/2025/07/On-the-Ground-Episode-29-Siegel.mp3",
-      category: "Health Advocacy"
+      category: "Health Advocacy",
+      tags: ["fundraising", "advocacy", "healthy longevity", "stem cell research", "health technologies"]
     }
   ];
 
@@ -62,7 +102,8 @@ export default function Podcast() {
       description: "Dr. Farombi addresses cultural misconceptions about neurological conditions and the importance of early intervention through the 'Dementia Not Witchcraft' campaign.",
       date: "June 2025",
       audioUrl: "https://gnec.ngo/wp-content/uploads/2025/06/Farombi-audio-edited.mp3",
-      category: "Health"
+      category: "Health",
+      tags: ["neurological conditions", "dementia", "Nigeria", "brain health", "early intervention", "misconceptions"]
     },
     {
       episode: 27,
@@ -71,7 +112,8 @@ export default function Podcast() {
       description: "Leaders from Olof Palme Peace Foundation, American Association of University Women, Organization of American Firefighters, and NGO Committee on Human Rights share insights.",
       date: "May 2025",
       audioUrl: "https://gnec.ngo/wp-content/uploads/2025/05/On-the-Ground-Special-for-May.mp3",
-      category: "Leadership"
+      category: "Leadership",
+      tags: ["leadership", "NGO collaboration", "peace foundation", "women's rights", "human rights", "firefighters"]
     },
     {
       episode: 26,
@@ -80,7 +122,8 @@ export default function Podcast() {
       description: "Focusing on the pressing issue of elder abuse with insights on research complexities, various forms, and psychological aspects involved.",
       date: "April 2025",
       audioUrl: "https://gnec.ngo/wp-content/uploads/2025/04/gnec-gloria-final.mp3",
-      category: "Human Rights"
+      category: "Human Rights",
+      tags: ["elder abuse", "awareness", "research", "psychology", "older persons", "abuse prevention"]
     },
     {
       episode: 25,
@@ -89,16 +132,46 @@ export default function Podcast() {
       description: "Celebrating achievements of women globally and discussing collaborative work on gender equality and rights of older women.",
       date: "March 2025",
       audioUrl: "https://gnec.ngo/wp-content/uploads/2025/03/Francis-Audio-Final.mp3",
-      category: "Women's Rights"
+      category: "Women's Rights",
+      tags: ["women's rights", "gender equality", "civil society", "older women", "Soroptimist", "achievements"]
     }
   ];
 
-  const allEpisodes = [...featuredEpisodes, ...olderEpisodes];
+  // Convert Supabase episodes to the same format as hardcoded episodes
+  const convertSupabaseEpisodes = (episodes: SupabaseEpisode[]) => {
+    return episodes.map(ep => ({
+      episode: ep.episode_number,
+      title: ep.title,
+      guest: ep.features || "GNEC Team",
+      description: ep.description,
+      date: new Date(ep.publication_date).toLocaleDateString('en-US', { 
+        year: 'numeric', 
+        month: 'long' 
+      }),
+      audioUrl: ep.audio_file_path,
+      category: ep.category,
+      tags: ep.tags || [],
+      featured: false,
+      isFromSupabase: true
+    }));
+  };
+
+  const convertedSupabaseEpisodes = convertSupabaseEpisodes(supabaseEpisodes);
   
-  const filteredEpisodes = olderEpisodes.filter(episode =>
+  // Combine all episodes and sort by episode number (descending)
+  const allEpisodes = [...featuredEpisodes, ...olderEpisodes, ...convertedSupabaseEpisodes]
+    .sort((a, b) => b.episode - a.episode);
+  
+  // Filter episodes for search (excluding featured episodes from search)
+  const searchableEpisodes = [...olderEpisodes, ...convertedSupabaseEpisodes];
+  const filteredEpisodes = searchableEpisodes.filter(episode =>
     episode.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
     episode.guest.toLowerCase().includes(searchQuery.toLowerCase()) ||
-    episode.description.toLowerCase().includes(searchQuery.toLowerCase())
+    episode.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
+    episode.category.toLowerCase().includes(searchQuery.toLowerCase()) ||
+    (episode.tags && episode.tags.some(tag => 
+      tag.toLowerCase().includes(searchQuery.toLowerCase())
+    ))
   );
 
   const podcastStats = [
@@ -260,8 +333,15 @@ export default function Podcast() {
             </div>
             
             <div className="space-y-8">
-              {featuredEpisodes.map((episode, index) => (
-                <Card key={index} className={`p-6 ${episode.featured ? 'ring-2 ring-primary/20 bg-primary/5' : ''}`}>
+              {loading ? (
+                <div className="text-center py-12">
+                  <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-brand-green mx-auto mb-4"></div>
+                  <p className="text-muted-foreground">Loading episodes...</p>
+                </div>
+              ) : (
+                // Show the most recent episodes (first 4) as featured
+                allEpisodes.slice(0, 4).map((episode, index) => (
+                <Card key={index} className={`p-6 ${index === 0 ? 'ring-2 ring-primary/20 bg-primary/5' : ''}`}>
                   <CardContent className="p-0">
                     <div className="space-y-4">
                       <div className="flex flex-wrap items-center gap-2">
@@ -269,11 +349,25 @@ export default function Podcast() {
                         <Badge className={getCategoryColor(episode.category)}>
                           {episode.category}
                         </Badge>
-                        {episode.featured && (
+                        {index === 0 && (
                           <Badge variant="default">
                             <Award className="h-3 w-3 mr-1" />
                             Latest
                           </Badge>
+                        )}
+                        {episode.tags && episode.tags.length > 0 && (
+                          <>
+                            {episode.tags.slice(0, 3).map((tag, tagIndex) => (
+                              <Badge key={tagIndex} variant="outline" className="text-xs">
+                                {tag}
+                              </Badge>
+                            ))}
+                            {episode.tags.length > 3 && (
+                              <Badge variant="outline" className="text-xs">
+                                +{episode.tags.length - 3} more
+                              </Badge>
+                            )}
+                          </>
                         )}
                       </div>
                       
@@ -302,7 +396,8 @@ export default function Podcast() {
                     </div>
                   </CardContent>
                 </Card>
-              ))}
+                ))
+              )}
             </div>
           </div>
         </div>
@@ -324,7 +419,7 @@ export default function Podcast() {
                   <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-muted-foreground" />
                   <Input
                     type="text"
-                    placeholder="Search episodes by title, guest, or topic..."
+                    placeholder="Search episodes by title, guest, topic, category, or tags..."
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
                     className="pl-10 py-6 text-lg"
@@ -344,6 +439,20 @@ export default function Podcast() {
                           <Badge className={getCategoryColor(episode.category)}>
                             {episode.category}
                           </Badge>
+                          {episode.tags && episode.tags.length > 0 && (
+                            <>
+                              {episode.tags.slice(0, 3).map((tag, tagIndex) => (
+                                <Badge key={tagIndex} variant="outline" className="text-xs">
+                                  {tag}
+                                </Badge>
+                              ))}
+                              {episode.tags.length > 3 && (
+                                <Badge variant="outline" className="text-xs">
+                                  +{episode.tags.length - 3} more
+                                </Badge>
+                              )}
+                            </>
+                          )}
                         </div>
                         
                         <div>

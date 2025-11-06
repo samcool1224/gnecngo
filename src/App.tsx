@@ -27,6 +27,10 @@ import Podcast from "./pages/news/Podcast";
 import NGOReporter from "./pages/news/NGOReporter";
 import Media from "./pages/news/Media";
 import { LanguageProvider } from "./contexts/LanguageContext";
+import { AuthProvider } from "./contexts/AuthContext";
+import Login from "./pages/Login";
+import Donate from "./pages/Donate";
+import CreatePodcast from "./pages/CreatePodcast";
 
 // Create a react-query client
 const queryClient = new QueryClient();
@@ -35,12 +39,16 @@ const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
       <LanguageProvider>
-        <Toaster />
-        <Sonner />
-        <BrowserRouter>
+        <AuthProvider>
+          <Toaster />
+          <Sonner />
+          <BrowserRouter>
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/donate" element={<Donate />} />
+            <Route path="/create-podcast" element={<CreatePodcast />} />
             
             {/* About Us Routes */}
             <Route path="/about/who-we-are" element={<WhoWeAre />} />
@@ -65,6 +73,7 @@ const App = () => (
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
+        </AuthProvider>
       </LanguageProvider>
     </TooltipProvider>
   </QueryClientProvider>
