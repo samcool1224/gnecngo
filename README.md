@@ -1,55 +1,96 @@
-# GNEC - Global NGO Executive Committee Website
+# GNEC – Global NGO Executive Committee Website
 
-## Project info
+This repository powers the public web experience for the Global NGO Executive Committee (GNEC). It highlights the committee’s mission, showcases events that connect accredited NGOs/CSOs with the United Nations, and provides engagement flows for donations, podcasts, and partnership inquiries.
 
-This is the official website for the Global NGO Executive Committee (GNEC), dedicated to strengthening UN partnerships and advancing sustainable development goals through civil society collaboration.
+## Key Features
 
-**URL**:
+- **Story-driven landing experience** – Hero, featured programs, and testimonial sections use content from `src/locales/en.ts` to communicate impact with motion and imagery.
+- **Information-rich routing** – React Router drives dedicated About, Services & Events, and News & Media sections so every initiative has a permanent home.
+- **Engagement funnels** – Contact, Donate, Login, and Create Podcast pages use shadcn-ui components for responsive, WCAG-friendly forms and CTAs.
+- **Supabase-powered auth** – `AuthProvider` exposes Supabase user/session state, enabling authenticated flows such as podcast management.
+- **Reusable design system** – Tailwind CSS, shadcn primitives, lucide-react icons, and utility hooks keep typography, spacing, and interactions consistent.
+- **Production-ready tooling** – Vite, TypeScript, ESLint, and React Query provide fast feedback, data fetching, and code quality automation.
 
+## Tech Stack
 
-**Use your preferred IDE**
+- React 18 + TypeScript + Vite (with SWC)
+- React Router DOM for client-side routing
+- Tailwind CSS + shadcn-ui component library
+- @tanstack/react-query for async data
+- Supabase JavaScript client for authentication
+- PostCSS, Autoprefixer, Lucide Icons, Recharts, date-fns, etc.
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## Prerequisites
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+- Node.js **18.x or 20.x** (Vite requires modern Node). Install via [nvm](https://github.com/nvm-sh/nvm#installing-and-updating) if needed.
+- npm **9+** (ships with Node). Yarn/Bun also work, but npm scripts are documented below.
 
-Follow these steps:
+## Getting Started
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+```bash
+git clone <repo-url>
+cd GNEC
+npm install
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+The dev server defaults to `http://localhost:5173` and reloads automatically as you edit files.
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## Available Scripts
 
-**Use GitHub Codespaces**
+| Command | Description |
+| --- | --- |
+| `npm run dev` | Start the Vite dev server with hot module reloading. |
+| `npm run build` | Create a production build in `dist/`. |
+| `npm run build:dev` | Build with the `development` mode flag (useful for debugging prod bundles). |
+| `npm run preview` | Serve the production build locally for smoke testing. |
+| `npm run lint` | Run ESLint across the repo. |
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## Project Structure
 
-## What technologies are used for this project?
+```
+├── public/                # Static assets served as-is
+├── src/
+│   ├── components/        # Shared UI pieces, layout primitives, sections
+│   ├── contexts/          # Auth + Language providers
+│   ├── hooks/             # Custom hooks
+│   ├── lib/               # Supabase client + helpers
+│   ├── locales/           # Text copy (currently English)
+│   ├── pages/             # Route-level screens (Home, Contact, News, etc.)
+│   ├── App.tsx            # Router + providers
+│   └── main.tsx           # React/Vite entry point
+├── tailwind.config.ts     # Design tokens and brand palette
+├── vite.config.ts         # Vite configuration
+└── vercel.json            # SPA rewrite rules for hosting
+```
 
-This project is built with modern web technologies to provide a professional, accessible, and responsive experience for NGOs and civil society organizations.
+## Configuration Notes
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-- Brand colors optimized for WCAG AA compliance
+- **Supabase credentials** – Update `src/lib/supabase.ts` with your project URL and anon key. Consider moving them to environment variables for deployment:
+
+  ```ts
+  const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
+  const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
+  ```
+
+  Then create a `.env` file with matching `VITE_*` variables (Vite exposes only variables prefixed with `VITE_`).
+
+- **Brand content & copy** – Edit `src/locales/en.ts` for text, and drop images/PDFs into `public/`.
+
+- **Routing** – `vercel.json` rewrites every request to `index.html`, ensuring React Router handles deep links on Vercel or any SPA-aware host.
+
+## Deployment
+
+1. `npm run build`
+2. Deploy the generated `dist/` directory to your host of choice.
+3. For Vercel, import the repo, set the Supabase environment variables, keep the framework preset on Vite, and the included rewrite config will serve the SPA correctly.
+
+## Contributing & Quality
+
+- Run `npm run lint` before pushing changes.
+- Favor reusable components in `src/components` and shared copy in `src/locales` to keep styling and messaging consistent.
+- Add tests or Storybook stories for complex UI states where possible.
+
+## License
+
+No license file is present. Please coordinate with the GNEC maintainers before reusing or distributing this codebase.
