@@ -13,9 +13,14 @@ export default function Elections() {
 
   const electionProcess = [
     {
+      step: "January",
+      title: "Elections Announced",
+      description: "Elections are announced; open houses invite interested NGOs to learn more about the election process and what serving as an elected member of GNEC means."
+    },
+    {
       step: "March",
       title: "Call for Nominations",
-      description: "The Nominations and Elections Subcommittee invites UNDGC affiliated NGOs to submit candidates along with their qualifications."
+      description: "The Nominations and Elections Subcommittee invites UNDGC affiliated NGOs to submit candidates along with their qualifications to elections@gnec.ngo."
     },
     {
       step: "April", 
@@ -34,6 +39,9 @@ export default function Elections() {
     }
   ];
 
+  const firstRow = electionProcess.slice(0, 3);
+  const secondRow = electionProcess.slice(3);
+
   const candidateRequirements = [
     "Must be a representative of a UNDGC-affiliated NGO in good standing",
     "Organization must have completed its biennial review within required timeframe",
@@ -45,9 +53,7 @@ export default function Elections() {
 
   const votingEligibility = [
     "Each UNDGC-affiliated organization gets one ballot",
-    "Organization must have completed biennial review within required time",
-    "Special 72-hour window provided for late biennial review submissions",
-    "Ballot must be submitted through official Constant Contact email system",
+    "Must be listed on the UN DGC official list of NGOs/CSOs at the time of the election",
     "Organizations in good standing with UNDGC are eligible to vote"
   ];
 
@@ -64,7 +70,7 @@ export default function Elections() {
               Nominations and Elections
             </h1>
             <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
-              Learn about GNEC's democratic election process and how UNDGC affiliated NGOs can participate in selecting the Executive Board leadership.
+              Learn about GNEC's democratic election process as well as how UNDGC affiliated NGOs can participate in selecting the Executive Board leadership and can nominate members of their NGO.
             </p>
           </div>
         </div>
@@ -107,21 +113,39 @@ export default function Elections() {
               </p>
             </div>
             
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {electionProcess.map((phase, index) => (
-                <Card key={index} className="p-6 text-center">
-                  <CardContent className="p-0">
-                    <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                      <Calendar className="h-8 w-8 text-primary" />
-                    </div>
-                    <Badge className="mb-3">{phase.step}</Badge>
-                    <h3 className="text-lg font-bold mb-3">{phase.title}</h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed">
-                      {phase.description}
-                    </p>
-                  </CardContent>
-                </Card>
-              ))}
+            <div className="space-y-6">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 justify-items-center">
+                {firstRow.map((phase, index) => (
+                  <Card key={`row1-${index}`} className="p-6 text-center w-full">
+                    <CardContent className="p-0">
+                      <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <Calendar className="h-8 w-8 text-primary" />
+                      </div>
+                      <Badge className="mb-3">{phase.step}</Badge>
+                      <h3 className="text-lg font-bold mb-3">{phase.title}</h3>
+                      <p className="text-sm text-muted-foreground leading-relaxed">
+                        {phase.description}
+                      </p>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 justify-items-center">
+                {secondRow.map((phase, index) => (
+                  <Card key={`row2-${index}`} className="p-6 text-center w-full">
+                    <CardContent className="p-0">
+                      <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <Calendar className="h-8 w-8 text-primary" />
+                      </div>
+                      <Badge className="mb-3">{phase.step}</Badge>
+                      <h3 className="text-lg font-bold mb-3">{phase.title}</h3>
+                      <p className="text-sm text-muted-foreground leading-relaxed">
+                        {phase.description}
+                      </p>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
             </div>
           </div>
         </div>
@@ -155,7 +179,7 @@ export default function Elections() {
                     <div>
                       <h4 className="font-medium text-blue-900 dark:text-blue-100 mb-2">Interview Process</h4>
                       <p className="text-sm text-blue-800 dark:text-blue-200">
-                        All candidates participate in a preliminary interview with the Nominations and Elections subcommittee covering their vision for GNEC, planned contributions, and relevant experience.
+                        All candidates participate in a preliminary interview with the Nominations and Elections subcommittee covering their vision for GNEC, planned contributions, and relevant experience. The interview will also cover the mandatory responsibilities of GNEC directors, if a candidate is unable to perform these responsibilities they will be ineligible to serve on GNEC.
                       </p>
                     </div>
                   </div>
@@ -202,8 +226,8 @@ export default function Elections() {
                     <h3 className="text-xl font-bold">How to Vote</h3>
                   </div>
                   <div className="space-y-3 text-sm text-muted-foreground">
-                    <p>Ballots are distributed via Constant Contact email during the voting period in April.</p>
-                    <p>If you don't receive the ballot email, check spam/junk folders or contact the elections team.</p>
+                    <p>Ballots are distributed during the voting period in April.</p>
+                    <p>If you do not receive a ballot and your organization meets the requirements outlined in our WHO CAN VOTE section, please use the contact email below.</p>
                     <p>Each organization receives one ballot regardless of size or membership.</p>
                     <p>Voting is confidential and results are announced at the June board meeting.</p>
                   </div>
@@ -230,16 +254,7 @@ export default function Elections() {
                 <CardContent className="p-0">
                   <h3 className="text-lg font-bold mb-2">Can candidates campaign for their positions?</h3>
                   <p className="text-muted-foreground">
-                    GNEC posts standardized promotional materials for all candidates. Beyond that, candidates are free to campaign however they like, so long as no GNEC resource is used.
-                  </p>
-                </CardContent>
-              </Card>
-
-              <Card className="p-6">
-                <CardContent className="p-0">
-                  <h3 className="text-lg font-bold mb-2">What if my organization missed the biennial review deadline?</h3>
-                  <p className="text-muted-foreground">
-                    Organizations that miss the general deadline can still participate if they submit their ballot and complete a special biennial review filing within a 72-hour window when notified.
+                    GNEC posts standardized promotional materials for all candidates. Beyond that, candidates are free to campaign however they like, so long as no GNEC resource is used and candidates are civil to others running for election.
                   </p>
                 </CardContent>
               </Card>
@@ -267,7 +282,7 @@ export default function Elections() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" asChild>
-                <a href="mailto:nomselectionschair@gnec.ngo">Contact Elections Team</a>
+                <a href="mailto:elections@gnec.ngo">Contact Elections Team</a>
               </Button>
               <Button size="lg" variant="outline" asChild>
                 <a href="/about/bylaws">Review Bylaws</a>

@@ -30,8 +30,7 @@ export default function Navbar() {
         { name: "Upcoming Events", path: "/services/upcoming-events" },
         { name: "Past Events", path: "/services/past-events" },
         { name: "GNEC Hackathon", path: "/services/hackathon" },
-        { name: "Elections", path: "/services/elections" },
-        { name: "GNEC LMS", path: "/services/lms" }
+        { name: "Elections", path: "/services/elections" }
       ]
     },
     { 

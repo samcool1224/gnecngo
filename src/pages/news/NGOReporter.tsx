@@ -42,17 +42,17 @@ export default function NGOReporter() {
     {
       icon: <Globe className="h-6 w-6" />,
       title: "Global Reach",
-      description: "Distributed to NGO leaders, UN officials, media, and civil society networks worldwide."
+      description: "Distributed to NGO/CSO community leaders and organizations, UN Departments, Media and Civil Society networks worldwide."
     },
     {
       icon: <Users className="h-6 w-6" />,
-      title: "Expert Contributors",
-      description: "Articles from GNEC board members, UN officials, and leading NGO practitioners."
+      title: "Community Contributors",
+      description: "Articles from GNEC board members, UN officials, and leading NGO/CSO Community leaders."
     },
     {
       icon: <Award className="h-6 w-6" />,
-      title: "30+ Years of Authority",
-      description: "Established in 1992 as the authoritative voice of civil society at the UN."
+      title: "30+ years of engagement",
+      description: "Established in 1992 as an amplifying voice of civil society at the UN and creating community engagement."
     },
     {
       icon: <FileText className="h-6 w-6" />,
@@ -61,14 +61,8 @@ export default function NGOReporter() {
     }
   ];
 
-  const submissionGuidelines = [
-    "Articles must be UN/NGO-related and relevant to civil society engagement",
-    "Content should be original and not previously published elsewhere",
-    "Preferred length: 500-1500 words for feature articles",
-    "Include author bio and organization affiliation",
-    "High-resolution images welcome to accompany articles",
-    "Submit via email to info@gnec.ngo with 'NGO Reporter Submission' in subject line"
-  ];
+  // Condensed article submission guidelines text per request
+  const condensedGuidelines = `ARTICLE SUBMISSION GUIDELINES\n\nWE REQUEST THAT YOU SUBMIT YOUR UN/NGO RELATED ARTICLES FOR CONSIDERATION.\n\nSubmissions for consideration to the NGO Reporter:\nFirst, all articles must be reviewed for content and quality. Submissions for Consideration should be sent to the: communications@gnec.ngo.\n\nThe FLIER: should be one page, clear and legible, with all information and links correct and accessible.\n\nThe ARTICLE: should be 500-800 words – The lead paragraphs may be published in the magazine with a link to the GNEC site, and any related site, where the complete article may be viewed. Commentary and Event-oriented articles on a relevant tone, highlighting recently past or upcoming events are preferred.\n\nThe article should not contain any of the following: Advertorial/for-profit message endorsement of any kind; Information unrelated to the work of the UN in some capacity; Inappropriate information or language; specific political or religious advocacy.\n\nThe article can be a: Personal Essay; Op-ed; Narrative — and include photos and/or video content.\n\nHere are some guiding topics to help you get started: Actions your NGO has taken to address the issues presented/discussed at/by the UN. How the UN has shaped or changed your thinking about international issues, the SDGs, pending debates, etc. Your perspectives on the UN’s global development goals and challenges. Experiences with community action of any kind in relation to UN goals or challenges. Stories about global friendships and collaborations that started at UN Conferences, etc.\n\nSubmit articles in Word (.doc) format to this address: communications@gnec.ngo with the subject line “NGO REPORTER SUBMISSION REQUEST : ‘Title of the Article’”. Once reviewed, it may take about 14 business days until the article is acknowledged as received and a decision is provided as to its use in the NGO Reporter. Along with the article, kindly provide a brief description about the author (1 -2 sentences), together with relevant information such as a website link, a Twitter handle, and other contact information, if applicable.\n\nPhotos bring articles to life: please include HIGH RESOLUTION photographs or video links wherever possible.`;
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-background to-muted/20">
@@ -253,19 +247,14 @@ export default function NGOReporter() {
             
             <Card className="p-8">
               <CardContent className="p-0">
-                <h3 className="text-xl font-bold mb-4">Article Submission Guidelines</h3>
-                <div className="space-y-3 mb-6">
-                  {submissionGuidelines.map((guideline, index) => (
-                    <div key={index} className="flex items-start gap-3">
-                      <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                      <span className="text-muted-foreground leading-relaxed">{guideline}</span>
-                    </div>
-                  ))}
+                <h3 className="text-xl font-bold mb-4">ARTICLE SUBMISSION GUIDELINES</h3>
+                <div className="mb-6 text-muted-foreground whitespace-pre-line leading-relaxed">
+                  {condensedGuidelines}
                 </div>
                 
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Button className="flex-1" asChild>
-                    <a href="mailto:info@gnec.ngo?subject=NGO Reporter Submission">Submit Article</a>
+                    <a href="mailto:communications@gnec.ngo?subject=NGO REPORTER SUBMISSION REQUEST">Submit Article</a>
                   </Button>
                   <Button variant="outline" className="flex-1">
                     <FileText className="h-4 w-4 mr-2" />

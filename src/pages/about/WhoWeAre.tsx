@@ -12,46 +12,46 @@ export default function WhoWeAre() {
 
   const executiveCommittee = [
     {
-      name: "Mr. Uwem Robert OTU",
+      name: "Mr. Uwem Robert Otu",
       title: "International President",
       organization: "African Youth Movement",
       image: "/officers/uwemrobert.png",
-      description: "Nigerian nationality with International Diploma in Environmental Pollution Control and Master's in Industrial Biochemistry. Founding President of African Youth Movement and has addressed the UN twice at Annual UNDPINGO Conferences."
+      description: "Mr. Uwem Robert Otu is a Nigerian UN-engaged leader, environmental specialist, and founding President of the African Youth Movement, with global speaking credentials and advanced training in pollution control, water management and biochemistry."
     },
     {
       name: "Ms. Ediola Pashollari", 
-      title: "New York President",
+      title: "Co-President",
       organization: "World Assembly of Youth (WAY)",
       image: "/officers/ediolapashollari.png",
-      description: "Albanian nationality residing in New York. Holds MBA, MA in Political Science, Masters in Entreprenology, and LLB. Secretary General of WAY and Director of World Youth Institute."
+      description: "Ms. Ediola Pashollari, an Albanian leader in global youth development, is GNEC’s Co- President and WAY Secretary General, with multiple advanced degrees and extensive international experience in youth advocacy, programmes and policy."
     },
     {
-      name: "Mr. Dileepkumar Thankappan",
+      name: "Guruji H.H. Dileepkumar Thankappan",
       title: "International Vice President", 
       organization: "World Yoga Community",
       image: "/officers/thankappan.png",
-      description: "Founder, Global Chairman, and CEO of World Yoga Community. Hindu Monk, ordained Interfaith Minister, and global culture of peace activist residing in New York."
+      description: "Guruji H.H. Dileepkumar Thankappan, Founder and CEO of the World Yoga Community, is a Hindu monk, interfaith minister, UN religious leader, humanitarian, spiritual teacher and global advocate for peace and yoga."
     },
     {
-      name: "Dr. Constance Sobon Sensor",
+      name: "Dr. Connie Sobon Sensor",
       title: "New York Vice President",
       organization: "League of Women Voters of the United States", 
       image: "/officers/constancesensor.png",
-      description: "PhD, RN, recently retired Professor from Rutgers University. Main representative for LWVUS at the UN, focusing on population health and Sustainable Development Goals."
+      description: "Dr. Connie Sobon Sensor, PhD, RN, is an American nursing leader and UN representative for LWVUS, with extensive experience in population health, SDGs, global citizenship, climate advocacy and nursing education and policy."
     },
     {
-      name: "Dr. Brian Muzás",
+      name: "Rev. Dr. Brian Keenan Muzás",
       title: "Treasurer",
       organization: "School of Diplomacy and International Relations, Seton Hall University",
       image: "/officers/brianmuzas.png",
-      description: "Assistant Professor and Director of the Center for United Nations and Global Governance Studies. Catholic Priest with PhD in Public Affairs and research focus on international security."
+      description: "Rev. Dr. Brian Keenan Muzás, a Catholic priest and scholar, is a Seton Hall University professor and UN-focused researcher, specializing in international security, ethics, and interreligious dialogue, with advanced degrees in theology, aeronautics and engineering."
     },
     {
       name: "Ms. Shennon Sequeira",
       title: "Secretary", 
       organization: "MUN Impact",
       image: "/officers/shennonsequiera.png",
-      description: "Portuguese nationality with LLB Law with Criminology, pursuing LLM. Youth Representative on Board of Directors at MUN Impact, recognized in Top 20 Young Women in Sustainable Development."
+      description: "Ms. Shennon Sequeira, a Portuguese youth leader and legal professional, serves on MUN Impact’s board, advocates for youth engagement and empowerment, and has been recognized among the Top 20 Young Women in Sustainable Development."
     }
   ];
 
@@ -61,91 +61,91 @@ export default function WhoWeAre() {
       title: "Director",
       organization: "Lightup Foundation",
       image: "/directors/olasubomiaina.png",
-      description: `Ms. Olasubomi Iginla Aina is of Nigerian nationality and currently resides in London, United Kingdom. She holds a Masters in Law (LLM), Brighton University, UK; Generative Leadership, Oxford University; BSc. Architecture, Obafemi Awolowo University, Ile-Ife, Nigeria. She is the Executive Director of the Lightup Foundation, a charity that has broken a world record with the “Bag of Hope” project used to project the UN Rights of the Child, targeting 30 countries. She was appointed as Member of the Most Excellent Order of the British Empire (MBE) on the nomination of the UK Prime Minister. Appointed as Diaspora Ambassador for Nigeria and National Assembly Ambassador to the UK by the Nigerian government in 2019 and Minister of Youth for the State of African Diaspora (SOAD) – the African Diaspora being the 6th region of the African Union (AU). She has organised various programmes and activities and presented at several UN events.`
+      description: `Ms. Olasubomi Iginla Aina, Nigerian-born UK resident and MBE recipient, is Executive Director of Lightup Foundation, UN speaker, and African Diaspora ambassador, recognized for leadership in youth empowerment and global advocacy.`
     },
     {
       name: "Ms. Elena Reiss",
       title: "Director",
       organization: "Lehigh University",
       image: "/directors/Elena-Reiss.jpg",
-      description: `Elena Reiss is an experienced higher education professional, program manager, and passionate women’s rights advocate. She serves as Lehigh University’s designated alternate representative to the United Nations, where she champions youth leadership and amplifies student voices on global platforms. For nearly two decades, Ms. Reiss has dedicated her career to designing transformative learning experiences that open doors for students to thrive globally—whether by guiding them through competitive fellowships or mentoring them to engage meaningfully with NGOs at the UN. Her professional “sweet spot” lies at the intersection of content strategy, youth empowerment, and global education.`
+      description: `Elena Reiss, Lehigh University’s UN alternate representative, is an experienced higher education professional and women’s rights advocate, dedicated to youth empowerment, global education and creating transformative programs that prepare students for international engagement.`
     },
     {
       name: "Ms. Kim Quarles",
       title: "Director",
       organization: "World Jurist Association",
       image: "/directors/kimquarles.png",
-      description: `Kim Quarles is the Executive Vice President of the World Jurist Association (WJA), a global association of judges, politicians, professors, lawyers and law students, whose mission is world peace through the Rule of Law. The WJA is DGC and ECOSOC accredited, and Ms. Quarles is one of its two designated representatives to the United Nations. She is currently a Senior Vice President at Willis Towers Watson and specializes in Professional Liability and Information Security.`
+      description: `Kim Quarles, Executive Vice President of the World Jurist Association and UN representative, is a lawyer and insurance executive with extensive experience in global governance, law and advocacy for world peace through the Rule of Law.`
     },
     {
       name: "Ms. Aimée Quinlan",
       title: "Director",
       organization: "Future China",
       image: "/directors/aimeequinlan.png",
-      description: `Ms. Aimée Quinlan currently serves on the board representing Future China, an NGO dedicated to eliminate the unbalanced distribution of education resources in China. She holds a B.A. from the City College of New York, graduating summa cum laude, and has served as a youth representative to an NGO at the UN. Within GNEC, she is the Chair of the Nominations and Elections Subcommittee.`
+      description: `Ms. Aimée Quinlan represents Future China, advocating for equitable education and youth voices, with a strong commitment to civic engagement, international cooperation and enhancing education initiatives and global outreach.`
     },
     {
       name: "Dr. J. Nadine Gracia",
       title: "Director",
       organization: "National Social Action Commission of Delta Sigma Theta Sorority",
       image: "/directors/nadinegracia.png",
-      description: `Dr. J. Nadine Gracia earned a BA from Stanford University, an MD from the University of Pittsburgh School of Medicine, and an MS in Clinical Epidemiology from the University of Pennsylvania. She is a Commissioner on the National Social Action Commission of Delta Sigma Theta Sorority, Incorporated and serves as Co-Chair of the Delta Days at the United Nations Subcommittee. Dr. Gracia is a national health equity and public health leader with extensive leadership experience.`
+      description: `Dr. J. Nadine Gracia, a national health equity leader, represents the Delta Sigma Theta Sorority. She holds extensive experience in public health, federal leadership, nonprofit work, and civic engagement.`
     },
     {
       name: "Ms. Nora Hajjar",
       title: "Director",
       organization: "World Lebanese Cultural Union Inc.",
       image: "/directors/norahajjar.png",
-      description: `Ms. Nora Hajjar is a Senior AI Engineer at Microsoft, focusing on building large language models, AI platforms, and agents. Her prior work spans healthcare, international development, policy research, and civil society tech. She holds an MS in Computational Analysis and Public Policy from the University of Chicago and a BS in Political Science and Economics from Georgetown University.`
+      description: `Ms. Nora Hajjar, Senior AI Engineer at Microsoft, combines technology expertise and global civic experience to advance ethical, inclusive innovation, leveraging AI and data for social good and Civil Society impact at the UN.`
     },
     {
       name: "Mr. Joseph DeMeyer",
       title: "Director",
       organization: "Society for the Psychological Study of Social Issues",
       image: "/directors/josephdemeyer.png",
-      description: `Mr. Joseph DeMeyer holds a 25-year tenure as UN NGO Representative of the Society for the Psychological Study of Social Issues with executive roles in the NGO Committees on Mental Health and on Education, Learning and Literacy; and in the Psychology Coalition at the UN. He has co-organized presentations at UN Commissions and Civil Society Conferences and submitted oral and written statements at High Level Political Forums.`
+      description: `Mr. Joseph DeMeyer, holds 25 years of experience as an UN NGO representative. He advocates for mental health, education and youth engagement whilst promoting global citizenship.`
     },
     {
       name: "Ms. Dayana Blanco Galo",
       title: "Director",
       organization: "The City College of New York",
       image: "/directors/dayanagalo.png",
-      description: `Ms. Dayana J. Blanco Galo is currently an undergraduate student at CUNY City College, pursuing a double major in Business Administration and Management and International Studies. She brings a fresh perspective on global issues and is actively involved in empowering youth through education.`
+      description: `Ms. Dayana J. Blanco Galo, a university student, advocates for youth empowerment and education. Whilst promoting global partnerships, cultural competence and representation to advance UN goals and amplify diverse voices.`
     },
     {
       name: "Adriane Berg",
       title: "Director",
       organization: "International Federation on Ageing",
       image: "/directors/adrianeberg.png",
-      description: `Ms. Adriane Berg holds a BA from Brooklyn College and a JD from New York University School of Law. She is the UN Representative from the International Federation on Ageing and a veteran radio and TV personality. Through her course Speak Out Communication, Adriane empowers older adults to confidently navigate diverse interactions.`
+      description: `Ms. Adriane Berg is the UN Representative for the International Federation on Ageing, a lawyer, media host, and advocate. She empowers older adults through aging-focused initiatives, education, podcasts and global programs.`
     },
     {
       name: "Ms. Farah Salim Eck",
       title: "Director",
       organization: "United Nations Association of the USA (UNA-USA)",
       image: "/directors/faraheck.png",
-      description: `Ms. Farah Salim Eck is Managing Director at the UN Association of the USA (UNA-USA), catalyzing partnerships, programs and policies that bolster everyday UN champions. She has passionately supported the UN's values and principles in personal and professional roles.`
+      description: `Ms. Farah Salim Eck, Managing Director at UNA-USA, advances UN values through partnerships and programs, leveraging personal and professional experience in global humanitarian, education and human rights initiatives.`
     },
     {
       name: "HRH Prince Adnan El-Hashemite",
       title: "Director",
       organization: "Seton Hall University",
       image: "/directors/hrhadnan.png",
-      description: `HRH Adnan is the Dean of RASIT and Executive Director for Global Initiatives at Holy Family University. As a philanthropist, HRH has been a driving force behind equity in education and ethical social developments, mobilizing support for scholarships and humanitarian relief. He promotes peace and social development through cultures, languages, and arts.`
+      description: `HRH Adnan, Dean of RASIT and Executive Director at Holy Family University, is a philanthropist advancing education, youth development, peace and social equity through scholarships, humanitarian relief and global cultural initiatives.`
     },
     {
       name: "Dr Piyush Gupta",
       title: "Director",
       organization: "Cancer Aid Society India",
       image: "/directors/piyushgupta.png",
-      description: `Dr. Gupta, with degrees across Science, Law, Management, and Social Sciences, founded Cancer Aid Society in 1987 to control Tobacco, Cancer, and NCDs integrated with Palliative Care. He serves as Secretary of National Association of Palliative Care for AYUSH & Integrative Medicine and has represented India at various UN meetings.`
+      description: `Dr. Gupta, founder of Cancer Aid Society, is an Indian health leader in palliative care, cancer and NCD control, representing India at UN and WHO, with extensive global advocacy and publications.`
     },
     {
       name: "Mr Faisal Alfadl",
       title: "Director",
       organization: "Saudi Green Building Forum",
       image: "/directors/Faisal-Alfadl-.jpg",
-      description: `Mr. Faisal ALFADL's philosophy centers on creating sustainable and eco-friendly environments advocating innovative architecture and urban planning policies. As an educator and advocate, he is a master architect and urban planner, inspiring the next generation to ensure sustainability remains at the forefront of practice.`
+      description: `Mr. Faisal Alfadl, architect and urban planner, champions sustainable development and eco-friendly design. He mentors youth and promotes green practices to create positive global impact through architecture, policy and environmental advocacy.`
     }
   ];
 
@@ -179,7 +179,7 @@ export default function WhoWeAre() {
               Who We Are
             </h1>
             <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
-              The Global NGO Executive Committee is comprised of eighteen representatives elected by organizations officially associated with the United Nations Department of Global Communications (UNDGC).
+              The Global NGO Executive Committee is comprised of nineteen representatives elected by organizations officially associated with the United Nations Department of Global Communications (UNDGC).
             </p>
           </div>
         </div>
@@ -220,7 +220,7 @@ export default function WhoWeAre() {
               </p>
             </div>
             
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
               {executiveCommittee.map((member, index) => (
                 <Card key={index} className="h-full">
                   <CardContent className="p-6">
@@ -250,7 +250,7 @@ export default function WhoWeAre() {
               <h2 className="text-3xl font-bold mb-4">Executive Committee Directors</h2>
               <p className="text-lg text-muted-foreground">Meet the directors supporting GNEC's global mission</p>
             </div>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
               {directors.map((member, index) => (
                 <Card key={index} className="h-full">
                   <CardContent className="p-6">
@@ -278,7 +278,7 @@ export default function WhoWeAre() {
               <h2 className="text-3xl font-bold mb-4">Advisory Board</h2>
               <p className="text-lg text-muted-foreground">Our advisory board brings extensive expertise to guide GNEC</p>
             </div>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
               {advisoryBoard.map((person, index) => (
                 <Card key={index} className="h-full">
                   <CardContent className="p-6">

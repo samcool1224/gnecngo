@@ -286,7 +286,7 @@ export default function Podcast() {
                       On the Ground is produced by the Global NGO Executive Committee and hosted by Emmy-winning Broadcaster, Adriane Berg. We offer our services to more than 1,500 UNDGC affiliated NGOs which are on the frontlines of addressing and tackling the most pressing issues of our time.
                     </p>
                     <p className="text-lg leading-relaxed">
-                      In each episode, we showcase one amazing NGO that is on the ground, doing the critical social good work needed to help the world achieve the Sustainable Development Goals. If you would like to voice out the work that you are doing and be featured on our podcast, please contact president@gnec.ngo.
+                      In each episode, we showcase one amazing NGO that is on the ground, doing the critical social good work needed to help the world achieve the Sustainable Development Goals. If you would like to voice out the work that you are doing and be featured on our podcast, please contact outreach@gnec.ngo.
                     </p>
                   </div>
                 </div>
@@ -339,8 +339,8 @@ export default function Podcast() {
                   <p className="text-muted-foreground">Loading episodes...</p>
                 </div>
               ) : (
-                // Show the most recent episodes (first 4) as featured
-                allEpisodes.slice(0, 4).map((episode, index) => (
+                // Show the most recent episodes (first 3) as featured
+                allEpisodes.slice(0, 3).map((episode, index) => (
                 <Card key={index} className={`p-6 ${index === 0 ? 'ring-2 ring-primary/20 bg-primary/5' : ''}`}>
                   <CardContent className="p-0">
                     <div className="space-y-4">
@@ -425,6 +425,11 @@ export default function Podcast() {
                     className="pl-10 py-6 text-lg"
                   />
                 </div>
+              </div>
+              <div className="mt-6">
+                <Button asChild>
+                  <a href="/news/podcast-library">Open Podcast Library</a>
+                </Button>
               </div>
             </div>
             
@@ -531,11 +536,7 @@ export default function Podcast() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" asChild>
-                <a href="mailto:president@gnec.ngo">Apply to be Featured</a>
-              </Button>
-              <Button size="lg" variant="outline">
-                <ExternalLink className="h-4 w-4 mr-2" />
-                Podcast Guidelines
+                <a href="mailto:outreach@gnec.ngo">Apply to be Featured</a>
               </Button>
             </div>
           </div>

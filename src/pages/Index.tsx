@@ -2,7 +2,6 @@ import { useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import HeroSection from "@/components/HeroSection";
-import TestimonialsSection from "@/components/TestimonialsSection";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -27,7 +26,7 @@ const featuredPrograms: ProgramProps[] = [
   {
     id: "1",
     name: "UN Civil Society Conference",
-    description: "Annual flagship event facilitating global NGO collaboration and promoting understanding of UN's SDG efforts.",
+    description: "The UN Civil Society Conference unites global NGOs/CSOs to drive collaboration and accelerate progress on the SDGs.",
     year: 2024,
     participants: 1500,
     duration: "3 days",
@@ -38,7 +37,7 @@ const featuredPrograms: ProgramProps[] = [
   {
     id: "2",
     name: "Communication Workshops",
-    description: "Regular training sessions throughout the year to help NGOs become more effective UN partners.",
+    description: "GNEC partners with UNDGC to support NGO/CSO collaboration, capacity-building, and progress toward the SDGs.",
     year: 1962,
     participants: 200,
     duration: "Ongoing",
@@ -49,7 +48,7 @@ const featuredPrograms: ProgramProps[] = [
   {
     id: "3", 
     name: "GNEC Hackathon",
-    description: "Technology solutions contest for UN Sustainable Development Goals with global participation encouraged.",
+    description: "The GNEC Hackathon is your calling to create a real impact. Collaborate, create, and compete in an online competition centered around the United Nations Sustainable Development Goals.",
     year: 2023,
     participants: 500,
     duration: "48 hours",
@@ -262,24 +261,24 @@ export default function Index() {
               </p>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 auto-rows-fr">
               {featuredPrograms.map((program, index) => (
-                <div key={program.id} className="animate-fade-in" style={{ animationDelay: `${(index + 1) * 100}ms` }}>
-                  <Card className="overflow-hidden hover:shadow-lg transition-shadow">
+                <div key={program.id} className="h-full animate-fade-in" style={{ animationDelay: `${(index + 1) * 100}ms` }}>
+                  <Card className="h-full flex flex-col overflow-hidden hover:shadow-lg transition-shadow">
                     <div className="aspect-video overflow-hidden">
                       <img 
                         src={program.image} 
                         alt={program.name}
-                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                        className={`${(program.id === "2" || program.id === "3") ? 'w-full h-full object-contain bg-white px-2 border-x border-gray-200' : 'w-full h-full object-cover object-center hover:scale-105 transition-transform duration-300'}`}
                       />
                     </div>
-                    <CardContent className="p-6">
+                    <CardContent className="p-6 flex flex-col flex-1">
                       <div className="flex items-center justify-between mb-2">
                         <Badge variant="secondary">{program.location}</Badge>
                         <span className="text-sm text-muted-foreground">{program.year}</span>
                       </div>
                       <h3 className="text-xl font-bold mb-2">{program.name}</h3>
-                      <p className="text-muted-foreground mb-4 line-clamp-2">{program.description}</p>
+                      <p className="text-muted-foreground mb-4 italic">{program.description}</p>
                       
                       <div className="flex items-center justify-between mb-4 text-sm text-muted-foreground">
                         <div className="flex items-center">
@@ -305,11 +304,21 @@ export default function Index() {
                         )}
                       </div>
                       
-                      <Button asChild className="w-full bg-brand-green text-white hover:bg-brand-blue transition-colors rounded-full px-6 py-2.5 font-medium">
-                        <Link to="/services/upcoming-events">
-                          Learn More <ArrowRight className="ml-2 h-4 w-4" />
-                        </Link>
-                      </Button>
+                      <div className="mt-auto">
+                        {program.id === "3" ? (
+                          <Button asChild className="w-full bg-brand-green text-white hover:bg-brand-blue transition-colors rounded-full px-6 py-2.5 font-medium">
+                            <Link to="/services/hackathon">
+                              Learn More <ArrowRight className="ml-2 h-4 w-4" />
+                            </Link>
+                          </Button>
+                        ) : (
+                          <Button asChild className="w-full bg-brand-green text-white hover:bg-brand-blue transition-colors rounded-full px-6 py-2.5 font-medium">
+                            <Link to={program.id === "1" ? "/services/civil-society" : "/services/communication-workshops"}>
+                              Learn More <ArrowRight className="ml-2 h-4 w-4" />
+                            </Link>
+                          </Button>
+                        )}
+                      </div>
                     </CardContent>
                   </Card>
                 </div>
@@ -325,9 +334,6 @@ export default function Index() {
             </div>
           </div>
         </section>
-        
-        {/* Testimonials Section */}
-        <TestimonialsSection />
         
         {/* Services Section */}
         <section className="section bg-brand-light-green-gray">

@@ -251,7 +251,7 @@ export default function Media() {
                 <div className="text-center mb-6">
                   <h2 className="text-3xl font-bold mb-4">Media Usage & Downloads</h2>
                   <p className="text-lg text-muted-foreground">
-                    Guidelines for using GNEC media content and accessing high-resolution files
+                    Use of logo is prohibited without prior consent and authorisation. Contact communications@gnec.ngo to learn more.
                   </p>
                 </div>
                 
@@ -261,7 +261,6 @@ export default function Media() {
                     <ul className="space-y-2 text-sm text-muted-foreground">
                       <li>• Free use of GNEC media for non-commercial purposes</li>
                       <li>• Attribution required: "Courtesy of GNEC"</li>
-                      <li>• High-resolution files available upon request</li>
                       <li>• Contact communications@gnec.ngo for permissions</li>
                     </ul>
                   </div>
@@ -269,22 +268,11 @@ export default function Media() {
                   <div>
                     <h3 className="text-xl font-bold mb-3">For Media & Press</h3>
                     <ul className="space-y-2 text-sm text-muted-foreground">
-                      <li>• Press kit materials available for download</li>
                       <li>• Interview opportunities with GNEC leadership</li>
                       <li>• Event coverage and photo access provided</li>
-                      <li>• Contact info@gnec.ngo for media inquiries</li>
+                      <li>• Contact communications@gnec.ngo for media inquiries</li>
                     </ul>
                   </div>
-                </div>
-                
-                <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
-                  <Button>
-                    <Download className="h-4 w-4 mr-2" />
-                    Download Press Kit
-                  </Button>
-                  <Button variant="outline">
-                    Request High-Res Files
-                  </Button>
                 </div>
               </CardContent>
             </Card>

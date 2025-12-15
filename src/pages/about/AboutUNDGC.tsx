@@ -104,9 +104,29 @@ export default function AboutUNDGC() {
               </p>
             </div>
             
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {benefits.map((benefit, index) => (
+            {/* Top row: 3 centered */}
+            <div className="grid lg:grid-cols-3 gap-6 justify-items-stretch max-w-5xl mx-auto">
+              {benefits.slice(0,3).map((benefit, index) => (
                 <Card key={index} className="h-full">
+                  <CardContent className="p-6">
+                    <div className="flex items-center gap-3 mb-4">
+                      <div className="p-2 bg-primary/10 rounded-lg text-primary">
+                        {benefit.icon}
+                      </div>
+                      <h3 className="text-lg font-bold">{benefit.title}</h3>
+                    </div>
+                    <p className="text-muted-foreground leading-relaxed">
+                      {benefit.description}
+                    </p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+
+            {/* Bottom row: 2 centered */}
+            <div className="grid lg:grid-cols-2 gap-6 justify-items-stretch max-w-3xl mx-auto mt-6">
+              {benefits.slice(3).map((benefit, index) => (
+                <Card key={`bottom-${index}`} className="h-full">
                   <CardContent className="p-6">
                     <div className="flex items-center gap-3 mb-4">
                       <div className="p-2 bg-primary/10 rounded-lg text-primary">

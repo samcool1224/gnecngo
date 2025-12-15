@@ -10,13 +10,13 @@ export const en = {
   hero: {
     subtitle: "PARTNERING WITH THE UN SINCE 1962",
     title: "Global NGO Executive Committee",
-    description: "GNEC has, for 60+ years, partnered with the United Nations to guarantee a voice at the decision-making table for NGOs worldwide.",
+    description: "GNEC has, for 60+ years, partnered with the United Nations to guarantee a voice at the decision-making table for NGOs/CSOs worldwide.",
     bookStay: "Learn About Our Mission",
     exploreApartments: "Explore Our Programs",
     scrollDown: "Scroll Down"
   },
   footer: {
-    description: "The Global NGO Executive Committee partners with the United Nations to promote closer working relationships between the UN and NGOs worldwide.",
+    description: "The Global NGO Executive Committee partners with the United Nations to promote closer working relationships between the UN and NGOs/CSOs worldwide.",
     quickLinks: "Quick Links",
     contact: "Contact",
     newsletter: "NGO Reporter",
@@ -39,7 +39,7 @@ export const en = {
   },
   testimonials: {
     title: "What Our Partners Say",
-    description: "Hear from UN officials and NGO leaders about GNEC's impact on global civil society engagement."
+    description: "Hear from UN officials and NGO/CSO leaders about GNEC's impact on global civil society engagement."
   },
   notFound: {
     title: "Page Not Found",
@@ -50,8 +50,8 @@ export const en = {
     welcome: {
       subtitle: "About GNEC",
       title: "60+ Years of UN Partnership",
-      description1: "The Global NGO Executive Committee was founded in 1962 to promote a closer working relationship between the United Nations and non-governmental organizations affiliated with it. GNEC acts as a liaison between the NGO community and the UN's Department of Global Communications.",
-      description2: "Our mission is to provide strategic guidance to help NGOs become more effective partners of the UN, serving more than 1,500 UNDGC affiliated NGOs worldwide through workshops, conferences, and advocacy initiatives.",
+      description1: "The Global NGO Executive Committee was founded in 1962 to promote a closer working relationship between the United Nations and non-governmental organisation/ Civil Society Organisation affiliated with it. GNEC acts as a liaison between the NGO/CSO community and the UN's Department of Global Communications.",
+      description2: "Our mission is to provide strategic guidance to help NGOs/CSOs become more effective partners of the UN, serving more than 1,500 UNDGC affiliated NGOs/CSOs worldwide through workshops, conferences, and advocacy initiatives.",
       learnMore: "Learn More"
     },
     booking: {
@@ -63,17 +63,17 @@ export const en = {
     featuredPrograms: {
       subtitle: "Our Programs", 
       title: "Key Initiatives",
-      description: "Discover our flagship programs designed to strengthen NGO-UN partnerships and advance the Sustainable Development Goals.",
+      description: "Discover our flagship programs designed to strengthen NGO/CSO-UN partnerships and advance the Sustainable Development Goals.",
       viewAll: "View All Programs"
     },
     services: {
       subtitle: "Our Services",
-      title: "How We Support NGOs",
-      description: "GNEC provides comprehensive support to help NGOs maximize their impact through effective UN partnerships.",
+      title: "How We Support NGOs/CSOs",
+      description: "GNEC provides comprehensive support to help NGOs/CSOs maximize their impact through effective UN partnerships.",
       features: {
         liaison: {
-          title: "UN-NGO Liaison",
-          description: "Direct communication channel between NGO community and UN Department of Global Communications."
+          title: "UN-NGO/CSO Liaison",
+          description: "Direct communication channel between NGO/CSO community and UN Department of Global Communications."
         },
         guidance: {
           title: "Strategic Guidance", 
@@ -81,11 +81,11 @@ export const en = {
         },
         workshops: {
           title: "Communication Workshops",
-          description: "Regular training sessions to enhance NGO knowledge of UN operations and partnerships."
+          description: "Regular training sessions to enhance NGO/CSO knowledge of UN operations and partnerships."
         },
         networking: {
           title: "Global Networking",
-          description: "Facilitate collaboration among NGOs worldwide through events and platforms."
+          description: "Facilitate collaboration among NGOs/CSOs worldwide through events and platforms."
         },
         advocacy: {
           title: "Civil Society Advocacy",
@@ -93,7 +93,7 @@ export const en = {
         },
         global: {
           title: "Worldwide Reach",
-          description: "Serving 1,500+ affiliated NGOs across all continents and sectors."
+          description: "Serving 1,500+ affiliated NGOs/CSOs across all continents and sectors."
         }
       }
     },
@@ -105,7 +105,7 @@ export const en = {
   },
   apartments: {
     title: "Our Programs & Initiatives",
-    subtitle: "Explore our comprehensive programs designed to strengthen NGO-UN partnerships and advance global civil society engagement.",
+    subtitle: "Explore our comprehensive programs designed to strengthen NGO/CSO-UN partnerships and advance global civil society engagement.",
     filters: {
       guests: "Participants",
       anyGuests: "Any number of participants",
@@ -129,7 +129,7 @@ export const en = {
   },
   gallery: {
     title: "On The Ground Podcast",
-    subtitle: "Featuring one amazing NGO per episode, showcasing critical social good work toward SDG achievement.",
+    subtitle: "Featuring one amazing NGO/CSO per episode, showcasing critical social good work toward SDG achievement.",
     filters: {
       all: "All Episodes",
       exterior: "Recent",

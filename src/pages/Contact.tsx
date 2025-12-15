@@ -74,16 +74,16 @@ export default function Contact() {
 
   const faqItems = [
     {
-      question: "How can my NGO get involved with GNEC?",
+      question: "How can my NGO/CSO get involved with GNEC?",
       answer: "Organizations with UNDGC affiliation can participate in our workshops, conferences, and initiatives. Contact us at president@gnec.ngo to learn more about engagement opportunities."
     },
     {
       question: "What is the annual UN Civil Society Conference?",
-      answer: "Our flagship event facilitating global NGO collaboration and promoting understanding of UN's SDG efforts. It's held annually at UN Headquarters or abroad."
+      answer: "Our flagship event facilitating global NGO/CSO collaboration and promoting understanding of UN's SDG efforts. It's held annually at UN Headquarters or abroad."
     },
     {
-      question: "How does GNEC support NGO capacity building?",
-      answer: "We provide regular communication workshops, strategic guidance, and networking opportunities to help NGOs become more effective UN partners."
+      question: "How does GNEC support NGO/CSO capacity building?",
+      answer: "We provide regular communication workshops, strategic guidance, and networking opportunities to help NGOs/CSOs become more effective UN partners."
     },
     {
       question: "What is the GNEC Hackathon?",
@@ -91,11 +91,11 @@ export default function Contact() {
     },
     {
       question: "How can I listen to the 'On The Ground' podcast?",
-      answer: "Our podcast featuring amazing NGOs is available on major podcast platforms. Contact president@gnec.ngo for featuring opportunities."
+      answer: "Our podcast featuring amazing NGOs/CSOs is available on major podcast platforms. Contact president@gnec.ngo for featuring opportunities."
     },
     {
-      question: "What services does GNEC provide to affiliated NGOs?",
-      answer: "We offer liaison services with UN DGC, strategic guidance, communication workshops, networking events, and advocacy support to enhance NGO-UN partnerships."
+      question: "What services does GNEC provide to affiliated NGOs/CSOs?",
+      answer: "We offer liaison services with UN DGC, strategic guidance, communication workshops, networking events, and advocacy support to enhance NGO/CSO-UN partnerships."
     }
   ];
 
@@ -323,7 +323,7 @@ export default function Contact() {
                     </div>
                     <h3 className="font-bold mb-2">Global Reach</h3>
                     <p className="text-sm text-muted-foreground">
-                      Serving 1,500+ NGOs<br />
+                      Serving 1,500+ NGOs/CSOs<br />
                       Across all continents
                     </p>
                   </div>

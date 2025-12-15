@@ -18,7 +18,7 @@ export default function UpcomingEvents() {
       time: "9:00 AM - 6:00 PM EST",
       location: "UN Headquarters, New York",
       type: "Conference",
-      description: "Annual flagship event facilitating global NGO collaboration and promoting understanding of UN's SDG efforts. Join civil society organizations from around the world.",
+      description: "Annual flagship event facilitating global NGO/CSO collaboration and promoting understanding of UN's SDG efforts. Join civil society organizations from around the world.",
       participants: "1,500+ Expected",
       registration: "Open",
       featured: true
@@ -29,7 +29,7 @@ export default function UpcomingEvents() {
       time: "2:00 PM - 4:00 PM EST",
       location: "Virtual & UN Headquarters",
       type: "Workshop",
-      description: "Monthly workshop designed to enhance NGO knowledge of UN operations and partnerships. Focus on effective communication strategies.",
+      description: "Monthly workshop designed to enhance NGO/CSO knowledge of UN operations and partnerships. Focus on effective communication strategies.",
       participants: "200+ Expected",
       registration: "Open"
     },
@@ -98,7 +98,7 @@ export default function UpcomingEvents() {
               Upcoming Events
             </h1>
             <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
-              Join GNEC's upcoming workshops, conferences, and initiatives designed to strengthen NGO-UN partnerships and advance global civil society engagement.
+              Join GNEC's upcoming workshops, conferences, and initiatives designed to strengthen NGO/CSO-UN partnerships and advance global civil society engagement.
             </p>
           </div>
         </div>
@@ -202,7 +202,7 @@ export default function UpcomingEvents() {
             <div className="text-center mb-12">
               <h2 className="text-3xl font-bold mb-4">Types of GNEC Events</h2>
               <p className="text-lg text-muted-foreground">
-                Discover the various ways GNEC brings together the global NGO community
+                Discover the various ways GNEC brings together the global NGO/CSO community
               </p>
             </div>
             
@@ -214,7 +214,7 @@ export default function UpcomingEvents() {
                   </div>
                   <h3 className="text-xl font-bold mb-3">Conferences</h3>
                   <p className="text-muted-foreground leading-relaxed">
-                    Large-scale gatherings bringing together NGOs worldwide to address global challenges and strengthen UN partnerships.
+                    Large-scale gatherings bringing together NGOs/CSOs worldwide to address global challenges and strengthen UN partnerships.
                   </p>
                 </CardContent>
               </Card>

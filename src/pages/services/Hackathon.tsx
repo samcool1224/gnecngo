@@ -81,6 +81,77 @@ export default function Hackathon() {
     }
   ];
 
+  const hackathonTeam: { name: string; title: string }[] = [];
+
+  const sponsors: { name: string; logoUrl?: string; url?: string }[] = [
+    { name: "IVECA", logoUrl: "/sponsors/iveca.jpeg", url: "https://www.website.iveca.org/" },
+    { name: "International Federation on Ageing (IFA)", logoUrl: "/sponsors/ifa.jpg", url: "https://ifa.ngo/" },
+    { name: "Airline Ambassadors International", logoUrl: "/sponsors/airlineambassadors.jpeg", url: "https://airlineamb.org/" },
+    { name: "WYC Events", logoUrl: "/sponsors/wyc.jpeg", url: "http://www.wycevents.com/" },
+    { name: "League of Women Voters (LWV)", logoUrl: "/sponsors/lwv.jpeg", url: "https://www.lwv.org/" },
+    { name: "World Assembly of Youth (WAY)", logoUrl: "/sponsors/way.jpeg", url: "https://www.way.org.my/" },
+    { name: "African Youth Movement (AYM)", logoUrl: "/sponsors/aym.png", url: "https://www.aym-inc.org/" }
+  ];
+
+  const continentalAmbassadors: { region: string; name: string; bio: string }[] = [
+    {
+      region: "AFRICAN CONTINENTAL AMBASSADOR",
+      name: "Ojieh Miracle",
+      bio: "Ojieh is a Nigerian youth leader and a passionate advocate for STEAM."
+    },
+    {
+      region: "ASIAN CONTINENTAL AMBASSADOR",
+      name: "Isara M",
+      bio: "Isara is a young leader in business, having founded Mindful, and is passionate in advocating for mental health and tech."
+    },
+    {
+      region: "ASIAN CONTINENTAL AMBASSADOR",
+      name: "Smit Shetye",
+      bio: "Smit is a full-stack developer passionate for the intersection of algorithms and social good."
+    }
+  ];
+
+  const coordinators: { role: string; name: string; bio: string }[] = [
+    {
+      role: "GLOBAL COORDINATOR & 2024 GNEC HACKATHON LEAD",
+      name: "Ruoyu Xu",
+      bio: "Ruoyu is passionate about algorithmic programming and wishes to inspire others to explore innovative ways of using technology."
+    },
+    {
+      role: "TECHNICAL COORDINATOR",
+      name: "Michael Ren",
+      bio: "Michael has been deeply involved in STEM and continues to make an impact through his projects and initiatives."
+    },
+    {
+      role: "OUTREACH COORDINATOR",
+      name: "Derek Chen",
+      bio: "Derek is committed to raising awareness for the NGOs and leading youth across the world."
+    }
+  ];
+
+  const founders: { role: string; name: string; bio: string }[] = [
+    {
+      role: "ASSISTANT GLOBAL COORDINATOR",
+      name: "Jason Xu",
+      bio: "Jason is a passionate programmer and humanitarian having worked extensively to bring computer science to the global decision-making table."
+    },
+    {
+      role: "FORMER GNEC PRESIDENT",
+      name: "Patrick Sciarratta",
+      bio: "Patrick Sciarratta was the former President of the Global NGO Executive Committee and a Senior Fellow at the World Development Foundation. Regrettably, he is no longer with us, but his laugh could still be heard in the background of every meeting, and in many ways, he was a great advisor and an even better friend."
+    },
+    {
+      role: "GNEC PRESIDENT",
+      name: "Ediola Pashollari",
+      bio: "Ediola currently holds the position of President of the Global NGO Executive Committee and has worked extensively in establishing the hackathon in our first year through her devotion to sponsor relations and outreach."
+    },
+    {
+      role: "GENERAL OPERATIONS COORDINATOR",
+      name: "Anthony Tan",
+      bio: "Anthony has worked with computers and technology for his whole life and now tries to spread his own passion for STEM to others."
+    }
+  ];
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-background to-muted/20">
       <Navbar />
@@ -255,6 +326,105 @@ export default function Hackathon() {
         </div>
       </section>
 
+      {/* Hackathon Team */}
+      <section className="py-16">
+        <div className="container">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold mb-4">Hackathon Team</h2>
+              <p className="text-lg text-muted-foreground">Meet the organizers and mentors behind the GNEC Hackathon</p>
+            </div>
+            {hackathonTeam.length > 0 ? (
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {hackathonTeam.map((member, index) => (
+                  <Card key={index} className="p-6">
+                    <CardContent className="p-0">
+                      <h3 className="text-xl font-bold mb-1">{member.name}</h3>
+                      <p className="text-muted-foreground">{member.title}</p>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            ) : (
+              <Card className="p-6 text-center">
+                <CardContent className="p-0">
+                  <p className="text-muted-foreground">Team list will be updated shortly.</p>
+                </CardContent>
+              </Card>
+            )}
+          </div>
+        </div>
+      </section>
+
+      {/* Continental Ambassadors */}
+      <section className="py-16 bg-muted/30">
+        <div className="container">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold mb-4">Continental Ambassadors</h2>
+              <p className="text-lg text-muted-foreground">Regional leaders supporting outreach and engagement</p>
+            </div>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {continentalAmbassadors.map((a, idx) => (
+                <Card key={idx} className="p-6">
+                  <CardContent className="p-0">
+                    <Badge variant="secondary" className="mb-2">{a.region}</Badge>
+                    <h3 className="text-xl font-bold mb-1">{a.name}</h3>
+                    <p className="text-muted-foreground leading-relaxed">{a.bio}</p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Coordinators */}
+      <section className="py-16">
+        <div className="container">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold mb-4">Coordinators</h2>
+              <p className="text-lg text-muted-foreground">The global team coordinating operations, technology, and outreach</p>
+            </div>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {coordinators.map((c, idx) => (
+                <Card key={idx} className="p-6">
+                  <CardContent className="p-0">
+                    <Badge variant="secondary" className="mb-2">{c.role}</Badge>
+                    <h3 className="text-xl font-bold mb-1">{c.name}</h3>
+                    <p className="text-muted-foreground leading-relaxed">{c.bio}</p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Founders */}
+      <section className="py-16 bg-muted/30">
+        <div className="container">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold mb-4">Founders</h2>
+              <p className="text-lg text-muted-foreground">Leaders who helped establish and grow the GNEC Hackathon</p>
+            </div>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {founders.map((f, idx) => (
+                <Card key={idx} className="p-6">
+                  <CardContent className="p-0">
+                    <Badge variant="secondary" className="mb-2">{f.role}</Badge>
+                    <h3 className="text-xl font-bold mb-1">{f.name}</h3>
+                    <p className="text-muted-foreground leading-relaxed">{f.bio}</p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* How to Participate */}
       <section className="py-16">
         <div className="container">
@@ -303,6 +473,51 @@ export default function Hackathon() {
                 </CardContent>
               </Card>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Sponsors */}
+      <section className="py-16 bg-muted/30">
+        <div className="container">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold mb-4">Sponsors</h2>
+              <p className="text-lg text-muted-foreground">We are grateful to our partners and sponsors who make the GNEC Hackathon possible</p>
+            </div>
+            {sponsors.length > 0 ? (
+              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6 items-center">
+                {sponsors.map((s, idx) => (
+                  <Card key={idx} className="p-4 text-center">
+                    <CardContent className="p-0">
+                      {s.url ? (
+                        <a href={s.url} target="_blank" rel="noopener noreferrer" className="block p-2">
+                          {s.logoUrl ? (
+                            <img src={s.logoUrl} alt={s.name} className="mx-auto h-12 object-contain" />
+                          ) : (
+                            <span className="text-sm text-muted-foreground">{s.name}</span>
+                          )}
+                        </a>
+                      ) : (
+                        <>
+                          {s.logoUrl ? (
+                            <img src={s.logoUrl} alt={s.name} className="mx-auto h-12 object-contain" />
+                          ) : (
+                            <span className="text-sm text-muted-foreground">{s.name}</span>
+                          )}
+                        </>
+                      )}
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            ) : (
+              <Card className="p-6 text-center">
+                <CardContent className="p-0">
+                  <p className="text-muted-foreground">Sponsors will be announced soon.</p>
+                </CardContent>
+              </Card>
+            )}
           </div>
         </div>
       </section>

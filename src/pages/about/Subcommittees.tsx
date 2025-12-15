@@ -13,15 +13,15 @@ export default function Subcommittees() {
 
   const subcommittees = [
     {
-      name: "By-Laws, Policies and Procedures",
+      name: "Bylaws, Policies and Procedures Subcommittee",
       icon: <FileText className="h-6 w-6" />,
-      chair: "Dr. Connie Sobon Sensor",
+      chair: "Dr. Connie Sobon Sensor and Ms. Kim Quarles",
       secretary: "Dr. Piyush Gupta",
       email: "bylaws@gnec.ngo",
       description: "Responsible for reviewing GNEC's two official NYS and IRS governing documents, presenting any proposed revisions to the GNEC Board and recording revisions voted upon and made."
     },
     {
-      name: "Communications",
+      name: "Communication Subcommittee",
       icon: <Mail className="h-6 w-6" />,
       chair: "Ms. Shennon Sequeira", 
       secretary: "Ms. Dayana Blanco Galo",
@@ -29,52 +29,52 @@ export default function Subcommittees() {
       description: "Develops communications strategies for GNEC events and creates materials to inform and promote the work of GNEC and UNDGC affiliated NGOs through various communications channels. Also responsible for social media and the NGO Reporter."
     },
     {
-      name: "Events and Conferences",
+      name: "Events Subcommittee",
       icon: <Calendar className="h-6 w-6" />,
-      chair: "Mr. Dileepkumar Thankappan and Dr. Aysegul Dukrakoglu",
-      secretary: "Dr. J. Nadine Gracia",
+      chair: "Dr. J. Nadine Gracia and Mr. Dileepkumar Thankappan",
+      secretary: "Ms. Elena Reiss",
       email: "events@gnec.ngo", 
       description: "Responsible for the planning, development, and implementation of an annual conference as well as other GNEC-initiated briefings and related events, which may be developed by GNEC or as collaborative efforts with UNDGC or other NGOs."
     },
     {
-      name: "Fundraising",
+      name: "Fundraising Subcommittee",
       icon: <DollarSign className="h-6 w-6" />,
       chair: "HRH Prince Adnan El-Hashemite",
-      secretary: "Ms. Farah Salim",
+      secretary: "Ms. Farah Salim Eck",
       email: "fundraising@gnec.ngo",
       description: "Responsible for fundraising and development, including preparing presentations, prospecting, contacting potential funders and securing support for GNEC projects and UNDGC affiliated NGOs."
     },
     {
-      name: "Finance", 
+      name: "Finance Subcommittee", 
       icon: <Target className="h-6 w-6" />,
       chair: "Dr. Brian Muzàs",
-      secretary: "Mr Dassé Diarra", 
+      secretary: "Mr. Faisal El Fadl", 
       email: "treasurer@gnec.ngo",
       description: "Responsible for handling GNEC finances, receiving and disbursing funds, and managing the budget."
     },
     {
-      name: "Nominations and Elections",
+      name: "Election Subcommittee",
       icon: <Vote className="h-6 w-6" />,
       chair: "Ms. Aimée Quinlan",
-      secretary: "Mr Joseph DeMeyer",
+      secretary: "Ms. Kim Quarles",
       email: "elections@gnec.ngo",
       description: "Responsible for all aspects of conducting the GNEC elections, including determining the most appropriate method to recruit candidates and administer the election process."
     },
     {
-      name: "Outreach and Partnerships",
+      name: "Outreach and Partnership Subcommittee",
       icon: <Handshake className="h-6 w-6" />,
       chair: "Ms. Adriane Berg",
-      secretary: "",
+      secretary: "Ms. Nora Hajjar",
       email: "outreach@gnec.ngo", 
       description: "Responsible for reaching out and engaging with all UNDGC affiliated NGOs by creating and providing opportunities to increase visibility and/or collaboration."
     },
     {
-      name: "Strategic Plan",
+      name: "Strategic Plan Subcommittee",
       icon: <Target className="h-6 w-6" />,
-      chair: "Mr. Richard Jordan",
-      secretary: "Dr. Connie Sobon Sensor",
+      chair: "Mr. Dileepkumar Thankappan and Mr. Joseph DeMeyer",
+      secretary: "HRH Prince Adnan El-Hashemite",
       email: "strategicplan@gnec.ngo",
-      description: "Responsible for reviewing short and long range strategic plans for GNEC."
+      description: "Responsible for reviewing short and long range strategic plans for GNEC. Members: Adriane, Kim, Faisal."
     }
   ];
 

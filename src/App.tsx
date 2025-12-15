@@ -20,10 +20,12 @@ import UpcomingEvents from "./pages/services/UpcomingEvents";
 import PastEvents from "./pages/services/PastEvents";
 import Hackathon from "./pages/services/Hackathon";
 import Elections from "./pages/services/Elections";
-import LMS from "./pages/services/LMS";
+import CivilSociety from "./pages/services/CivilSociety";
+import CommunicationWorkshops from "./pages/services/CommunicationWorkshops";
 
 // News & Media pages
 import Podcast from "./pages/news/Podcast";
+import PodcastLibrary from "./pages/news/PodcastLibrary";
 import NGOReporter from "./pages/news/NGOReporter";
 import Media from "./pages/news/Media";
 import { LanguageProvider } from "./contexts/LanguageContext";
@@ -62,10 +64,12 @@ const App = () => (
             <Route path="/services/past-events" element={<PastEvents />} />
             <Route path="/services/hackathon" element={<Hackathon />} />
             <Route path="/services/elections" element={<Elections />} />
-            <Route path="/services/lms" element={<LMS />} />
+            <Route path="/services/civil-society" element={<CivilSociety />} />
+            <Route path="/services/communication-workshops" element={<CommunicationWorkshops />} />
             
             {/* News & Media Routes */}
             <Route path="/news/podcast" element={<Podcast />} />
+            <Route path="/news/podcast-library" element={<PodcastLibrary />} />
             <Route path="/news/ngo-reporter" element={<NGOReporter />} />
             <Route path="/news/media" element={<Media />} />
             

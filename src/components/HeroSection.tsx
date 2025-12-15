@@ -12,7 +12,7 @@ export default function HeroSection() {
       <div
         className="absolute inset-0 w-screen max-w-full h-full bg-cover bg-no-repeat"
         style={{
-          backgroundImage: "url('/homepage/herosec.png')",
+          backgroundImage: "url('/homepage/herosec.jpg')",
           backgroundPosition: 'center 35%',
         }}
       />
