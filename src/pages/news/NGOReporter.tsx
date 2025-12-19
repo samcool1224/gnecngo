@@ -16,25 +16,29 @@ export default function NGOReporter() {
       title: "NGO Reporter Vol 38",
       date: "2024",
       description: "Latest developments in NGO-UN partnerships, featuring updates from GNEC board activities and global civil society initiatives.",
-      topics: ["Board Updates", "Partnership News", "Event Highlights"]
+      topics: ["Board Updates", "Partnership News", "Event Highlights"],
+      url: "https://myemail.constantcontact.com/NGO-Reporter-Vol-38--1.html?soid=1118608394243&aid=rNkpqJuyR70"
     },
     {
       title: "NGO Reporter Vol 37",
       date: "2024", 
       description: "Focus on digital advocacy strategies and emerging technologies for NGO communications and outreach.",
-      topics: ["Digital Advocacy", "Tech Innovation", "Communication Tools"]
+      topics: ["Digital Advocacy", "Tech Innovation", "Communication Tools"],
+      url: "https://myemail.constantcontact.com/NGO-Reporter-Vol-38--1.html?soid=1118608394243&aid=yJdfRku5fno"
     },
     {
       title: "NGO Reporter Vol 36",
       date: "2024",
       description: "Special coverage of the UN Civil Society Conference and its impact on global NGO collaboration.",
-      topics: ["Conference Coverage", "Global Collaboration", "Policy Updates"]
+      topics: ["Conference Coverage", "Global Collaboration", "Policy Updates"],
+      url: "https://myemail.constantcontact.com/NGO-Reporter-Vol-36--1.html?soid=1118608394243&aid=SeDSa18HRdw"
     },
     {
       title: "NGO Reporter Vol 35",
       date: "2024",
       description: "Highlighting successful NGO campaigns and their contributions to Sustainable Development Goals achievement.",
-      topics: ["Success Stories", "SDG Progress", "Campaign Analysis"]
+      topics: ["Success Stories", "SDG Progress", "Campaign Analysis"],
+      url: "https://myemail.constantcontact.com/NGO-Reporter-Vol-35--1.html?soid=1118608394243&aid=Rxt6iYz4Syk"
     }
   ];
 
@@ -188,9 +192,11 @@ export default function NGOReporter() {
                       </div>
                     </div>
                     
-                    <Button variant="outline" className="w-full">
-                      <ExternalLink className="h-4 w-4 mr-2" />
-                      Read More
+                    <Button variant="outline" className="w-full" asChild>
+                      <a href={(issue as any).url} target="_blank" rel="noopener noreferrer">
+                        <ExternalLink className="h-4 w-4 mr-2" />
+                        Read More
+                      </a>
                     </Button>
                   </CardContent>
                 </Card>
@@ -255,10 +261,6 @@ export default function NGOReporter() {
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Button className="flex-1" asChild>
                     <a href="mailto:communications@gnec.ngo?subject=NGO REPORTER SUBMISSION REQUEST">Submit Article</a>
-                  </Button>
-                  <Button variant="outline" className="flex-1">
-                    <FileText className="h-4 w-4 mr-2" />
-                    Submission Template
                   </Button>
                 </div>
               </CardContent>

@@ -177,8 +177,7 @@ export default function Podcast() {
   const podcastStats = [
     { label: "Episodes Published", value: "25+" },
     { label: "Countries Reached", value: "50+" },
-    { label: "NGOs Featured", value: "40+" },
-    { label: "Total Downloads", value: "10K+" }
+    { label: "NGOs Featured", value: "40+" }
   ];
 
   const getCategoryColor = (category: string) => {
@@ -307,7 +306,7 @@ export default function Podcast() {
               </p>
             </div>
             
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {podcastStats.map((stat, index) => (
                 <Card key={index} className="p-6 text-center">
                   <CardContent className="p-0">

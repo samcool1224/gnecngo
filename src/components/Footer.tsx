@@ -1,6 +1,5 @@
-
 import { Link } from "react-router-dom";
-import { Facebook, Instagram, Twitter, Mail, Phone, MapPin } from "lucide-react";
+import { Facebook, Instagram, Twitter, Mail } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function Footer() {
@@ -55,22 +54,10 @@ export default function Footer() {
             </ul>
           </div>
           
-          <div className="animate-fade-in [animation-delay:300ms]">
+          <div className="animate-fade-in [animation-delay:300ms]"> 
             <h4 className="text-xl font-bold mb-4">{t.footer.contact}</h4>
             <ul className="space-y-3">
-              <li className="flex items-start">
-                <MapPin className="w-5 h-5 mr-2 mt-0.5 text-brand-green" />
-                <span className="text-white/70">
-                  UN Headquarters<br />
-                  New York, NY 10017<br />
-                  United States
-                </span>
-              </li>
-              <li className="flex items-center">
-                <Phone className="w-5 h-5 mr-2 text-brand-green" />
-                <span className="text-white/70">+1 (212) 963-1234</span>
-              </li>
-              <li className="flex items-center">
+              <li className="flex items-center"> 
                 <Mail className="w-5 h-5 mr-2 text-brand-green" />
                 <span className="text-white/70">info@gnec.org</span>
               </li>

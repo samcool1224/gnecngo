@@ -81,7 +81,26 @@ export default function Hackathon() {
     }
   ];
 
-  const hackathonTeam: { name: string; title: string }[] = [];
+  const hackathonTeam: { name: string; title: string; bio: string; image: string }[] = [
+    {
+      name: "Qilan (Kelland) Hong",
+      title: "Partnerships Coordinator",
+      bio: "Kelland draws on her experience in design, communication, and tech to support GNEC’s partnerships work. She builds relationships with NGOs, companies, and community groups, helping the hackathon grow its reach and create meaningful opportunities for youth around the world.",
+      image: "/qilan.jpg"
+    },
+    {
+      name: "Ray Zhang",
+      title: "Participants Coordinator",
+      bio: "Ray works in global outreach, connecting talented youth worldwide to GNEC hackathons. He supports international event promotion, coordinates participant engagement, and helps expand access to youth-driven innovation and leadership on a global scale.",
+      image: "/ray.jpg"
+    },
+    {
+      name: "Christina Chen",
+      title: "Digital Assets Coordinator",
+      bio: "Christina draws on her experience in design, communication, and organization to manage GNEC’s digital assets. She creates and curates media posts, develops email content, and maintains the website to ensure information is clear, engaging, and up to date for the global GNEC community.",
+      image: "/christina.jpg"
+    }
+  ];
 
   const sponsors: { name: string; logoUrl?: string; url?: string }[] = [
     { name: "IVECA", logoUrl: "/sponsors/iveca.jpeg", url: "https://www.website.iveca.org/" },
@@ -334,24 +353,22 @@ export default function Hackathon() {
               <h2 className="text-3xl font-bold mb-4">Hackathon Team</h2>
               <p className="text-lg text-muted-foreground">Meet the organizers and mentors behind the GNEC Hackathon</p>
             </div>
-            {hackathonTeam.length > 0 ? (
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {hackathonTeam.map((member, index) => (
-                  <Card key={index} className="p-6">
-                    <CardContent className="p-0">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
+              {hackathonTeam.map((member, index) => (
+                <Card key={index} className="h-full">
+                  <CardContent className="p-6">
+                    <div className="mb-4">
+                      <div className="aspect-[3/4] w-full overflow-hidden rounded-md mb-4">
+                        <img src={member.image} alt={member.name} className="w-full h-full object-cover object-top" />
+                      </div>
                       <h3 className="text-xl font-bold mb-1">{member.name}</h3>
-                      <p className="text-muted-foreground">{member.title}</p>
-                    </CardContent>
-                  </Card>
-                ))}
-              </div>
-            ) : (
-              <Card className="p-6 text-center">
-                <CardContent className="p-0">
-                  <p className="text-muted-foreground">Team list will be updated shortly.</p>
-                </CardContent>
-              </Card>
-            )}
+                      <p className="text-primary font-medium">{member.title}</p>
+                    </div>
+                    <p className="text-sm text-muted-foreground leading-relaxed">{member.bio}</p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
           </div>
         </div>
       </section>

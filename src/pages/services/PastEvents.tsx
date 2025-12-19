@@ -13,36 +13,6 @@ export default function PastEvents() {
 
   const pastEvents = [
     {
-      title: "GNEC Holiday Meet and Greet",
-      date: "December 19, 2024",
-      time: "11:30 AM - 12:30 PM EST",
-      location: "Virtual Event",
-      type: "Networking",
-      description: "End-of-year celebration bringing together GNEC board members, affiliated NGOs, and partners to reflect on achievements and strengthen community bonds.",
-      participants: "150+ Attendees",
-      materials: ["Event Recording", "Photo Gallery", "Participant List"]
-    },
-    {
-      title: "Closing Ceremony - 3rd GNEC Hackathon",
-      date: "December 5, 2024", 
-      time: "12:00 PM - 1:00 PM EST",
-      location: "Virtual Event",
-      type: "Hackathon",
-      description: "Celebration of innovative technology solutions for UN Sustainable Development Goals, featuring winner presentations and awards ceremony.",
-      participants: "500+ Global Participants",
-      materials: ["Winner Presentations", "Awards Ceremony Recording", "Project Showcase"]
-    },
-    {
-      title: "Opening Ceremony - 3rd GNEC Hackathon",
-      date: "October 3, 2024",
-      time: "12:00 PM - 1:00 PM EST", 
-      location: "Virtual Event",
-      type: "Hackathon",
-      description: "Launch of the third annual GNEC Hackathon, bringing together global innovators to develop technology solutions for SDG challenges.",
-      participants: "800+ Registered",
-      materials: ["Opening Keynote", "Challenge Briefings", "Participant Guide"]
-    },
-    {
       title: "UN Civil Society Conference 2024",
       date: "August 26-28, 2024",
       time: "Full Day Event",
@@ -62,16 +32,7 @@ export default function PastEvents() {
       participants: "200+ Participants",
       materials: ["Workshop Slides", "Resource Toolkit", "Best Practices Guide"]
     },
-    {
-      title: "Regional SDGs Roundtable - Asia Pacific",
-      date: "May 20, 2024",
-      time: "9:00 AM - 2:00 PM JST",
-      location: "Tokyo, Japan",
-      type: "Roundtable",
-      description: "Regional discussion on SDG implementation challenges and opportunities in the Asia Pacific region with local NGO leaders.",
-      participants: "120+ Regional Representatives",
-      materials: ["Regional Report", "Action Plan", "Follow-up Commitments"]
-    }
+    
   ];
 
   const getTypeColor = (type: string) => {

@@ -13,6 +13,37 @@ export default function UpcomingEvents() {
 
   const upcomingEvents = [
     {
+      title: "GNEC Holiday Meet and Greet",
+      date: "December 19, 2024",
+      time: "11:30 AM - 12:30 PM",
+      location: "Virtual Event",
+      type: "Networking",
+      description: "Save the date and register here!",
+      participants: "Open to All",
+      registration: "Open",
+      featured: true
+    },
+    {
+      title: "Closing Ceremony - 3rd GNEC Hackathon",
+      date: "December 5, 2024",
+      time: "12:00 PM - 1:00 PM",
+      location: "Virtual Event",
+      type: "Hackathon",
+      description: "Save the date and register here!",
+      participants: "Open to All",
+      registration: "Open"
+    },
+    {
+      title: "Opening Ceremony - 3rd GNEC Hackathon",
+      date: "October 3, 2024",
+      time: "12:00 PM - 1:00 PM",
+      location: "Virtual Event",
+      type: "Hackathon",
+      description: "",
+      participants: "Open to All",
+      registration: "Open"
+    },
+    {
       title: "2025 UN Civil Society Conference",
       date: "May 15-17, 2025",
       time: "9:00 AM - 6:00 PM EST",
@@ -21,7 +52,7 @@ export default function UpcomingEvents() {
       description: "Annual flagship event facilitating global NGO/CSO collaboration and promoting understanding of UN's SDG efforts. Join civil society organizations from around the world.",
       participants: "1,500+ Expected",
       registration: "Open",
-      featured: true
+      featured: false
     },
     {
       title: "Communication Workshop Series - Spring 2025",
@@ -104,31 +135,14 @@ export default function UpcomingEvents() {
         </div>
       </section>
 
-      {/* No Events Notice */}
-      <section className="py-8">
-        <div className="container">
-          <div className="max-w-4xl mx-auto">
-            <Card className="p-6 bg-yellow-50 dark:bg-yellow-900/20 border-yellow-200 dark:border-yellow-800">
-              <CardContent className="p-0 text-center">
-                <Calendar className="h-12 w-12 text-yellow-600 dark:text-yellow-400 mx-auto mb-4" />
-                <h3 className="text-lg font-bold mb-2">No Upcoming Events Currently Scheduled</h3>
-                <p className="text-muted-foreground">
-                  We are currently planning our 2025 event calendar. Please check back soon for updates on upcoming workshops, conferences, and initiatives.
-                </p>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* Planned Events for 2025 */}
+      {/* Upcoming Events */}
       <section className="py-16">
         <div className="container">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold mb-4">Planned Events for 2025</h2>
+              <h2 className="text-3xl font-bold mb-4">Upcoming Events</h2>
               <p className="text-lg text-muted-foreground">
-                Preview of events currently in development - dates and details subject to confirmation
+                Dates and details subject to confirmation
               </p>
             </div>
             

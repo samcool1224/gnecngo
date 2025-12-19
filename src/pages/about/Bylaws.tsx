@@ -4,7 +4,7 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { FileText, Download, Scale, Users } from "lucide-react";
+import { FileText, ExternalLink, Scale, Users } from "lucide-react";
 
 export default function Bylaws() {
   useEffect(() => {
@@ -84,8 +84,8 @@ export default function Bylaws() {
                     variant="outline"
                     onClick={() => window.open('https://gnec.ngo/wp-content/uploads/2021/03/FINAL-Bylaws-June-2020.pdf', '_blank')}
                   >
-                    <Download className="h-4 w-4 mr-2" />
-                    Download By-Laws (PDF)
+                    <ExternalLink className="h-4 w-4 mr-2" />
+                    View By-Laws (PDF)
                   </Button>
                 </CardContent>
               </Card>
@@ -106,8 +106,8 @@ export default function Bylaws() {
                     variant="outline"
                     onClick={() => window.open('https://gnec.ngo/wp-content/uploads/2021/03/FINAL-Bylaws-June-2020.pdf', '_blank')}
                   >
-                    <Download className="h-4 w-4 mr-2" />
-                    Download Policies (PDF)
+                    <ExternalLink className="h-4 w-4 mr-2" />
+                    View Policies (PDF)
                   </Button>
                 </CardContent>
               </Card>

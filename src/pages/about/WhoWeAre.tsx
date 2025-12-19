@@ -149,6 +149,9 @@ export default function WhoWeAre() {
     }
   ];
 
+  const directorsTop = directors.slice(0, Math.max(0, directors.length - 4));
+  const directorsBottom = directors.slice(Math.max(0, directors.length - 4));
+
   const advisoryBoard = [
     { name: "Ambassador Isaiah Zimba Chabala", bio: "Founder and President, Visionary Consulting Associates; Former Ambassador of Zambia to the United Nations" },
     { name: "Hawa Taylor-Kamara Diallo", bio: "President and Executive Director, I.B. Taylor-Kamara Foundation" },
@@ -225,8 +228,8 @@ export default function WhoWeAre() {
                 <Card key={index} className="h-full">
                   <CardContent className="p-6">
                     <div className="mb-4">
-                      <div className="aspect-[4/3] w-full overflow-hidden rounded-md mb-4">
-                        <img src={(member as any).image} alt={member.name} className="w-full h-full object-cover" />
+                      <div className="aspect-[3/4] w-full overflow-hidden rounded-md mb-4">
+                        <img src={(member as any).image} alt={member.name} className="w-full h-full object-cover object-top" />
                       </div>
                       <h3 className="text-xl font-bold mb-2">{member.name}</h3>
                       <Badge variant="secondary" className="mb-2">{member.title}</Badge>
@@ -251,12 +254,30 @@ export default function WhoWeAre() {
               <p className="text-lg text-muted-foreground">Meet the directors supporting GNEC's global mission</p>
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
-              {directors.map((member, index) => (
+              {directorsTop.map((member, index) => (
                 <Card key={index} className="h-full">
                   <CardContent className="p-6">
                     <div className="mb-4">
-                      <div className="aspect-[4/3] w-full overflow-hidden rounded-md mb-4">
-                        <img src={member.image} alt={member.name} className="w-full h-full object-cover" />
+                      <div className="aspect-[3/4] w-full overflow-hidden rounded-md mb-4">
+                        <img src={member.image} alt={member.name} className="w-full h-full object-cover object-top" />
+                      </div>
+                      <h3 className="text-xl font-bold mb-2">{member.name}</h3>
+                      <Badge variant="secondary" className="mb-2">{member.title}</Badge>
+                      <p className="text-sm font-medium text-primary mb-3">{member.organization}</p>
+                    </div>
+                    <p className="text-sm text-muted-foreground leading-relaxed">{member.description}</p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+
+            <div className="mt-6 grid sm:grid-cols-2 gap-6 items-stretch max-w-4xl mx-auto">
+              {directorsBottom.map((member, index) => (
+                <Card key={directorsTop.length + index} className="h-full">
+                  <CardContent className="p-6">
+                    <div className="mb-4">
+                      <div className="aspect-[3/4] w-full overflow-hidden rounded-md mb-4">
+                        <img src={member.image} alt={member.name} className="w-full h-full object-cover object-top" />
                       </div>
                       <h3 className="text-xl font-bold mb-2">{member.name}</h3>
                       <Badge variant="secondary" className="mb-2">{member.title}</Badge>
