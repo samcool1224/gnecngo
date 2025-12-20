@@ -4,7 +4,7 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { FileText, ExternalLink, Scale, Users } from "lucide-react";
+import { FileText, ExternalLink, Scale } from "lucide-react";
 
 export default function Bylaws() {
   useEffect(() => {
@@ -68,7 +68,7 @@ export default function Bylaws() {
             </div>
             
             <div className="grid md:grid-cols-2 gap-8">
-              <Card className="p-6">
+              <Card className="p-6 md:col-span-2">
                 <CardContent className="p-0">
                   <div className="flex items-center gap-3 mb-4">
                     <div className="p-2 bg-primary/10 rounded-lg">
@@ -86,28 +86,6 @@ export default function Bylaws() {
                   >
                     <ExternalLink className="h-4 w-4 mr-2" />
                     View By-Laws (PDF)
-                  </Button>
-                </CardContent>
-              </Card>
-
-              <Card className="p-6">
-                <CardContent className="p-0">
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="p-2 bg-primary/10 rounded-lg">
-                      <Users className="h-6 w-6 text-primary" />
-                    </div>
-                    <h3 className="text-xl font-bold">Policies & Procedures</h3>
-                  </div>
-                  <p className="text-muted-foreground mb-6 leading-relaxed">
-                    Detailed policies and procedures that complement the by-laws, providing specific guidance on how the Executive Committee carries out its obligations to NGOs affiliated with UNDGC.
-                  </p>
-                  <Button 
-                    className="w-full" 
-                    variant="outline"
-                    onClick={() => window.open('https://gnec.ngo/wp-content/uploads/2021/03/FINAL-Bylaws-June-2020.pdf', '_blank')}
-                  >
-                    <ExternalLink className="h-4 w-4 mr-2" />
-                    View Policies (PDF)
                   </Button>
                 </CardContent>
               </Card>
