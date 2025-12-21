@@ -112,6 +112,9 @@ export default function Hackathon() {
     { name: "African Youth Movement (AYM)", logoUrl: "/sponsors/aym.png", url: "https://www.aym-inc.org/" }
   ];
 
+  const topSponsors = sponsors.slice(0, 4);
+  const bottomSponsors = sponsors.slice(4);
+
   const continentalAmbassadors: { region: string; name: string; bio: string }[] = [
     {
       region: "AFRICAN CONTINENTAL AMBASSADOR",
@@ -422,14 +425,14 @@ export default function Hackathon() {
       {/* Founders */}
       <section className="py-16 bg-muted/30">
         <div className="container">
-          <div className="max-w-6xl mx-auto">
+          <div className="max-w-7xl mx-auto">
             <div className="text-center mb-12">
               <h2 className="text-3xl font-bold mb-4">Founders</h2>
               <p className="text-lg text-muted-foreground">Leaders who helped establish and grow the GNEC Hackathon</p>
             </div>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6">
               {founders.map((f, idx) => (
-                <Card key={idx} className="p-6">
+                <Card key={idx} className="p-6 h-full">
                   <CardContent className="p-0">
                     <Badge variant="secondary" className="mb-2">{f.role}</Badge>
                     <h3 className="text-xl font-bold mb-1">{f.name}</h3>
@@ -497,37 +500,64 @@ export default function Hackathon() {
       {/* Sponsors */}
       <section className="py-16 bg-muted/30">
         <div className="container">
-          <div className="max-w-6xl mx-auto">
+          <div className="max-w-7xl mx-auto">
             <div className="text-center mb-12">
               <h2 className="text-3xl font-bold mb-4">Sponsors</h2>
               <p className="text-lg text-muted-foreground">We are grateful to our partners and sponsors who make the GNEC Hackathon possible</p>
             </div>
             {sponsors.length > 0 ? (
-              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6 items-center">
-                {sponsors.map((s, idx) => (
-                  <Card key={idx} className="p-4 text-center">
-                    <CardContent className="p-0">
-                      {s.url ? (
-                        <a href={s.url} target="_blank" rel="noopener noreferrer" className="block p-2">
-                          {s.logoUrl ? (
-                            <img src={s.logoUrl} alt={s.name} className="mx-auto h-12 object-contain" />
-                          ) : (
-                            <span className="text-sm text-muted-foreground">{s.name}</span>
-                          )}
-                        </a>
-                      ) : (
-                        <>
-                          {s.logoUrl ? (
-                            <img src={s.logoUrl} alt={s.name} className="mx-auto h-12 object-contain" />
-                          ) : (
-                            <span className="text-sm text-muted-foreground">{s.name}</span>
-                          )}
-                        </>
-                      )}
-                    </CardContent>
-                  </Card>
-                ))}
-              </div>
+              <>
+                <div className="flex flex-wrap justify-center gap-8 mb-8">
+                  {topSponsors.map((s, idx) => (
+                    <Card key={idx} className="p-8 text-center w-64 sm:w-72">
+                      <CardContent className="p-0">
+                        {s.url ? (
+                          <a href={s.url} target="_blank" rel="noopener noreferrer" className="block p-2">
+                            {s.logoUrl ? (
+                              <img src={s.logoUrl} alt={s.name} className="mx-auto h-28 object-contain" />
+                            ) : (
+                              <span className="text-sm text-muted-foreground">{s.name}</span>
+                            )}
+                          </a>
+                        ) : (
+                          <>
+                            {s.logoUrl ? (
+                              <img src={s.logoUrl} alt={s.name} className="mx-auto h-28 object-contain" />
+                            ) : (
+                              <span className="text-sm text-muted-foreground">{s.name}</span>
+                            )}
+                          </>
+                        )}
+                      </CardContent>
+                    </Card>
+                  ))}
+                </div>
+                <div className="flex flex-wrap justify-center gap-8">
+                  {bottomSponsors.map((s, idx) => (
+                    <Card key={idx} className="p-8 text-center w-64 sm:w-72">
+                      <CardContent className="p-0">
+                        {s.url ? (
+                          <a href={s.url} target="_blank" rel="noopener noreferrer" className="block p-2">
+                            {s.logoUrl ? (
+                              <img src={s.logoUrl} alt={s.name} className="mx-auto h-28 object-contain" />
+                            ) : (
+                              <span className="text-sm text-muted-foreground">{s.name}</span>
+                            )}
+                          </a>
+                        ) : (
+                          <>
+                            {s.logoUrl ? (
+                              <img src={s.logoUrl} alt={s.name} className="mx-auto h-28 object-contain" />
+                            ) : (
+                              <span className="text-sm text-muted-foreground">{s.name}</span>
+                            )}
+                          </>
+                        )}
+                      </CardContent>
+                    </Card>
+                  ))}
+                </div>
+              </>
             ) : (
               <Card className="p-6 text-center">
                 <CardContent className="p-0">

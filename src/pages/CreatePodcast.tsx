@@ -7,11 +7,7 @@ import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Calendar } from "@/components/ui/calendar";
-import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
-import { CalendarIcon, Upload, CheckCircle } from "lucide-react";
-import { format } from "date-fns";
-import { cn } from "@/lib/utils";
+import { Upload, CheckCircle } from "lucide-react";
 import { useAuth } from "@/contexts/AuthContext";
 import ProtectedRoute from "@/components/ProtectedRoute";
 import { supabase } from "@/lib/supabase";
@@ -23,7 +19,7 @@ export default function CreatePodcast() {
   const [description, setDescription] = useState("");
   const [features, setFeatures] = useState("");
   const [file, setFile] = useState<File | null>(null);
-  const [date, setDate] = useState<Date>();
+  const [imageFile, setImageFile] = useState<File | null>(null);
   const [category, setCategory] = useState("");
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
@@ -36,7 +32,7 @@ export default function CreatePodcast() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!file || !date || !user) {
+    if (!file || !user) {
       setError("Please fill in all required fields");
       return;
     }
@@ -48,7 +44,7 @@ export default function CreatePodcast() {
       // Upload audio file to Supabase storage
       const fileExt = file.name.split('.').pop();
       const fileName = `${user.id}/${episodeNumber}-${Date.now()}.${fileExt}`;
-      
+
       const { data: uploadData, error: uploadError } = await supabase.storage
         .from('podcast-audio')
         .upload(fileName, file);
@@ -61,6 +57,23 @@ export default function CreatePodcast() {
       const { data: { publicUrl } } = supabase.storage
         .from('podcast-audio')
         .getPublicUrl(fileName);
+
+      // Optionally upload cover image to the same bucket
+      let imagePublicUrl: string | null = null;
+      if (imageFile) {
+        const imageExt = imageFile.name.split('.').pop();
+        const imageFileName = `${user.id}/${episodeNumber}-${Date.now()}-cover.${imageExt}`;
+        const { error: imageUploadError } = await supabase.storage
+          .from('podcast-audio')
+          .upload(imageFileName, imageFile);
+        if (imageUploadError) {
+          throw new Error(`Image upload failed: ${imageUploadError.message}`);
+        }
+        const { data: { publicUrl: imageUrl } } = supabase.storage
+          .from('podcast-audio')
+          .getPublicUrl(imageFileName);
+        imagePublicUrl = imageUrl;
+      }
 
       // Parse tags into array
       const tagsArray = tags.split(',').map(tag => tag.trim()).filter(tag => tag.length > 0);
@@ -75,9 +88,10 @@ export default function CreatePodcast() {
           features,
           tags: tagsArray,
           audio_file_path: publicUrl,
-          publication_date: date.toISOString().split('T')[0],
+          publication_date: new Date().toISOString().split('T')[0],
           category,
-          created_by: user.id
+          created_by: user.id,
+          image_file_path: imagePublicUrl
         });
 
       if (insertError) {
@@ -92,7 +106,7 @@ export default function CreatePodcast() {
       setDescription("");
       setFeatures("");
       setFile(null);
-      setDate(undefined);
+      setImageFile(null);
       setCategory("");
 
     } catch (err: any) {
@@ -105,6 +119,12 @@ export default function CreatePodcast() {
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files && e.target.files[0]) {
       setFile(e.target.files[0]);
+    }
+  };
+
+  const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target.files && e.target.files[0]) {
+      setImageFile(e.target.files[0]);
     }
   };
 
@@ -236,6 +256,7 @@ export default function CreatePodcast() {
                           <SelectItem value="Women's Rights">Women's Rights</SelectItem>
                           <SelectItem value="Education">Education</SelectItem>
                           <SelectItem value="Environment">Environment</SelectItem>
+                          <SelectItem value="Youth">Youth</SelectItem>
                           <SelectItem value="Other">Other</SelectItem>
                         </SelectContent>
                       </Select>
@@ -258,32 +279,23 @@ export default function CreatePodcast() {
                       )}
                     </div>
 
-                    {/* Date */}
+                    {/* Cover Image Upload */}
                     <div className="space-y-2">
-                      <Label>Publication Date</Label>
-                      <Popover>
-                        <PopoverTrigger asChild>
-                          <Button
-                            variant="outline"
-                            className={cn(
-                              "w-full justify-start text-left font-normal",
-                              !date && "text-muted-foreground"
-                            )}
-                          >
-                            <CalendarIcon className="mr-2 h-4 w-4" />
-                            {date ? format(date, "PPP") : "Pick a date"}
-                          </Button>
-                        </PopoverTrigger>
-                        <PopoverContent className="w-auto p-0">
-                          <Calendar
-                            mode="single"
-                            selected={date}
-                            onSelect={setDate}
-                            initialFocus
-                          />
-                        </PopoverContent>
-                      </Popover>
+                      <Label htmlFor="cover">Cover Image</Label>
+                      <Input
+                        id="cover"
+                        type="file"
+                        onChange={handleImageChange}
+                        accept="image/*"
+                        className="cursor-pointer"
+                      />
+                      {imageFile && (
+                        <p className="text-sm text-muted-foreground">
+                          Selected: {imageFile.name}
+                        </p>
+                      )}
                     </div>
+
 
                     {/* Submit Button */}
                     <Button

@@ -5,7 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Calendar, Search, ExternalLink } from "lucide-react";
+import { Search, ExternalLink } from "lucide-react";
 import { supabase } from "@/lib/supabase";
 
 interface SupabaseEpisode {
@@ -16,7 +16,6 @@ interface SupabaseEpisode {
   features: string;
   tags: string[];
   audio_file_path: string;
-  publication_date: string;
   category: string;
   created_at: string;
 }
@@ -49,7 +48,6 @@ export default function PodcastLibrary() {
     title: ep.title,
     guest: ep.features || "GNEC Team",
     description: ep.description,
-    date: new Date(ep.publication_date).toLocaleDateString('en-US', { year: 'numeric', month: 'long' }),
     audioUrl: ep.audio_file_path,
     category: ep.category,
     tags: ep.tags || [],
@@ -152,13 +150,6 @@ export default function PodcastLibrary() {
                               <source src={episode.audioUrl} type="audio/mpeg" />
                               Your browser does not support the audio element.
                             </audio>
-                          </div>
-
-                          <div className="flex items-center gap-4 text-sm text-muted-foreground pt-2">
-                            <div className="flex items-center gap-1">
-                              <Calendar className="h-4 w-4" />
-                              <span>{episode.date}</span>
-                            </div>
                           </div>
                         </div>
                       </CardContent>

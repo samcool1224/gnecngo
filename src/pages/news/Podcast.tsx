@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
-import { Mic, Play, Calendar, Clock, ExternalLink, Award, Users, Search } from "lucide-react";
+import { Mic, ExternalLink, Award, Users, Search } from "lucide-react";
 import { supabase } from "@/lib/supabase";
 
 interface SupabaseEpisode {
@@ -16,9 +16,9 @@ interface SupabaseEpisode {
   features: string;
   tags: string[];
   audio_file_path: string;
-  publication_date: string;
   category: string;
   created_at: string;
+  image_file_path?: string | null;
 }
 
 export default function Podcast() {
@@ -50,121 +50,28 @@ export default function Podcast() {
     }
   };
 
-  const featuredEpisodes = [
-    {
-      episode: 32,
-      title: "The Impact of Voluntourism on NGO Success",
-      guest: "Lorraine Keenan, CEO of Hero Holidays, South Africa",
-      description: "Lorraine outlines the criteria for NGOs seeking to attract volunteers, stressing the need for well-structured programs that provide a safe and rewarding experience for both volunteers and the community. She shares valuable insights into fundraising with volunteers, volunteer training, and volunteer selection.",
-      date: "October 2025",
-      audioUrl: "https://gnec.ngo/wp-content/uploads/2025/10/On-the-Ground-Episode-32-Lorraine-Final.mp3",
-      category: "Voluntourism",
-      tags: ["voluntourism", "volunteers", "fundraising", "training"],
-      featured: true
-    },
-    {
-      episode: 31,
-      title: "AI and the Human Rights of Older Persons",
-      guest: "Dr. Caroline Green, Director of Research at the Institute of Ethics and AI at Oxford University",
-      description: "Discover how artificial intelligence intersects with the human rights of older persons. Topics include data privacy, digital equity, scams and risks, long-term care solutions, and systemic ageism in AI.",
-      date: "September 2025",
-      audioUrl: "https://gnec.ngo/wp-content/uploads/2025/09/GNEC-On-the-Ground-Episode-31.mp3",
-      category: "Technology & Rights",
-      tags: ["AI", "artificial intelligence", "human rights", "older persons", "data privacy", "digital equity"]
-    },
-    {
-      episode: 30,
-      title: "Aging, Gender Equality, and the Longevity Dividend",
-      guest: "Julie Byles, International Longevity Center's Global Alliance",
-      description: "Julie shares insights on aging, gender equality, and the importance of the United Nations treaty on the human rights of older persons. Discover how the longevity dividend can shape our understanding of aging and the social fabric of communities.",
-      date: "August 2025",
-      audioUrl: "https://gnec.ngo/wp-content/uploads/2025/08/On-the-Ground-Episode-30-Guest-Julie-Byles.mp3",
-      category: "Aging & Society",
-      tags: ["aging", "gender equality", "longevity", "UN treaty", "human rights", "older persons"]
-    },
-    {
-      episode: 29,
-      title: "A Master Class in Effective Fundraising and Successful Advocacy",
-      guest: "Bernard Siegel, Health Span Action Coalition",
-      description: "Bernard Siegel shares insights on making healthy longevity a universal right through stem cell research and advocacy. The Health Span Action Coalition comprises over 275 organizations working to democratize access to health technologies.",
-      date: "July 2025",
-      audioUrl: "https://gnec.ngo/wp-content/uploads/2025/07/On-the-Ground-Episode-29-Siegel.mp3",
-      category: "Health Advocacy",
-      tags: ["fundraising", "advocacy", "healthy longevity", "stem cell research", "health technologies"]
-    }
-  ];
-
-  const olderEpisodes = [
-    {
-      episode: 28,
-      title: "Fighting Neurological Misconceptions in Nigeria",
-      guest: "Dr. Farombi, Brain Health Initiative",
-      description: "Dr. Farombi addresses cultural misconceptions about neurological conditions and the importance of early intervention through the 'Dementia Not Witchcraft' campaign.",
-      date: "June 2025",
-      audioUrl: "https://gnec.ngo/wp-content/uploads/2025/06/Farombi-audio-edited.mp3",
-      category: "Health",
-      tags: ["neurological conditions", "dementia", "Nigeria", "brain health", "early intervention", "misconceptions"]
-    },
-    {
-      episode: 27,
-      title: "Inspiring Advice from Four Strong Organizations",
-      guest: "Multiple NGO Leaders",
-      description: "Leaders from Olof Palme Peace Foundation, American Association of University Women, Organization of American Firefighters, and NGO Committee on Human Rights share insights.",
-      date: "May 2025",
-      audioUrl: "https://gnec.ngo/wp-content/uploads/2025/05/On-the-Ground-Special-for-May.mp3",
-      category: "Leadership",
-      tags: ["leadership", "NGO collaboration", "peace foundation", "women's rights", "human rights", "firefighters"]
-    },
-    {
-      episode: 26,
-      title: "World Elder Abuse Awareness with Dr. Gloria Gutman",
-      guest: "Dr. Gloria Gutman",
-      description: "Focusing on the pressing issue of elder abuse with insights on research complexities, various forms, and psychological aspects involved.",
-      date: "April 2025",
-      audioUrl: "https://gnec.ngo/wp-content/uploads/2025/04/gnec-gloria-final.mp3",
-      category: "Human Rights",
-      tags: ["elder abuse", "awareness", "research", "psychology", "older persons", "abuse prevention"]
-    },
-    {
-      episode: 25,
-      title: "Women's Rights and Civil Society",
-      guest: "Frances Zainoeddin, Soroptimist International",
-      description: "Celebrating achievements of women globally and discussing collaborative work on gender equality and rights of older women.",
-      date: "March 2025",
-      audioUrl: "https://gnec.ngo/wp-content/uploads/2025/03/Francis-Audio-Final.mp3",
-      category: "Women's Rights",
-      tags: ["women's rights", "gender equality", "civil society", "older women", "Soroptimist", "achievements"]
-    }
-  ];
-
-  // Convert Supabase episodes to the same format as hardcoded episodes
+  // Convert Supabase episodes to the display format used in this page
   const convertSupabaseEpisodes = (episodes: SupabaseEpisode[]) => {
     return episodes.map(ep => ({
       episode: ep.episode_number,
       title: ep.title,
       guest: ep.features || "GNEC Team",
       description: ep.description,
-      date: new Date(ep.publication_date).toLocaleDateString('en-US', { 
-        year: 'numeric', 
-        month: 'long' 
-      }),
-      audioUrl: ep.audio_file_path,
-      category: ep.category,
+      category: ep.category || 'General',
       tags: ep.tags || [],
-      featured: false,
-      isFromSupabase: true
+      id: ep.id,
+      imageUrl: ep.image_file_path || null,
     }));
   };
 
-  const convertedSupabaseEpisodes = convertSupabaseEpisodes(supabaseEpisodes);
-  
-  // Combine all episodes and sort by episode number (descending)
-  const allEpisodes = [...featuredEpisodes, ...olderEpisodes, ...convertedSupabaseEpisodes]
+  const convertedSupabaseEpisodes = convertSupabaseEpisodes(supabaseEpisodes)
     .sort((a, b) => b.episode - a.episode);
-  
-  // Filter episodes for search (excluding featured episodes from search)
-  const searchableEpisodes = [...olderEpisodes, ...convertedSupabaseEpisodes];
-  const filteredEpisodes = searchableEpisodes.filter(episode =>
+
+  // Latest three episodes only from Supabase
+  const latestThree = convertedSupabaseEpisodes.slice(0, 3);
+
+  // Searchable list uses all from Supabase
+  const filteredEpisodes = convertedSupabaseEpisodes.filter(episode =>
     episode.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
     episode.guest.toLowerCase().includes(searchQuery.toLowerCase()) ||
     episode.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -337,9 +244,14 @@ export default function Podcast() {
                   <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-brand-green mx-auto mb-4"></div>
                   <p className="text-muted-foreground">Loading episodes...</p>
                 </div>
+              ) : latestThree.length === 0 ? (
+                <Card className="p-12">
+                  <CardContent className="p-0 text-center">
+                    <p className="text-muted-foreground text-lg">No episodes available yet.</p>
+                  </CardContent>
+                </Card>
               ) : (
-                // Show the most recent episodes (first 3) as featured
-                allEpisodes.slice(0, 3).map((episode, index) => (
+                latestThree.map((episode, index) => (
                 <Card key={index} className={`p-6 ${index === 0 ? 'ring-2 ring-primary/20 bg-primary/5' : ''}`}>
                   <CardContent className="p-0">
                     <div className="space-y-4">
@@ -377,20 +289,10 @@ export default function Podcast() {
                           {episode.description}
                         </p>
                       </div>
-
-                      {/* Audio Player */}
-                      <div className="w-full">
-                        <audio controls className="w-full">
-                          <source src={episode.audioUrl} type="audio/mpeg" />
-                          Your browser does not support the audio element.
-                        </audio>
-                      </div>
-                      
-                      <div className="flex items-center gap-4 text-sm text-muted-foreground pt-2">
-                        <div className="flex items-center gap-1">
-                          <Calendar className="h-4 w-4" />
-                          <span>{episode.date}</span>
-                        </div>
+                      <div className="text-center space-y-3 pt-2">
+                        <Button size="lg" className="rounded-full px-8 py-6 text-base" asChild>
+                          <a href={`/news/podcast/${episode.episode}`}>Listen Now!</a>
+                        </Button>
                       </div>
                     </div>
                   </CardContent>
@@ -466,20 +368,11 @@ export default function Podcast() {
                             {episode.description}
                           </p>
                         </div>
-
-                        {/* Audio Player */}
-                        <div className="w-full">
-                          <audio controls className="w-full">
-                            <source src={episode.audioUrl} type="audio/mpeg" />
-                            Your browser does not support the audio element.
-                          </audio>
-                        </div>
-                        
-                        <div className="flex items-center gap-4 text-sm text-muted-foreground pt-2">
-                          <div className="flex items-center gap-1">
-                            <Calendar className="h-4 w-4" />
-                            <span>{episode.date}</span>
-                          </div>
+                        <div className="text-center space-y-3 pt-2">
+                          <div className="text-xl font-bold">Listen Now!</div>
+                          <Button size="lg" variant="outline" className="rounded-full px-8 py-5" asChild>
+                            <a href={`/news/podcast/${episode.episode}`}>Listen to podcast</a>
+                          </Button>
                         </div>
                       </div>
                     </CardContent>

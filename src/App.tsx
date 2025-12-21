@@ -26,6 +26,7 @@ import CommunicationWorkshops from "./pages/services/CommunicationWorkshops";
 // News & Media pages
 import Podcast from "./pages/news/Podcast";
 import PodcastLibrary from "./pages/news/PodcastLibrary";
+import PodcastEpisode from "./pages/news/PodcastEpisode";
 import NGOReporter from "./pages/news/NGOReporter";
 import Media from "./pages/news/Media";
 import { LanguageProvider } from "./contexts/LanguageContext";
@@ -69,6 +70,7 @@ const App = () => (
             
             {/* News & Media Routes */}
             <Route path="/news/podcast" element={<Podcast />} />
+            <Route path="/news/podcast/:episode" element={<PodcastEpisode />} />
             <Route path="/news/podcast-library" element={<PodcastLibrary />} />
             <Route path="/news/ngo-reporter" element={<NGOReporter />} />
             <Route path="/news/media" element={<Media />} />
