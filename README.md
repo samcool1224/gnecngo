@@ -4,7 +4,7 @@ This repository powers the public web experience for the Global NGO Executive Co
 
 ## Key Features
 
-- **Story-driven landing experience** – Hero, featured programs, and testimonial sections use content from `src/locales/en.ts` to communicate impact with motion and imagery.
+- **Stor landing experience** – Hero, featured programs, and testimonial sections use content from `src/locales/en.ts` to communicate impact with motion and imagery.
 - **Information-rich routing** – React Router drives dedicated About, Services & Events, and News & Media sections so every initiative has a permanent home.
 - **Engagement funnels** – Contact, Donate, Login, and Create Podcast pages use shadcn-ui components for responsive, WCAG-friendly forms and CTAs.
 - **Supabase-powered auth** – `AuthProvider` exposes Supabase user/session state, enabling authenticated flows such as podcast management.
