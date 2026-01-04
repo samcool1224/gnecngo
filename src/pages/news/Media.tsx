@@ -39,14 +39,16 @@ export default function Media() {
       description: "Comprehensive video coverage of the 3rd GNEC Hackathon including opening ceremony, participant interviews, winner presentations, and closing ceremony.",
       date: "December 2024",
       thumbnail: "hackathon-2024",
-      featured: true
+      featured: true,
+      videoUrl: "https://www.youtube.com/watch?v=JvJbKSscch0"
     },
     {
       title: "UN Civil Society Conference 2024 Highlights",
-      type: "Photo Gallery",
+      type: "Video Collection",
       description: "Visual highlights from the annual UN Civil Society Conference featuring global NGO leaders, panel discussions, and networking sessions.",
       date: "August 2024",
-      thumbnail: "conference-2024"
+      thumbnail: "conference-2024",
+      videoUrl: "https://www.youtube.com/watch?v=2Ko-f62Afv0"
     },
     {
       title: "GNEC Board Meeting - Global Representation",
@@ -193,9 +195,11 @@ export default function Media() {
                         <Calendar className="h-4 w-4" />
                         <span>{media.date}</span>
                       </div>
-                      <Button variant="outline" size="sm">
-                        <ExternalLink className="h-4 w-4 mr-2" />
-                        View
+                      <Button variant="outline" size="sm" asChild>
+                        <a href={media.videoUrl} target="_blank" rel="noopener noreferrer">
+                          <ExternalLink className="h-4 w-4 mr-2" />
+                          View
+                        </a>
                       </Button>
                     </div>
                   </CardContent>

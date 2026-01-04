@@ -14,28 +14,28 @@ export default function NGOReporter() {
   const recentIssues = [
     {
       title: "NGO Reporter Vol 38",
-      date: "2024",
+      date: "2025",
       description: "Latest developments in NGO-UN partnerships, featuring updates from GNEC board activities and global civil society initiatives.",
       topics: ["Board Updates", "Partnership News", "Event Highlights"],
       url: "https://myemail.constantcontact.com/NGO-Reporter-Vol-38--1.html?soid=1118608394243&aid=rNkpqJuyR70"
     },
     {
       title: "NGO Reporter Vol 37",
-      date: "2024", 
+      date: "2025", 
       description: "Focus on digital advocacy strategies and emerging technologies for NGO communications and outreach.",
       topics: ["Digital Advocacy", "Tech Innovation", "Communication Tools"],
       url: "https://myemail.constantcontact.com/NGO-Reporter-Vol-38--1.html?soid=1118608394243&aid=yJdfRku5fno"
     },
     {
       title: "NGO Reporter Vol 36",
-      date: "2024",
+      date: "2025",
       description: "Special coverage of the UN Civil Society Conference and its impact on global NGO collaboration.",
       topics: ["Conference Coverage", "Global Collaboration", "Policy Updates"],
       url: "https://myemail.constantcontact.com/NGO-Reporter-Vol-36--1.html?soid=1118608394243&aid=SeDSa18HRdw"
     },
     {
       title: "NGO Reporter Vol 35",
-      date: "2024",
+      date: "2025",
       description: "Highlighting successful NGO campaigns and their contributions to Sustainable Development Goals achievement.",
       topics: ["Success Stories", "SDG Progress", "Campaign Analysis"],
       url: "https://myemail.constantcontact.com/NGO-Reporter-Vol-35--1.html?soid=1118608394243&aid=Rxt6iYz4Syk"

@@ -64,16 +64,7 @@ export default function UpcomingEvents() {
       participants: "200+ Expected",
       registration: "Open"
     },
-    {
-      title: "Regional SDGs Roundtable - Africa",
-      date: "April 8, 2025",
-      time: "10:00 AM - 3:00 PM CAT",
-      location: "Cape Town, South Africa",
-      type: "Roundtable",
-      description: "Regional discussion on Sustainable Development Goals implementation with focus on African NGO perspectives and challenges.",
-      participants: "150+ Expected",
-      registration: "Opening Soon"
-    },
+    /* Roundtable events removed as per request */
     {
       title: "GNEC Board Meeting - Q2 2025",
       date: "June 12, 2025",
