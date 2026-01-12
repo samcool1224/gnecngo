@@ -61,7 +61,7 @@ export default function Contact() {
     {
       icon: <Award className="h-6 w-6" />,
       title: "Communications",
-      description: "Media inquiries, NGO Reporter, and communications",
+      description: "Media inquiries, NGO/CSO Reporter, and communications",
       contact: "communications@gnec.ngo"
     },
     {
@@ -291,7 +291,7 @@ export default function Contact() {
                 <div className="text-center mb-8">
                   <h2 className="text-3xl font-bold mb-4">GNEC Headquarters</h2>
                   <p className="text-lg text-muted-foreground">
-                    Based in New York, serving the global NGO community
+                    Based in New York, serving the global NGO/CSO community
                   </p>
                 </div>
                 

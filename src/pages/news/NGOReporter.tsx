@@ -13,32 +13,74 @@ export default function NGOReporter() {
 
   const recentIssues = [
     {
+      title: "NGO Reporter Vol 47",
+      date: "2025",
+      description: "Latest developments in NGO/CSO-UN partnerships, featuring updates from GNEC board activities and global civil society initiatives.",
+      topics: ["Board Updates", "Partnership News", "Event Highlights"],
+      url: "https://conta.cc/42f3XHg"
+    },
+    {
+      title: "NGO Reporter Vol 46",
+      date: "2025",
+      description: "Focus on digital advocacy strategies and emerging technologies for NGO/CSO communications and outreach.",
+      topics: ["Digital Advocacy", "Tech Innovation", "Communication Tools"],
+      url: "https://conta.cc/42f3XHg"
+    },
+    {
+      title: "NGO Reporter Vol 45",
+      date: "2025",
+      description: "Special coverage of the UN Civil Society Conference and its impact on global NGO/CSO collaboration.",
+      topics: ["Conference Coverage", "Global Collaboration", "Policy Updates"],
+      url: "https://conta.cc/4fhKMBH"
+    },
+    {
+      title: "NGO Reporter Vol 44",
+      date: "2025",
+      description: "Highlighting successful NGO/CSO campaigns and their contributions to Sustainable Development Goals achievement.",
+      topics: ["Success Stories", "SDG Progress", "Campaign Analysis"],
+      url: "https://conta.cc/4kBCIxL"
+    },
+    {
+      title: "NGO Reporter Vol 43",
+      date: "2025",
+      description: "Exploring innovative approaches to global challenges through NGO/CSO and UN partnerships.",
+      topics: ["Innovation", "Partnerships", "Global Challenges"],
+      url: "https://conta.cc/4cWUPuH"
+    },
+    {
+      title: "NGO Reporter Vol 42",
+      date: "2025",
+      description: "Focus on youth engagement and leadership development in the NGO/CSO sector.",
+      topics: ["Youth Engagement", "Leadership", "Capacity Building"],
+      url: "https://conta.cc/4icmE3v"
+    },
+    {
+      title: "NGO Reporter Vol 41",
+      date: "2025",
+      description: "Special edition on climate action and environmental sustainability initiatives by NGOs/CSOs.",
+      topics: ["Climate Action", "Sustainability", "Environmental Policy"],
+      url: "https://conta.cc/3DkYLYQ"
+    },
+    {
+      title: "NGO Reporter Vol 40",
+      date: "2025",
+      description: "Humanitarian response and crisis management strategies from leading NGOs/CSOs.",
+      topics: ["Humanitarian Aid", "Crisis Response", "Disaster Relief"],
+      url: "https://conta.cc/42vXBEe"
+    },
+    {
+      title: "NGO Reporter Vol 39",
+      date: "2025",
+      description: "Advancing gender equality and women's empowerment through NGO/CSO initiatives.",
+      topics: ["Gender Equality", "Women's Empowerment", "Inclusion"],
+      url: "https://conta.cc/3BePPTP"
+    },
+    {
       title: "NGO Reporter Vol 38",
       date: "2025",
-      description: "Latest developments in NGO-UN partnerships, featuring updates from GNEC board activities and global civil society initiatives.",
-      topics: ["Board Updates", "Partnership News", "Event Highlights"],
+      description: "Strengthening global health partnerships and pandemic response through NGO/CSO collaboration.",
+      topics: ["Global Health", "Pandemic Response", "Healthcare Access"],
       url: "https://myemail.constantcontact.com/NGO-Reporter-Vol-38--1.html?soid=1118608394243&aid=rNkpqJuyR70"
-    },
-    {
-      title: "NGO Reporter Vol 37",
-      date: "2025", 
-      description: "Focus on digital advocacy strategies and emerging technologies for NGO communications and outreach.",
-      topics: ["Digital Advocacy", "Tech Innovation", "Communication Tools"],
-      url: "https://myemail.constantcontact.com/NGO-Reporter-Vol-38--1.html?soid=1118608394243&aid=yJdfRku5fno"
-    },
-    {
-      title: "NGO Reporter Vol 36",
-      date: "2025",
-      description: "Special coverage of the UN Civil Society Conference and its impact on global NGO collaboration.",
-      topics: ["Conference Coverage", "Global Collaboration", "Policy Updates"],
-      url: "https://myemail.constantcontact.com/NGO-Reporter-Vol-36--1.html?soid=1118608394243&aid=SeDSa18HRdw"
-    },
-    {
-      title: "NGO Reporter Vol 35",
-      date: "2025",
-      description: "Highlighting successful NGO campaigns and their contributions to Sustainable Development Goals achievement.",
-      topics: ["Success Stories", "SDG Progress", "Campaign Analysis"],
-      url: "https://myemail.constantcontact.com/NGO-Reporter-Vol-35--1.html?soid=1118608394243&aid=Rxt6iYz4Syk"
     }
   ];
 
