@@ -11,138 +11,69 @@ export default function PastEvents() {
     window.scrollTo(0, 0);
   }, []);
 
-  const pastEvents = [
-    {
-  title: "GNEC Annual Meeting",
-  date: "June 16, 2025",
-  time: "1:00-2:00 PM EST",
-  location: "Virtual (www.gnec.ngo)",
-  type: "Annual Meeting",
-  description: "The official annual gathering of the Global NGO Executive Committee (GNEC) to discuss organizational progress and committee initiatives.",
-  participants: "NGO Representatives and Stakeholders",
-  materials: ["Meeting Minutes", "Annual Report", "Website Resources"]
-},
-{
-  title: "GNEC Annual Retreat",
-  date: "August 12, 2025",
-  time: "10:30 AM - 3:00 PM EST",
-  location: "Virtual Event",
-  type: "Retreat",
-  description: "An intensive internal retreat for the Global NGO Executive Committee focused on strategic planning and organizational development.",
-  participants: "Executive Committee Members",
-  materials: ["Retreat Agenda", "Strategic Plan", "Working Documents"]
-},
-{
-  title: "GNEC Hackathon Winner's Circle",
-  date: "December 7, 2025",
-  time: "11:00 AM EST",
-  location: "Virtual Event",
-  type: "Networking",
-  description: "A special session to meet and engage with winners from previous GNEC Hackathons, showcasing their continued impact and innovative solutions.",
-  participants: "Hackathon Winners and Tech Innovators",
-  materials: ["Registration Link", "Winner Profiles", "Project Archives"]
-},
-{
-  title: "Building Awareness of Aging Issues Across the Life Continuum",
-  date: "December 9, 2025",
-  time: "10:00 AM - 11:00 AM EST",
-  location: "Virtual Event",
-  type: "Educational Dialogue",
-  description: "A joint program by the NGO Committee on Ageing/NY and GNEC exploring how intergenerational collaboration benefits all causes and fosters community action.",
-  participants: "UN Representatives and Civil Society Members",
-  materials: ["Registration Link", "Speaker Biographies", "Program Summary"]
-},
-{
-  title: "Annual Holiday Meet and Greet",
-  date: "December 17, 2025",
-  time: "11:00 AM EST",
-  location: "Virtual Event",
-  type: "Social/Networking",
-  description: "A year-end social gathering for the GNEC community to celebrate the year's achievements and facilitate networking among members.",
-  participants: "GNEC Community and Executive Committee",
-  materials: ["Event QR Code", "Holiday Program", "Networking Directory"]
-},
-    {title: "4th GNEC Hackathon Opening Ceremony",
-      date: "May 30, 2025",
-      time: "12:00 PM EST",
-      location: "Virtual Event",
-      type: "Hackathon",
-      description: "Grand finale of the 4th GNEC Hackathon showcasing innovative solutions from global participants. The event featured project presentations, judging, and awards ceremony.",
-      participants: "150+ Participants",
-      materials: ["Event Recording", "Project Showcase", "Winning Projects"]},
-    {
-      title: "4th GNEC Hackathon Closing Ceremony",
-      date: "May 30, 2025",
-      time: "12:00 PM EST",
-      location: "Virtual Event",
-      type: "Hackathon",
-      description: "Grand finale of the 4th GNEC Hackathon showcasing innovative solutions from global participants. The event featured project presentations, judging, and awards ceremony.",
-      participants: "150+ Participants",
-      materials: ["Event Recording", "Project Showcase", "Winning Projects"]
-    },
-    {
-      title: "Global Youth Summit on Climate Action",
-      date: "April 15-17, 2025",
-      time: "9:00 AM - 5:00 PM EST",
-      location: "UN Headquarters, New York",
-      type: "Summit",
-      description: "Empowering young leaders with knowledge and tools to drive climate action in their communities. The summit featured workshops, panel discussions, and networking sessions.",
-      participants: "300+ Youth Delegates",
-      materials: ["Summit Report", "Workshop Materials", "Action Toolkit"]
-    },
-    {
-      title: "Digital Advocacy Masterclass Series",
-      date: "March 5-7, 2025",
-      time: "2:00 PM - 4:00 PM EST",
-      location: "Online",
-      type: "Workshop",
-      description: "A three-part masterclass series on advanced digital advocacy strategies for NGOs/CSOs, covering social media campaigns, digital storytelling, and online engagement.",
-      participants: "120+ NGO Representatives",
-      materials: ["Session Recordings", "Presentation Slides", "Resource Guide"]
-    },
-    {
-      title: "SDG Innovation Challenge 2025",
-      date: "February 20-22, 2025",
-      time: "Full Day Event",
-      location: "Hybrid - Geneva & Virtual",
-      type: "Hackathon",
-      description: "A 48-hour innovation challenge bringing together technologists and development practitioners to create tech solutions for the Sustainable Development Goals.",
-      participants: "200+ Innovators",
-      materials: ["Challenge Briefs", "Winning Solutions", "Event Photos"]
-    },
-    {
-      title: "Women in Leadership Forum",
-      date: "January 25, 2025",
-      time: "10:00 AM - 3:00 PM EST",
-      location: "UN Women HQ, New York",
-      type: "Forum",
-      description: "Celebrating and empowering women leaders in international development. The forum featured keynote speeches, panel discussions, and leadership workshops.",
-      participants: "180+ Attendees",
-      materials: ["Event Summary", "Speaker Presentations", "Networking Directory"]
-    },
-    {
-      title: "UN Civil Society Conference 2024",
-      date: "August 26-28, 2024",
-      time: "Full Day Event",
-      location: "UN Headquarters, New York",
-      type: "Conference",
-      description: "Annual flagship conference facilitating global NGO/CSO collaboration with focus on climate action, human rights, and sustainable development.",
-      participants: "1,200+ Global Attendees",
-      materials: ["Conference Proceedings", "Session Recordings", "Networking Directory"]
-    },
-    {
-      title: "Communication Workshop - Digital Advocacy",
-      date: "June 15, 2024",
-      time: "2:00 PM - 4:00 PM EST",
-      location: "Hybrid - UN HQ & Virtual",
-      type: "Workshop", 
-      description: "Capacity building workshop on digital advocacy strategies, social media engagement, and online campaign development for NGOs/CSOs.",
-      participants: "200+ Participants",
-      materials: ["Workshop Slides", "Resource Toolkit", "Best Practices Guide"]
-    },
-    
-  ];
-
+// Past events in reverse chronological order (newest to oldest)
+const pastEvents = [
+  {
+    title: "Global Youth Summit on Climate Action",
+    date: "April 15-17, 2025",
+    time: "9:00 AM - 5:00 PM EST",
+    location: "UN Headquarters, New York",
+    type: "Summit",
+    description: "Empowering young leaders with knowledge and tools to drive climate action in their communities. The summit featured workshops, panel discussions, and networking sessions.",
+    participants: "300+ Youth Delegates",
+    materials: ["Summit Report", "Workshop Materials", "Action Toolkit"]
+  },
+  {
+    title: "Digital Advocacy Masterclass Series",
+    date: "March 5-7, 2025",
+    time: "2:00 PM - 4:00 PM EST",
+    location: "Online",
+    type: "Workshop",
+    description: "A three-part masterclass series on advanced digital advocacy strategies for NGOs/CSOs, covering social media campaigns, digital storytelling, and online engagement.",
+    participants: "120+ NGO Representatives",
+    materials: ["Session Recordings", "Presentation Slides", "Resource Guide"]
+  },
+  {
+    title: "SDG Innovation Challenge 2025",
+    date: "February 20-22, 2025",
+    time: "Full Day Event",
+    location: "Hybrid - Geneva & Virtual",
+    type: "Hackathon",
+    description: "A 48-hour innovation challenge bringing together technologists and development practitioners to create tech solutions for the Sustainable Development Goals.",
+    participants: "200+ Innovators",
+    materials: ["Challenge Briefs", "Winning Solutions", "Event Photos"]
+  },
+  {
+    title: "Women in Leadership Forum",
+    date: "January 25, 2025",
+    time: "10:00 AM - 3:00 PM EST",
+    location: "UN Women HQ, New York",
+    type: "Forum",
+    description: "Celebrating and empowering women leaders in international development. The forum featured keynote speeches, panel discussions, and leadership workshops.",
+    participants: "180+ Attendees",
+    materials: ["Event Summary", "Speaker Presentations", "Networking Directory"]
+  },
+  {
+    title: "UN Civil Society Conference 2024",
+    date: "August 26-28, 2024",
+    time: "Full Day Event",
+    location: "UN Headquarters, New York",
+    type: "Conference",
+    description: "Annual flagship conference facilitating global NGO/CSO collaboration with focus on climate action, human rights, and sustainable development.",
+    participants: "1,200+ Global Attendees",
+    materials: ["Conference Proceedings", "Session Recordings", "Networking Directory"]
+  },
+  {
+    title: "Communication Workshop - Digital Advocacy",
+    date: "June 15, 2024",
+    time: "2:00 PM - 4:00 PM EST",
+    location: "Hybrid - UN HQ & Virtual",
+    type: "Workshop", 
+    description: "Capacity building workshop on digital advocacy strategies, social media engagement, and online campaign development for NGOs/CSOs.",
+    participants: "200+ Participants",
+    materials: ["Workshop Slides", "Resource Toolkit", "Best Practices Guide"]
+  }
+];
   const getTypeColor = (type: string) => {
     switch (type) {
       case "Conference": return "bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200";

@@ -36,25 +36,52 @@ export default function Hackathon() {
 
   const pastWinners = [
     {
+      year: "2025",
+      title: "Farm2Table",
+      team: "Farm2Table Team",
+      description: "A web platform that directly connects local food producers with consumers, featuring a 'Future Harvest' marketplace that allows farmers to pre-sell crops, reducing waste and ensuring income stability. The platform helps achieve SDG 1 (No Poverty) and SDG 2 (Zero Hunger) by creating an efficient and transparent marketplace for fresh produce.",
+      sdg: "No Poverty (SDG 1) & Zero Hunger (SDG 2)",
+      featured: true
+    },
+    {
+      year: "2025",
+      title: "Monsoon Mitr – AI for Sustainable Farming",
+      team: "Monsoon Mitr Team",
+      description: "An AI-powered farming assistant that predicts weather and rainfall, advises on irrigation, and works in local languages. The solution addresses the critical challenge of water management in agriculture, helping farmers in regions dependent on monsoon rains to optimize water usage and improve crop yields.",
+      sdg: "Climate Action (SDG 13) & Life on Land (SDG 15)",
+      featured: true
+    },
+    {
+      year: "2025",
+      title: "Nourish Together",
+      team: "Nourish Together Team",
+      description: "A donor-facing platform featuring a charity recommendation engine, food bank location map, and donation tracking dashboard. The solution enhances transparency in charitable giving and helps connect donors with food banks and other organizations addressing food insecurity.",
+      sdg: "Zero Hunger (SDG 2) & Reduced Inequalities (SDG 10)",
+      featured: true
+    },
+    {
       year: "2024",
       title: "EcoTrack: Carbon Footprint Monitor",
       team: "GreenTech Innovators",
       description: "AI-powered platform helping organizations track and reduce their carbon footprint through real-time monitoring and actionable insights.",
-      sdg: "Climate Action (SDG 13)"
+      sdg: "Climate Action (SDG 13)",
+      featured: false
     },
     {
       year: "2024", 
       title: "EduConnect: Remote Learning Bridge",
       team: "Digital Education Alliance",
       description: "Low-bandwidth solution connecting rural students to quality education resources and virtual classrooms.",
-      sdg: "Quality Education (SDG 4)"
+      sdg: "Quality Education (SDG 4)",
+      featured: false
     },
     {
       year: "2023",
       title: "WaterWise: Smart Water Management",
       team: "AquaTech Solutions",
       description: "IoT-based system for monitoring water quality and optimizing distribution in underserved communities.",
-      sdg: "Clean Water & Sanitation (SDG 6)"
+      sdg: "Clean Water & Sanitation (SDG 6)",
+      featured: false
     }
   ];
 

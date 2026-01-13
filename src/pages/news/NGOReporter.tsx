@@ -17,7 +17,7 @@ export default function NGOReporter() {
       date: "2025",
       description: "Latest developments in NGO/CSO-UN partnerships, featuring updates from GNEC board activities and global civil society initiatives.",
       topics: ["Board Updates", "Partnership News", "Event Highlights"],
-      url: "https://conta.cc/42f3XHg"
+      url: "https://conta.cc/47A7zW7"
     },
     {
       title: "NGO Reporter Vol 46",

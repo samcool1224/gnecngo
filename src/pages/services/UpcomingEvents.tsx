@@ -11,7 +11,49 @@ export default function UpcomingEvents() {
     window.scrollTo(0, 0);
   }, []);
 
+  // Upcoming events in reverse chronological order (newest to oldest)
   const upcomingEvents = [
+    {
+      title: "Youth Leadership Summit",
+      date: "July 20-22, 2025",
+      time: "Full Day Event",
+      location: "Geneva, Switzerland",
+      type: "Summit",
+      description: "Empowering young leaders in civil society to engage effectively with UN processes and advance youth-led initiatives.",
+      participants: "300+ Expected",
+      registration: "Opening Soon"
+    },
+    {
+      title: "GNEC Board Meeting - Q2 2025",
+      date: "June 12, 2025",
+      time: "11:00 AM - 4:00 PM EST",
+      location: "UN Headquarters, New York",
+      type: "Board Meeting",
+      description: "Quarterly board meeting to discuss strategic initiatives, review subcommittee reports, and plan upcoming activities.",
+      participants: "Board Members",
+      registration: "By Invitation"
+    },
+    {
+      title: "2025 UN Civil Society Conference",
+      date: "May 15-17, 2025",
+      time: "9:00 AM - 6:00 PM EST",
+      location: "UN Headquarters, New York",
+      type: "Conference",
+      description: "Annual flagship event facilitating global NGO/CSO collaboration and promoting understanding of UN's SDG efforts. Join civil society organizations from around the world.",
+      participants: "1,500+ Expected",
+      registration: "Open",
+      featured: false
+    },
+    {
+      title: "Communication Workshop Series - Spring 2025",
+      date: "March 10, 2025",
+      time: "2:00 PM - 4:00 PM EST",
+      location: "Virtual & UN Headquarters",
+      type: "Workshop",
+      description: "Monthly workshop designed to enhance NGO/CSO knowledge of UN operations and partnerships. Focus on effective communication strategies.",
+      participants: "200+ Expected",
+      registration: "Open"
+    },
     {
       title: "GNEC Holiday Meet and Greet",
       date: "December 19, 2024",
@@ -39,51 +81,9 @@ export default function UpcomingEvents() {
       time: "12:00 PM - 1:00 PM",
       location: "Virtual Event",
       type: "Hackathon",
-      description: "",
+      description: "Kickoff event for the 3rd GNEC Hackathon, introducing participants, challenges, and schedule.",
       participants: "Open to All",
       registration: "Open"
-    },
-    {
-      title: "2025 UN Civil Society Conference",
-      date: "May 15-17, 2025",
-      time: "9:00 AM - 6:00 PM EST",
-      location: "UN Headquarters, New York",
-      type: "Conference",
-      description: "Annual flagship event facilitating global NGO/CSO collaboration and promoting understanding of UN's SDG efforts. Join civil society organizations from around the world.",
-      participants: "1,500+ Expected",
-      registration: "Open",
-      featured: false
-    },
-    {
-      title: "Communication Workshop Series - Spring 2025",
-      date: "March 10, 2025",
-      time: "2:00 PM - 4:00 PM EST",
-      location: "Virtual & UN Headquarters",
-      type: "Workshop",
-      description: "Monthly workshop designed to enhance NGO/CSO knowledge of UN operations and partnerships. Focus on effective communication strategies.",
-      participants: "200+ Expected",
-      registration: "Open"
-    },
-    /* Roundtable events removed as per request */
-    {
-      title: "GNEC Board Meeting - Q2 2025",
-      date: "June 12, 2025",
-      time: "11:00 AM - 4:00 PM EST",
-      location: "UN Headquarters, New York",
-      type: "Board Meeting",
-      description: "Quarterly board meeting to discuss strategic initiatives, review subcommittee reports, and plan upcoming activities.",
-      participants: "Board Members",
-      registration: "By Invitation"
-    },
-    {
-      title: "Youth Leadership Summit",
-      date: "July 20-22, 2025",
-      time: "Full Day Event",
-      location: "Geneva, Switzerland",
-      type: "Summit",
-      description: "Empowering young leaders in civil society to engage effectively with UN processes and advance youth-led initiatives.",
-      participants: "300+ Expected",
-      registration: "Opening Soon"
     }
   ];
 
