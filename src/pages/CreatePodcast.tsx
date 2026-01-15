@@ -88,7 +88,6 @@ export default function CreatePodcast() {
           features,
           tags: tagsArray,
           audio_file_path: publicUrl,
-          publication_date: new Date().toISOString().split('T')[0],
           category,
           created_by: user.id,
           image_file_path: imagePublicUrl
