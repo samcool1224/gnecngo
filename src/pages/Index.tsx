@@ -27,7 +27,7 @@ const featuredPrograms: ProgramProps[] = [
     id: "1",
     name: "UN Civil Society Conference",
     description: "The UN Civil Society Conference unites global NGOs/CSOs to drive collaboration and accelerate progress on the SDGs.",
-    year: 2024,
+    year: 2025,
     participants: 1500,
     duration: "3 days",
     image: "/homepage/civilsociety.jpg",
@@ -49,7 +49,7 @@ const featuredPrograms: ProgramProps[] = [
     id: "3", 
     name: "GNEC Hackathon",
     description: "The GNEC Hackathon is your calling to create a real impact. Collaborate, create, and compete in an online competition centered around the United Nations Sustainable Development Goals.",
-    year: 2023,
+    year: 2025,
     participants: 500,
     duration: "48 hours",
     image: "/homepage/hackathonlogo.png",
@@ -284,10 +284,6 @@ export default function Index() {
                         <div className="flex items-center">
                           <Users className="h-4 w-4 mr-1" />
                           {program.participants} participants
-                        </div>
-                        <div className="flex items-center">
-                          <Calendar className="h-4 w-4 mr-1" />
-                          {program.duration}
                         </div>
                       </div>
                       

@@ -127,8 +127,9 @@ export default function Navbar() {
       </nav>
 
       {/* Mobile Menu */}
-      <div className={cn("fixed inset-0 z-40 bg-white/80 backdrop-blur-sm md:hidden transition-opacity duration-300", mobileMenuOpen ? "opacity-100" : "opacity-0 pointer-events-none")}>
-        <div className={cn("fixed inset-y-0 right-0 w-3/4 max-w-sm bg-white shadow-xl p-6 transition-transform duration-300 ease-in-out border-l border-brand-light-blue-gray", mobileMenuOpen ? "translate-x-0" : "translate-x-full")}>
+      <div className={cn("fixed inset-0 z-40 md:hidden transition-opacity duration-300", mobileMenuOpen ? "opacity-100" : "opacity-0 pointer-events-none")}>
+        <div className="absolute inset-0 bg-black/40" aria-hidden="true" />
+        <div className={cn("fixed inset-y-0 right-0 w-3/4 max-w-sm bg-white shadow-2xl p-6 transition-transform duration-300 ease-in-out border-l border-brand-light-blue-gray z-50", mobileMenuOpen ? "translate-x-0" : "translate-x-full")}>
           <div className="flex flex-col h-full justify-between">
             <div>
               <div className="flex justify-end mb-8">

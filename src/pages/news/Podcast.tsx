@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
-import { Mic, ExternalLink, Award, Users, Search } from "lucide-react";
+import { Mic, ExternalLink, Award, Users, Search, LogIn } from "lucide-react";
 import { supabase } from "@/lib/supabase";
 
 interface SupabaseEpisode {
@@ -156,6 +157,12 @@ export default function Podcast() {
               Featuring one amazing NGO per episode, showcasing critical social good work toward SDG achievement. Hosted by Emmy-winning broadcaster Adriane Berg.
             </p>
             <div className="flex flex-wrap items-center justify-center gap-4 mb-8">
+              <Button asChild className="bg-brand-green text-white hover:bg-brand-blue transition-colors rounded-full px-6 py-2.5 font-medium">
+                <Link to="/login">
+                  <LogIn className="h-4 w-4 mr-2" />
+                  Login
+                </Link>
+              </Button>
               <span className="text-sm font-medium text-muted-foreground">Listen on:</span>
               {listeningPlatforms.map((platform, index) => (
                 <Button

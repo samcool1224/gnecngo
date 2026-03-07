@@ -66,6 +66,42 @@ export default function Media() {
     }
   ];
 
+  const archivedMedia = [
+    {
+      title: "UN DPI/NGO Conference Archives",
+      type: "Video & Photo Archive",
+      description: "Historical coverage of UN DPI/NGO Conferences (now UN Civil Society Conference) from previous years, including plenaries, workshops, and side events.",
+      date: "2019–2023",
+      videoUrl: "https://www.youtube.com/@GlobalNGOExecutiveCommittee"
+    },
+    {
+      title: "GNEC Communication Workshops – Past Sessions",
+      type: "Video Archive",
+      description: "Recordings of past communication workshops on UN advocacy, media engagement, and NGO capacity building.",
+      date: "Ongoing archive",
+      videoUrl: "https://www.youtube.com/@GlobalNGOExecutiveCommittee"
+    },
+    {
+      title: "GNEC Hackathon – Past Editions",
+      type: "Video & Photo Archive",
+      description: "Highlights and winner presentations from earlier GNEC Hackathon editions, including project demos and award ceremonies.",
+      date: "2022–2024",
+      videoUrl: "https://gnec.ngo/hackathon/"
+    },
+    {
+      title: "Board Retreats & Annual Meetings",
+      type: "Photo Collection",
+      description: "Photos from GNEC board retreats, annual meetings, and leadership gatherings documenting governance and strategic planning.",
+      date: "Archive"
+    },
+    {
+      title: "NGO Reporter – Covers & Highlights",
+      type: "Publication Archive",
+      description: "Selected covers and content highlights from the NGO Reporter publication, showcasing civil society stories and UN engagement.",
+      date: "Archive"
+    }
+  ];
+
   const socialMediaPlatforms = [
     {
       platform: "Facebook",
@@ -201,6 +237,53 @@ export default function Media() {
                           View
                         </a>
                       </Button>
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Archived Media (from previous website) */}
+      <section className="py-16">
+        <div className="container">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold mb-4">Archived Media</h2>
+              <p className="text-lg text-muted-foreground">
+                Additional media content from previous GNEC events and the legacy website. Contact communications@gnec.ngo for access to full archives.
+              </p>
+            </div>
+            
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {archivedMedia.map((media, index) => (
+                <Card key={`archived-${index}`} className="p-6">
+                  <CardContent className="p-0">
+                    <div className="aspect-video bg-muted rounded-lg mb-4 flex items-center justify-center">
+                      <div className="text-center">
+                        <Video className="h-12 w-12 text-muted-foreground mx-auto mb-2" />
+                        <p className="text-sm text-muted-foreground">Archive</p>
+                      </div>
+                    </div>
+                    <Badge className="mb-2 bg-gray-100 text-gray-800 dark:bg-gray-800 dark:text-gray-200">
+                      {media.type}
+                    </Badge>
+                    <h3 className="text-lg font-bold mb-2">{media.title}</h3>
+                    <p className="text-sm text-muted-foreground mb-4 leading-relaxed">
+                      {media.description}
+                    </p>
+                    <div className="flex items-center justify-between">
+                      <span className="text-xs text-muted-foreground">{media.date}</span>
+                      {media.videoUrl && (
+                        <Button variant="outline" size="sm" asChild>
+                          <a href={media.videoUrl} target="_blank" rel="noopener noreferrer">
+                            <ExternalLink className="h-4 w-4 mr-2" />
+                            View
+                          </a>
+                        </Button>
+                      )}
                     </div>
                   </CardContent>
                 </Card>

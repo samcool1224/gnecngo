@@ -41,7 +41,9 @@ export default function Hackathon() {
       team: "Farm2Table Team",
       description: "A web platform that directly connects local food producers with consumers, featuring a 'Future Harvest' marketplace that allows farmers to pre-sell crops, reducing waste and ensuring income stability. The platform helps achieve SDG 1 (No Poverty) and SDG 2 (Zero Hunger) by creating an efficient and transparent marketplace for fresh produce.",
       sdg: "No Poverty (SDG 1) & Zero Hunger (SDG 2)",
-      featured: true
+      featured: true,
+      projectUrl: "https://gnec.ngo/hackathon/",
+      teamUrl: "https://gnec.ngo/hackathon/"
     },
     {
       year: "2025",
@@ -49,7 +51,9 @@ export default function Hackathon() {
       team: "Monsoon Mitr Team",
       description: "An AI-powered farming assistant that predicts weather and rainfall, advises on irrigation, and works in local languages. The solution addresses the critical challenge of water management in agriculture, helping farmers in regions dependent on monsoon rains to optimize water usage and improve crop yields.",
       sdg: "Climate Action (SDG 13) & Life on Land (SDG 15)",
-      featured: true
+      featured: true,
+      projectUrl: "https://gnec.ngo/hackathon/",
+      teamUrl: "https://gnec.ngo/hackathon/"
     },
     {
       year: "2025",
@@ -57,7 +61,9 @@ export default function Hackathon() {
       team: "Nourish Together Team",
       description: "A donor-facing platform featuring a charity recommendation engine, food bank location map, and donation tracking dashboard. The solution enhances transparency in charitable giving and helps connect donors with food banks and other organizations addressing food insecurity.",
       sdg: "Zero Hunger (SDG 2) & Reduced Inequalities (SDG 10)",
-      featured: true
+      featured: true,
+      projectUrl: "https://gnec.ngo/hackathon/",
+      teamUrl: "https://gnec.ngo/hackathon/"
     },
     {
       year: "2024",
@@ -65,7 +71,9 @@ export default function Hackathon() {
       team: "GreenTech Innovators",
       description: "AI-powered platform helping organizations track and reduce their carbon footprint through real-time monitoring and actionable insights.",
       sdg: "Climate Action (SDG 13)",
-      featured: false
+      featured: false,
+      projectUrl: "https://gnec.ngo/hackathon/",
+      teamUrl: "https://gnec.ngo/hackathon/"
     },
     {
       year: "2024", 
@@ -73,15 +81,19 @@ export default function Hackathon() {
       team: "Digital Education Alliance",
       description: "Low-bandwidth solution connecting rural students to quality education resources and virtual classrooms.",
       sdg: "Quality Education (SDG 4)",
-      featured: false
+      featured: false,
+      projectUrl: "https://gnec.ngo/hackathon/",
+      teamUrl: "https://gnec.ngo/hackathon/"
     },
     {
-      year: "2023",
+      year: "2024",
       title: "WaterWise: Smart Water Management",
       team: "AquaTech Solutions",
       description: "IoT-based system for monitoring water quality and optimizing distribution in underserved communities.",
       sdg: "Clean Water & Sanitation (SDG 6)",
-      featured: false
+      featured: false,
+      projectUrl: "https://gnec.ngo/hackathon/",
+      teamUrl: "https://gnec.ngo/hackathon/"
     }
   ];
 
@@ -162,7 +174,7 @@ export default function Hackathon() {
 
   const coordinators: { role: string; name: string; bio: string }[] = [
     {
-      role: "GLOBAL COORDINATOR & 2024 GNEC HACKATHON LEAD",
+      role: "GLOBAL COORDINATOR & 2025 GNEC HACKATHON LEAD",
       name: "Ruoyu Xu",
       bio: "Ruoyu is passionate about algorithmic programming and wishes to inspire others to explore innovative ways of using technology."
     },
@@ -244,11 +256,17 @@ export default function Hackathon() {
                   </div>
                   <div>
                     <h2 className="text-3xl font-bold mb-4">Innovation for Global Impact</h2>
+                    <h3 className="text-xl font-semibold mb-2">What is the GNEC Hackathon?</h3>
                     <p className="text-lg leading-relaxed mb-4">
                       The GNEC Hackathon is an annual technology solutions contest that challenges participants to develop innovative applications, platforms, and tools addressing the United Nations Sustainable Development Goals.
                     </p>
+                    <h3 className="text-xl font-semibold mb-2">Who Participates?</h3>
+                    <p className="text-lg leading-relaxed mb-4">
+                      This global event brings together developers, designers, entrepreneurs, and social innovators to collaborate on solutions that can make a real difference in communities worldwide.
+                    </p>
+                    <h3 className="text-xl font-semibold mb-2">Our Focus</h3>
                     <p className="text-lg leading-relaxed">
-                      This global event brings together developers, designers, entrepreneurs, and social innovators to collaborate on solutions that can make a real difference in communities worldwide. With a focus on innovation-driven approaches to SDG challenges, the hackathon serves as a catalyst for technological solutions to global problems.
+                      With a focus on innovation-driven approaches to SDG challenges, the hackathon serves as a catalyst for technological solutions to global problems.
                     </p>
                   </div>
                 </div>
@@ -359,11 +377,15 @@ export default function Hackathon() {
                       </div>
                       
                       <div className="lg:w-48 flex flex-col gap-3">
-                        <Button variant="outline" className="w-full">
-                          View Project
+                        <Button variant="outline" className="w-full" asChild>
+                          <a href={(winner as { projectUrl?: string }).projectUrl || "https://gnec.ngo/hackathon/"} target="_blank" rel="noopener noreferrer">
+                            View Project
+                          </a>
                         </Button>
-                        <Button variant="outline" className="w-full">
-                          Team Profile
+                        <Button variant="outline" className="w-full" asChild>
+                          <a href={(winner as { teamUrl?: string }).teamUrl || "https://gnec.ngo/hackathon/"} target="_blank" rel="noopener noreferrer">
+                            Team Profile
+                          </a>
                         </Button>
                       </div>
                     </div>

@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -222,10 +223,10 @@ export default function AboutUNDGC() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" asChild>
-                <a href="mailto:undgccso@un.org">Start Application</a>
+                <a href="https://www.un.org/en/civil-society/page/application" target="_blank" rel="noopener noreferrer">Start Application</a>
               </Button>
               <Button size="lg" variant="outline" asChild>
-                <a href="/contact">Contact GNEC for Guidance</a>
+                <Link to="/contact">Contact GNEC for Guidance</Link>
               </Button>
             </div>
           </div>

@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { MapPin, Phone, Mail, Clock, Send, Check, Globe, Users, Award } from "lucide-react";
+import { MapPin, Phone, Mail, Send, Check, Globe, Users, Award } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -308,13 +308,12 @@ export default function Contact() {
                   
                   <div>
                     <div className="w-12 h-12 bg-brand-blue/10 rounded-full flex items-center justify-center mx-auto mb-3">
-                      <Clock className="h-6 w-6 text-brand-blue" />
+                      <Mail className="h-6 w-6 text-brand-blue" />
                     </div>
-                    <h3 className="font-bold mb-2">Office Hours</h3>
-                    <p className="text-sm text-muted-foreground">
-                      Meetings: By appointment<br />
-                      Inquiries: 24/7 online
-                    </p>
+                    <h3 className="font-bold mb-2">Email</h3>
+                    <a href="mailto:info@gnec.ngo" className="text-sm text-muted-foreground hover:text-brand-green transition-colors">
+                      info@gnec.ngo
+                    </a>
                   </div>
                   
                   <div>

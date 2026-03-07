@@ -54,7 +54,8 @@ export default function Elections() {
   const votingEligibility = [
     "Each UNDGC-affiliated organization gets one ballot",
     "Must be listed on the UN DGC official list of NGOs/CSOs at the time of the election",
-    "Organizations in good standing with UNDGC are eligible to vote"
+    "Organizations in good standing with UNDGC are eligible to vote",
+    "Ballots will be distributed in Spring 2026"
   ];
 
   return (
@@ -208,11 +209,11 @@ export default function Elections() {
                     <Users className="h-6 w-6 text-primary" />
                     <h3 className="text-xl font-bold">Who Can Vote?</h3>
                   </div>
-                  <ul className="space-y-2 text-sm">
+                  <ul className="space-y-2 text-base text-muted-foreground leading-relaxed">
                     {votingEligibility.map((item, index) => (
                       <li key={index} className="flex items-start gap-2">
                         <span className="text-primary">•</span>
-                        <span className="text-muted-foreground">{item}</span>
+                        <span>{item}</span>
                       </li>
                     ))}
                   </ul>
@@ -225,12 +226,24 @@ export default function Elections() {
                     <Mail className="h-6 w-6 text-primary" />
                     <h3 className="text-xl font-bold">How to Vote</h3>
                   </div>
-                  <div className="space-y-3 text-sm text-muted-foreground">
-                    <p>Ballots are distributed during the voting period in April.</p>
-                    <p>If you do not receive a ballot and your organization meets the requirements outlined in our WHO CAN VOTE section, please use the contact email below.</p>
-                    <p>Each organization receives one ballot regardless of size or membership.</p>
-                    <p>Voting is confidential and results are announced at the June board meeting.</p>
-                  </div>
+                  <ul className="space-y-2 text-base text-muted-foreground leading-relaxed">
+                    <li className="flex items-start gap-2">
+                      <span className="text-primary">•</span>
+                      <span>Ballots are distributed during the voting period in April.</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-primary">•</span>
+                      <span>If you do not receive a ballot and your organization meets the requirements outlined in our Who Can Vote section, please use the contact email below.</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-primary">•</span>
+                      <span>Each organization receives one ballot regardless of size or membership.</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-primary">•</span>
+                      <span>Voting is confidential and results are announced at the June board meeting.</span>
+                    </li>
+                  </ul>
                 </CardContent>
               </Card>
             </div>

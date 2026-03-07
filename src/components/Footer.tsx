@@ -36,11 +36,11 @@ export default function Footer() {
             <ul className="space-y-2">
               {[
                 { name: t.nav.home, path: "/" },
-                { name: t.nav.apartments, path: "/apartments" },
-                { name: t.nav.amenities, path: "/amenities" },
-                { name: t.nav.gallery, path: "/gallery" },
+                { name: t.nav.apartments, path: "/services/upcoming-events" },
+                { name: t.nav.amenities, path: "/about/who-we-are" },
+                { name: t.nav.gallery, path: "/news/podcast" },
                 { name: t.nav.contact, path: "/contact" },
-                { name: t.nav.bookNow, path: "/booking" },
+                { name: t.nav.bookNow, path: "/donate" },
               ].map((link) => (
                 <li key={link.name}>
                   <Link 
@@ -59,7 +59,7 @@ export default function Footer() {
             <ul className="space-y-3">
               <li className="flex items-center"> 
                 <Mail className="w-5 h-5 mr-2 text-brand-green" />
-                <span className="text-white/70">info@gnec.org</span>
+                <a href="mailto:info@gnec.ngo" className="text-white/70 hover:text-brand-green transition-colors">info@gnec.ngo</a>
               </li>
             </ul>
           </div>

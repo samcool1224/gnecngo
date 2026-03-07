@@ -1,9 +1,20 @@
 import { useEffect } from "react";
+import type React from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+
+function nameToLines(name: string, wordsPerLine = 2): React.ReactNode {
+  const parts = name.trim().split(/\s+/);
+  const lines: React.ReactNode[] = [];
+  for (let i = 0; i < parts.length; i += wordsPerLine) {
+    const line = parts.slice(i, i + wordsPerLine).join(" ");
+    lines.push(line);
+  }
+  return lines.length <= 1 ? name : lines.map((line, i) => <span key={i} className="block">{line}</span>);
+}
 
 export default function WhoWeAre() {
   useEffect(() => {
@@ -20,10 +31,10 @@ export default function WhoWeAre() {
     },
     {
       name: "Ms. Ediola Pashollari", 
-      title: "Co-President",
+      title: "Co-President and WAY Secretary General",
       organization: "World Assembly of Youth (WAY)",
       image: "/officers/ediolapashollari.png",
-      description: "Ms. Ediola Pashollari, an Albanian leader in global youth development, is GNEC’s Co- President and WAY Secretary General, with multiple advanced degrees and extensive international experience in youth advocacy, programmes and policy."
+      description: "Ms. Ediola Pashollari, an Albanian leader in global youth development, is GNEC’s Co-President and WAY Secretary General, with multiple advanced degrees and extensive international experience in youth advocacy, programmes and policy."
     },
     {
       name: "Guruji H.H. Dileepkumar Thankappan",
@@ -231,7 +242,7 @@ export default function WhoWeAre() {
                       <div className="aspect-[3/4] w-full overflow-hidden rounded-md mb-4">
                         <img src={(member as any).image} alt={member.name} className="w-full h-full object-cover object-top" />
                       </div>
-                      <h3 className="text-xl font-bold mb-2">{member.name}</h3>
+                      <h3 className="text-xl font-bold mb-2">{nameToLines(member.name)}</h3>
                       <Badge variant="secondary" className="mb-2">{member.title}</Badge>
                       <p className="text-sm font-medium text-primary mb-3">{member.organization}</p>
                     </div>
@@ -301,10 +312,10 @@ export default function WhoWeAre() {
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
               {advisoryBoard.map((person, index) => (
-                <Card key={index} className="h-full">
+                <Card key={index} className={`h-full ${(person.name === "James M. Black II" || person.name === "Dr. Sandra Timmerman") ? "flex flex-col items-center text-center" : ""}`}>
                   <CardContent className="p-6">
-                    <h3 className="text-xl font-bold mb-2">{person.name}</h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed">{person.bio}</p>
+                    <h3 className={`text-xl font-bold mb-2 ${(person.name === "James M. Black II" || person.name === "Dr. Sandra Timmerman") ? "text-center" : ""}`}>{nameToLines(person.name)}</h3>
+                    <p className={`text-sm text-muted-foreground leading-relaxed ${(person.name === "James M. Black II" || person.name === "Dr. Sandra Timmerman") ? "text-center" : ""}`}>{person.bio}</p>
                   </CardContent>
                 </Card>
               ))}
