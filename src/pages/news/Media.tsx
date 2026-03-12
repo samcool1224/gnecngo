@@ -86,7 +86,7 @@ export default function Media() {
       type: "Video & Photo Archive",
       description: "Highlights and winner presentations from earlier GNEC Hackathon editions, including project demos and award ceremonies.",
       date: "2022–2024",
-      videoUrl: "https://gnec.ngo/hackathon/"
+      videoUrl: "https://gnecngo.vercel.app/hackathon/"
     },
     {
       title: "Board Retreats & Annual Meetings",

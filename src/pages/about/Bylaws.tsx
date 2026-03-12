@@ -82,7 +82,7 @@ export default function Bylaws() {
                   <Button 
                     className="w-full" 
                     variant="outline"
-                    onClick={() => window.open('https://gnec.ngo/wp-content/uploads/2021/03/FINAL-Bylaws-June-2020.pdf', '_blank')}
+                    onClick={() => window.open('https://gnecngo.vercel.app/wp-content/uploads/2021/03/FINAL-Bylaws-June-2020.pdf', '_blank')}
                   >
                     <ExternalLink className="h-4 w-4 mr-2" />
                     View By-Laws (PDF)

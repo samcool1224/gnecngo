@@ -42,8 +42,8 @@ export default function Hackathon() {
       description: "A web platform that directly connects local food producers with consumers, featuring a 'Future Harvest' marketplace that allows farmers to pre-sell crops, reducing waste and ensuring income stability. The platform helps achieve SDG 1 (No Poverty) and SDG 2 (Zero Hunger) by creating an efficient and transparent marketplace for fresh produce.",
       sdg: "No Poverty (SDG 1) & Zero Hunger (SDG 2)",
       featured: true,
-      projectUrl: "https://gnec.ngo/hackathon/",
-      teamUrl: "https://gnec.ngo/hackathon/"
+      projectUrl: "https://gnecngo.vercel.app/hackathon/",
+      teamUrl: "https://gnecngo.vercel.app/hackathon/"
     },
     {
       year: "2025",
@@ -52,8 +52,8 @@ export default function Hackathon() {
       description: "An AI-powered farming assistant that predicts weather and rainfall, advises on irrigation, and works in local languages. The solution addresses the critical challenge of water management in agriculture, helping farmers in regions dependent on monsoon rains to optimize water usage and improve crop yields.",
       sdg: "Climate Action (SDG 13) & Life on Land (SDG 15)",
       featured: true,
-      projectUrl: "https://gnec.ngo/hackathon/",
-      teamUrl: "https://gnec.ngo/hackathon/"
+      projectUrl: "https://gnecngo.vercel.app/hackathon/",
+      teamUrl: "https://gnecngo.vercel.app/hackathon/"
     },
     {
       year: "2025",
@@ -62,8 +62,8 @@ export default function Hackathon() {
       description: "A donor-facing platform featuring a charity recommendation engine, food bank location map, and donation tracking dashboard. The solution enhances transparency in charitable giving and helps connect donors with food banks and other organizations addressing food insecurity.",
       sdg: "Zero Hunger (SDG 2) & Reduced Inequalities (SDG 10)",
       featured: true,
-      projectUrl: "https://gnec.ngo/hackathon/",
-      teamUrl: "https://gnec.ngo/hackathon/"
+      projectUrl: "https://gnecngo.vercel.app/hackathon/",
+      teamUrl: "https://gnecngo.vercel.app/hackathon/"
     },
     {
       year: "2024",
@@ -72,8 +72,8 @@ export default function Hackathon() {
       description: "AI-powered platform helping organizations track and reduce their carbon footprint through real-time monitoring and actionable insights.",
       sdg: "Climate Action (SDG 13)",
       featured: false,
-      projectUrl: "https://gnec.ngo/hackathon/",
-      teamUrl: "https://gnec.ngo/hackathon/"
+      projectUrl: "https://gnecngo.vercel.app/hackathon/",
+      teamUrl: "https://gnecngo.vercel.app/hackathon/"
     },
     {
       year: "2024", 
@@ -82,8 +82,8 @@ export default function Hackathon() {
       description: "Low-bandwidth solution connecting rural students to quality education resources and virtual classrooms.",
       sdg: "Quality Education (SDG 4)",
       featured: false,
-      projectUrl: "https://gnec.ngo/hackathon/",
-      teamUrl: "https://gnec.ngo/hackathon/"
+      projectUrl: "https://gnecngo.vercel.app/hackathon/",
+      teamUrl: "https://gnecngo.vercel.app/hackathon/"
     },
     {
       year: "2024",
@@ -92,8 +92,8 @@ export default function Hackathon() {
       description: "IoT-based system for monitoring water quality and optimizing distribution in underserved communities.",
       sdg: "Clean Water & Sanitation (SDG 6)",
       featured: false,
-      projectUrl: "https://gnec.ngo/hackathon/",
-      teamUrl: "https://gnec.ngo/hackathon/"
+      projectUrl: "https://gnecngo.vercel.app/hackathon/",
+      teamUrl: "https://gnecngo.vercel.app/hackathon/"
     }
   ];
 
@@ -230,7 +230,7 @@ export default function Hackathon() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" asChild>
-                <a href="https://gnec.ngo/hackathon/" target="_blank" rel="noopener noreferrer">
+                <a href="https://gnecngo.vercel.app/hackathon/" target="_blank" rel="noopener noreferrer">
                   <ExternalLink className="h-4 w-4 mr-2" />
                   Visit Hackathon Site
                 </a>
@@ -378,12 +378,12 @@ export default function Hackathon() {
                       
                       <div className="lg:w-48 flex flex-col gap-3">
                         <Button variant="outline" className="w-full" asChild>
-                          <a href={(winner as { projectUrl?: string }).projectUrl || "https://gnec.ngo/hackathon/"} target="_blank" rel="noopener noreferrer">
+                          <a href={(winner as { projectUrl?: string }).projectUrl || "https://gnecngo.vercel.app/hackathon/"} target="_blank" rel="noopener noreferrer">
                             View Project
                           </a>
                         </Button>
                         <Button variant="outline" className="w-full" asChild>
-                          <a href={(winner as { teamUrl?: string }).teamUrl || "https://gnec.ngo/hackathon/"} target="_blank" rel="noopener noreferrer">
+                          <a href={(winner as { teamUrl?: string }).teamUrl || "https://gnecngo.vercel.app/hackathon/"} target="_blank" rel="noopener noreferrer">
                             Team Profile
                           </a>
                         </Button>
@@ -628,7 +628,7 @@ export default function Hackathon() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" asChild>
-                <a href="https://gnec.ngo/hackathon/" target="_blank" rel="noopener noreferrer">
+                <a href="https://gnecngo.vercel.app/hackathon/" target="_blank" rel="noopener noreferrer">
                   Learn More & Register
                 </a>
               </Button>

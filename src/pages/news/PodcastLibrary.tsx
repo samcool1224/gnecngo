@@ -88,7 +88,7 @@ export default function PodcastLibrary() {
             </p>
             <div className="mt-4 flex justify-center">
               <Button asChild>
-                <a href="https://gnec.ngo/podcast-2/" target="_blank" rel="noopener noreferrer">
+                <a href="https://gnecngo.vercel.app/podcast-2/" target="_blank" rel="noopener noreferrer">
                   <ExternalLink className="h-4 w-4 mr-2" /> Full External Archive
                 </a>
               </Button>
