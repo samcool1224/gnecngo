@@ -67,7 +67,7 @@ export default function Navbar() {
   return <header className={cn("fixed top-0 left-0 right-0 z-50 transition-all duration-300", scrolled ? "bg-white/95 backdrop-blur-lg py-3 shadow-md border-b border-brand-light-blue-gray" : "bg-white/90 backdrop-blur-sm py-5")}>
       <nav className="container flex justify-center items-center relative">
         <Link to="/" className="absolute left-0 flex items-center">
-          <img src="/homepage/ngologo.png" alt="GNEC NGO/CSO logo" className="h-10 md:h-12 w-auto" />
+          <img src="https://gnec.ngo/wp-content/uploads/2026/01/ngologo.png" alt="GNEC NGO/CSO logo" className="h-10 md:h-12 w-auto" />
         </Link>
 
         {/* Desktop Navigation */}

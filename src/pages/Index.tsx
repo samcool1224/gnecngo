@@ -30,7 +30,7 @@ const featuredPrograms: ProgramProps[] = [
     year: 2025,
     participants: 1500,
     duration: "3 days",
-    image: "/homepage/civilsociety.jpg",
+    image: "https://gnec.ngo/wp-content/uploads/2026/01/civilsociety.jpg",
     location: "UN Headquarters",
     features: ["Global Collaboration", "SDG Focus", "Networking", "Workshops", "Panel Discussions", "Youth Participation"]
   },
@@ -41,7 +41,7 @@ const featuredPrograms: ProgramProps[] = [
     year: 1962,
     participants: 200,
     duration: "Ongoing",
-    image: "/homepage/workshops.jpg",
+    image: "https://gnec.ngo/wp-content/uploads/2026/01/workshops.jpg",
     location: "Various Locations",
     features: ["Training", "Best Practices", "UN Operations", "Partnership Development", "Capacity Building", "Strategic Guidance"]
   },
@@ -52,7 +52,7 @@ const featuredPrograms: ProgramProps[] = [
     year: 2025,
     participants: 500,
     duration: "48 hours",
-    image: "/homepage/hackathonlogo.png",
+    image: "https://gnec.ngo/wp-content/uploads/2026/01/hackathonlogo.png",
     location: "Global/Virtual",
     features: ["Innovation", "SDG Solutions", "Technology", "Youth Focus", "Global Participation", "Impact Measurement"]
   }
@@ -135,21 +135,21 @@ export default function Index() {
               <div className="relative animate-fade-in [animation-delay:300ms]">
                 <div className="aspect-[4/3] rounded-2xl overflow-hidden">
                   <img 
-                    src="/homepage/section2img1.jpg"
+                    src="https://gnec.ngo/wp-content/uploads/2026/01/section2img1.jpg"
                     alt="GNEC program image 1" 
                     className="w-full h-full object-cover"
                   />
                 </div>
                 <div className="absolute -bottom-6 -left-6 w-2/3 rounded-2xl overflow-hidden shadow-xl">
                   <img 
-                    src="/homepage/section2img2.jpg"
+                    src="https://gnec.ngo/wp-content/uploads/2026/01/section2img2.jpg"
                     alt="GNEC program image 2" 
                     className="w-full h-full object-cover"
                   />
                 </div>
                 <div className="absolute -top-6 -right-6 w-1/2 rounded-2xl overflow-hidden shadow-xl">
                   <img 
-                    src="/homepage/section2img3.jpg"
+                    src="https://gnec.ngo/wp-content/uploads/2026/01/section2img3.jpg"
                     alt="GNEC program image 3" 
                     className="w-full h-full object-cover"
                   />

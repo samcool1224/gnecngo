@@ -49,7 +49,7 @@ export default function CivilSociety() {
             </Card>
 
             <div className="rounded-xl overflow-hidden border bg-background">
-              <img src="/homepage/cslearnmore.jpg" alt="UN Civil Society Conference" className="w-full h-auto object-contain" />
+              <img src="https://gnec.ngo/wp-content/uploads/2026/01/cslearnmore.jpg" alt="UN Civil Society Conference" className="w-full h-auto object-contain" />
             </div>
           </div>
         </div>

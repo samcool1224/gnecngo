@@ -26,42 +26,42 @@ export default function WhoWeAre() {
       name: "Mr. Uwem Robert Otu",
       title: "International President",
       organization: "African Youth Movement",
-      image: "/officers/uwemrobert.png",
+      image: "https://gnec.ngo/wp-content/uploads/2026/01/uwemrobert.png",
       description: "Mr. Uwem Robert Otu is a Nigerian UN-engaged leader, environmental specialist, and founding President of the African Youth Movement, with global speaking credentials and advanced training in pollution control, water management and biochemistry."
     },
     {
       name: "Ms. Ediola Pashollari", 
       title: "Co-President and WAY Secretary General",
       organization: "World Assembly of Youth (WAY)",
-      image: "/officers/ediolapashollari.png",
-      description: "Ms. Ediola Pashollari, an Albanian leader in global youth development, is GNEC’s Co-President and WAY Secretary General, with multiple advanced degrees and extensive international experience in youth advocacy, programmes and policy."
+      image: "https://gnec.ngo/wp-content/uploads/2026/01/ediolapashollari.png",
+      description: "Ms. Ediola Pashollari, an Albanian leader in global youth development, is GNEC’s Co- President and WAY Secretary General, with multiple advanced degrees and extensive international experience in youth advocacy, programmes and policy."
     },
     {
       name: "Guruji H.H. Dileepkumar Thankappan",
       title: "International Vice President", 
       organization: "World Yoga Community",
-      image: "/officers/thankappan.png",
+      image: "https://gnec.ngo/wp-content/uploads/2026/01/thankappan.png",
       description: "Guruji H.H. Dileepkumar Thankappan, Founder and CEO of the World Yoga Community, is a Hindu monk, interfaith minister, UN religious leader, humanitarian, spiritual teacher and global advocate for peace and yoga."
     },
     {
       name: "Dr. Connie Sobon Sensor",
       title: "New York Vice President",
       organization: "League of Women Voters of the United States", 
-      image: "/officers/constancesensor.png",
+      image: "https://gnec.ngo/wp-content/uploads/2026/01/constancesensor.png",
       description: "Dr. Connie Sobon Sensor, PhD, RN, is an American nursing leader and UN representative for LWVUS, with extensive experience in population health, SDGs, global citizenship, climate advocacy and nursing education and policy."
     },
     {
       name: "Rev. Dr. Brian Keenan Muzás",
       title: "Treasurer",
       organization: "School of Diplomacy and International Relations, Seton Hall University",
-      image: "/officers/brianmuzas.png",
+      image: "https://gnec.ngo/wp-content/uploads/2026/01/brianmuzas.png",
       description: "Rev. Dr. Brian Keenan Muzás, a Catholic priest and scholar, is a Seton Hall University professor and UN-focused researcher, specializing in international security, ethics, and interreligious dialogue, with advanced degrees in theology, aeronautics and engineering."
     },
     {
       name: "Ms. Shennon Sequeira",
       title: "Secretary", 
       organization: "MUN Impact",
-      image: "/officers/shennonsequiera.png",
+      image: "https://gnec.ngo/wp-content/uploads/2026/01/shennonsequiera.png",
       description: "Ms. Shennon Sequeira, a Portuguese youth leader and legal professional, serves on MUN Impact’s board, advocates for youth engagement and empowerment, and has been recognized among the Top 20 Young Women in Sustainable Development."
     }
   ];
@@ -71,91 +71,91 @@ export default function WhoWeAre() {
       name: "Ms. Olasubomi Iginla Aina",
       title: "Director",
       organization: "Lightup Foundation",
-      image: "/directors/olasubomiaina.png",
+      image: "https://gnec.ngo/wp-content/uploads/2026/01/olasubomiaina.png",
       description: `Ms. Olasubomi Iginla Aina, Nigerian-born UK resident and MBE recipient, is Executive Director of Lightup Foundation, UN speaker, and African Diaspora ambassador, recognized for leadership in youth empowerment and global advocacy.`
     },
     {
       name: "Ms. Elena Reiss",
       title: "Director",
       organization: "Lehigh University",
-      image: "/directors/Elena-Reiss.jpg",
+      image: "https://gnec.ngo/wp-content/uploads/2026/01/Elena-Reiss.jpg",
       description: `Elena Reiss, Lehigh University’s UN alternate representative, is an experienced higher education professional and women’s rights advocate, dedicated to youth empowerment, global education and creating transformative programs that prepare students for international engagement.`
     },
     {
       name: "Ms. Kim Quarles",
       title: "Director",
       organization: "World Jurist Association",
-      image: "/directors/kimquarles.png",
+      image: "https://gnec.ngo/wp-content/uploads/2026/01/kimquarles.png",
       description: `Kim Quarles, Executive Vice President of the World Jurist Association and UN representative, is a lawyer and insurance executive with extensive experience in global governance, law and advocacy for world peace through the Rule of Law.`
     },
     {
       name: "Ms. Aimée Quinlan",
       title: "Director",
       organization: "Future China",
-      image: "/directors/aimeequinlan.png",
+      image: "https://gnec.ngo/wp-content/uploads/2026/01/aimeequinlan.png",
       description: `Ms. Aimée Quinlan represents Future China, advocating for equitable education and youth voices, with a strong commitment to civic engagement, international cooperation and enhancing education initiatives and global outreach.`
     },
     {
       name: "Dr. J. Nadine Gracia",
       title: "Director",
       organization: "National Social Action Commission of Delta Sigma Theta Sorority",
-      image: "/directors/nadinegracia.png",
+      image: "https://gnec.ngo/wp-content/uploads/2026/01/nadinegracia.png",
       description: `Dr. J. Nadine Gracia, a national health equity leader, represents the Delta Sigma Theta Sorority. She holds extensive experience in public health, federal leadership, nonprofit work, and civic engagement.`
     },
     {
       name: "Ms. Nora Hajjar",
       title: "Director",
       organization: "World Lebanese Cultural Union Inc.",
-      image: "/directors/norahajjar.png",
+      image: "https://gnec.ngo/wp-content/uploads/2026/01/norahajjar.png",
       description: `Ms. Nora Hajjar, Senior AI Engineer at Microsoft, combines technology expertise and global civic experience to advance ethical, inclusive innovation, leveraging AI and data for social good and Civil Society impact at the UN.`
     },
     {
       name: "Mr. Joseph DeMeyer",
       title: "Director",
       organization: "Society for the Psychological Study of Social Issues",
-      image: "/directors/josephdemeyer.png",
+      image: "https://gnec.ngo/wp-content/uploads/2026/01/josephdemeyer.png",
       description: `Mr. Joseph DeMeyer, holds 25 years of experience as an UN NGO representative. He advocates for mental health, education and youth engagement whilst promoting global citizenship.`
     },
     {
       name: "Ms. Dayana Blanco Galo",
       title: "Director",
       organization: "The City College of New York",
-      image: "/directors/dayanagalo.png",
+      image: "https://gnec.ngo/wp-content/uploads/2026/01/dayanagalo.png",
       description: `Ms. Dayana J. Blanco Galo, a university student, advocates for youth empowerment and education. Whilst promoting global partnerships, cultural competence and representation to advance UN goals and amplify diverse voices.`
     },
     {
       name: "Adriane Berg",
       title: "Director",
       organization: "International Federation on Ageing",
-      image: "/directors/adrianeberg.png",
+      image: "https://gnec.ngo/wp-content/uploads/2026/01/adrianeberg.png",
       description: `Ms. Adriane Berg is the UN Representative for the International Federation on Ageing, a lawyer, media host, and advocate. She empowers older adults through aging-focused initiatives, education, podcasts and global programs.`
     },
     {
       name: "Ms. Farah Salim Eck",
       title: "Director",
       organization: "United Nations Association of the USA (UNA-USA)",
-      image: "/directors/faraheck.png",
+      image: "https://gnec.ngo/wp-content/uploads/2026/01/faraheck.png",
       description: `Ms. Farah Salim Eck, Managing Director at UNA-USA, advances UN values through partnerships and programs, leveraging personal and professional experience in global humanitarian, education and human rights initiatives.`
     },
     {
       name: "HRH Prince Adnan El-Hashemite",
       title: "Director",
       organization: "Seton Hall University",
-      image: "/directors/hrhadnan.png",
+      image: "https://gnec.ngo/wp-content/uploads/2026/01/hrhadnan.png",
       description: `HRH Adnan, Dean of RASIT and Executive Director at Holy Family University, is a philanthropist advancing education, youth development, peace and social equity through scholarships, humanitarian relief and global cultural initiatives.`
     },
     {
       name: "Dr Piyush Gupta",
       title: "Director",
       organization: "Cancer Aid Society India",
-      image: "/directors/piyushgupta.png",
+      image: "https://gnec.ngo/wp-content/uploads/2026/01/piyushgupta.png",
       description: `Dr. Gupta, founder of Cancer Aid Society, is an Indian health leader in palliative care, cancer and NCD control, representing India at UN and WHO, with extensive global advocacy and publications.`
     },
     {
       name: "Mr Faisal Alfadl",
       title: "Director",
       organization: "Saudi Green Building Forum",
-      image: "/directors/Faisal-Alfadl-.jpg",
+      image: "https://gnec.ngo/wp-content/uploads/2026/01/Faisal-Alfadl-.jpg",
       description: `Mr. Faisal Alfadl, architect and urban planner, champions sustainable development and eco-friendly design. He mentors youth and promotes green practices to create positive global impact through architecture, policy and environmental advocacy.`
     }
   ];

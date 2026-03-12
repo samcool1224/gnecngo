@@ -125,30 +125,30 @@ export default function Hackathon() {
       name: "Qilan (Kelland) Hong",
       title: "Partnerships Coordinator",
       bio: "Kelland draws on her experience in design, communication, and tech to support GNEC’s partnerships work. She builds relationships with NGOs, companies, and community groups, helping the hackathon grow its reach and create meaningful opportunities for youth around the world.",
-      image: "/qilan.jpg"
+      image: "https://gnec.ngo/wp-content/uploads/2026/01/qilan.jpg"
     },
     {
       name: "Ray Zhang",
       title: "Participants Coordinator",
       bio: "Ray works in global outreach, connecting talented youth worldwide to GNEC hackathons. He supports international event promotion, coordinates participant engagement, and helps expand access to youth-driven innovation and leadership on a global scale.",
-      image: "/ray.jpg"
+      image: "https://gnec.ngo/wp-content/uploads/2026/01/ray.jpg"
     },
     {
       name: "Christina Chen",
       title: "Digital Assets Coordinator",
       bio: "Christina draws on her experience in design, communication, and organization to manage GNEC’s digital assets. She creates and curates media posts, develops email content, and maintains the website to ensure information is clear, engaging, and up to date for the global GNEC community.",
-      image: "/christina.jpg"
+      image: "https://gnec.ngo/wp-content/uploads/2026/01/christina.jpg"
     }
   ];
 
   const sponsors: { name: string; logoUrl?: string; url?: string }[] = [
-    { name: "IVECA", logoUrl: "/sponsors/iveca.jpeg", url: "https://www.website.iveca.org/" },
-    { name: "International Federation on Ageing (IFA)", logoUrl: "/sponsors/ifa.jpg", url: "https://ifa.ngo/" },
-    { name: "Airline Ambassadors International", logoUrl: "/sponsors/airlineambassadors.jpeg", url: "https://airlineamb.org/" },
-    { name: "WYC Events", logoUrl: "/sponsors/wyc.jpeg", url: "http://www.wycevents.com/" },
-    { name: "League of Women Voters (LWV)", logoUrl: "/sponsors/lwv.jpeg", url: "https://www.lwv.org/" },
-    { name: "World Assembly of Youth (WAY)", logoUrl: "/sponsors/way.jpeg", url: "https://www.way.org.my/" },
-    { name: "African Youth Movement (AYM)", logoUrl: "/sponsors/aym.png", url: "https://www.aym-inc.org/" }
+    { name: "IVECA", logoUrl: "https://gnec.ngo/wp-content/uploads/2026/01/iveca.jpeg", url: "https://www.website.iveca.org/" },
+    { name: "International Federation on Ageing (IFA)", logoUrl: "https://gnec.ngo/wp-content/uploads/2026/01/ifa.jpg", url: "https://ifa.ngo/" },
+    { name: "Airline Ambassadors International", logoUrl: "https://gnec.ngo/wp-content/uploads/2026/01/airlineambassadors.jpeg", url: "https://airlineamb.org/" },
+    { name: "WYC Events", logoUrl: "https://gnec.ngo/wp-content/uploads/2026/01/wyc.jpeg", url: "http://www.wycevents.com/" },
+    { name: "League of Women Voters (LWV)", logoUrl: "https://gnec.ngo/wp-content/uploads/2026/01/lwv.jpeg", url: "https://www.lwv.org/" },
+    { name: "World Assembly of Youth (WAY)", logoUrl: "https://gnec.ngo/wp-content/uploads/2026/01/way.jpeg", url: "https://www.way.org.my/" },
+    { name: "African Youth Movement (AYM)", logoUrl: "https://gnec.ngo/wp-content/uploads/2026/01/aym.png", url: "https://www.aym-inc.org/" }
   ];
 
   const topSponsors = sponsors.slice(0, 4);

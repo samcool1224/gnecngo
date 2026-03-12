@@ -39,7 +39,7 @@ export default function Message() {
                 <CardContent className="p-0">
                   <div className="text-center mb-4">
                     <div className="w-32 h-32 rounded-full overflow-hidden mx-auto mb-4 border-4 border-primary/20">
-                      <img src="/officers/uwemrobert.png" alt="Uwem Robert OTU" className="w-full h-full object-cover object-top" />
+                      <img src="https://gnec.ngo/wp-content/uploads/2026/01/uwemrobert.png" alt="Uwem Robert OTU" className="w-full h-full object-cover object-top" />
                     </div>
                     <h3 className="text-xl font-bold">Uwem Robert OTU</h3>
                     <p className="text-primary font-medium">International President</p>
@@ -52,7 +52,7 @@ export default function Message() {
                 <CardContent className="p-0">
                   <div className="text-center mb-4">
                     <div className="w-32 h-32 rounded-full overflow-hidden mx-auto mb-4 border-4 border-primary/20">
-                      <img src="/officers/ediolapashollari.png" alt="Ediola Pashollari" className="w-full h-full object-cover object-top" />
+                      <img src="https://gnec.ngo/wp-content/uploads/2026/01/ediolapashollari.png" alt="Ediola Pashollari" className="w-full h-full object-cover object-top" />
                     </div>
                     <h3 className="text-xl font-bold">Ediola Pashollari</h3>
                     <p className="text-primary font-medium">New York President</p>
