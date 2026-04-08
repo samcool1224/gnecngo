@@ -9,7 +9,7 @@ import { Button } from "@/components/ui/button";
 import { useAuth } from "@/contexts/AuthContext";
 
 export default function Login() {
-  const [email, setEmail] = useState("");
+  const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
@@ -18,9 +18,8 @@ export default function Login() {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    // Redirect if already logged in
     if (user) {
-      navigate('/create-podcast');
+      navigate('/upload-selection');
     }
   }, [user, navigate]);
 
@@ -29,14 +28,13 @@ export default function Login() {
     setLoading(true);
     setError("");
 
-    const { error } = await signIn(email, password);
+    const { error } = await signIn(username, password);
     
     if (error) {
       setError(error.message);
       setLoading(false);
     } else {
-      // Success - redirect will happen via useEffect when user state updates
-      navigate('/create-podcast');
+      navigate('/upload-selection');
     }
   };
 
@@ -49,7 +47,7 @@ export default function Login() {
             <div className="text-center mb-8">
               <h1 className="text-4xl font-bold mb-3">Member Login</h1>
               <p className="text-muted-foreground">
-                Access the GNEC member portal.
+                Access the GNEC upload portal for Podcast and NGO Reporter.
               </p>
             </div>
 
@@ -63,13 +61,13 @@ export default function Login() {
                   )}
                   
                   <div className="space-y-2">
-                    <Label htmlFor="email">Email</Label>
+                    <Label htmlFor="username">WordPress Username or Email</Label>
                     <Input
-                      id="email"
-                      type="email"
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
-                      placeholder="you@organization.org"
+                      id="username"
+                      type="text"
+                      value={username}
+                      onChange={(e) => setUsername(e.target.value)}
+                      placeholder="your WordPress login"
                       required
                     />
                   </div>

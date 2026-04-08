@@ -4,17 +4,18 @@ import { useAuth } from '@/contexts/AuthContext'
 
 interface ProtectedRouteProps {
   children: React.ReactNode
+  redirectTo?: string
 }
 
-export default function ProtectedRoute({ children }: ProtectedRouteProps) {
+export default function ProtectedRoute({ children, redirectTo = '/login' }: ProtectedRouteProps) {
   const { user, loading } = useAuth()
   const navigate = useNavigate()
 
   useEffect(() => {
     if (!loading && !user) {
-      navigate('/login')
+      navigate(redirectTo)
     }
-  }, [user, loading, navigate])
+  }, [user, loading, navigate, redirectTo])
 
   if (loading) {
     return (

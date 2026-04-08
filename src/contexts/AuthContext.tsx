@@ -1,69 +1,99 @@
-import { createContext, useContext, useEffect, useState, ReactNode } from 'react'
-import { User, Session } from '@supabase/supabase-js'
-import { supabase } from '@/lib/supabase'
+import { createContext, useContext, useEffect, useState, ReactNode } from "react";
+import {
+  WordPressUser,
+  clearStoredAuthToken,
+  fetchCurrentWordPressUser,
+  getStoredAuthToken,
+  loginWithWordPress,
+} from "@/lib/wordpress";
 
 interface AuthContextType {
-  user: User | null
-  session: Session | null
-  loading: boolean
-  signIn: (email: string, password: string) => Promise<{ error: any }>
-  signOut: () => Promise<void>
+  user: WordPressUser | null;
+  token: string | null;
+  loading: boolean;
+  signIn: (username: string, password: string) => Promise<{ error: Error | null }>;
+  signOut: () => Promise<void>;
 }
 
-const AuthContext = createContext<AuthContextType | undefined>(undefined)
+const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
 export function AuthProvider({ children }: { children: ReactNode }) {
-  const [user, setUser] = useState<User | null>(null)
-  const [session, setSession] = useState<Session | null>(null)
-  const [loading, setLoading] = useState(true)
+  const [user, setUser] = useState<WordPressUser | null>(null);
+  const [token, setToken] = useState<string | null>(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Get initial session
-    supabase.auth.getSession().then(({ data: { session } }) => {
-      setSession(session)
-      setUser(session?.user ?? null)
-      setLoading(false)
-    })
+    const restoreSession = async () => {
+      const storedToken = getStoredAuthToken();
 
-    // Listen for auth changes
-    const { data: { subscription } } = supabase.auth.onAuthStateChange(
-      async (event, session) => {
-        setSession(session)
-        setUser(session?.user ?? null)
-        setLoading(false)
+      if (!storedToken) {
+        setLoading(false);
+        return;
       }
-    )
 
-    return () => subscription.unsubscribe()
-  }, [])
+      try {
+        const currentUser = await fetchCurrentWordPressUser(storedToken);
+        setToken(storedToken);
+        setUser(currentUser);
+      } catch {
+        clearStoredAuthToken();
+        setToken(null);
+        setUser(null);
+      } finally {
+        setLoading(false);
+      }
+    };
 
-  const signIn = async (email: string, password: string) => {
-    const { error } = await supabase.auth.signInWithPassword({
-      email,
-      password,
-    })
-    return { error }
-  }
+    restoreSession();
+  }, []);
+
+  const signIn = async (username: string, password: string) => {
+    try {
+      const loginResult = await loginWithWordPress(username, password);
+      const currentUser = await fetchCurrentWordPressUser(loginResult.token);
+
+      setToken(loginResult.token);
+      setUser(currentUser);
+
+      return { error: null };
+    } catch (error) {
+      clearStoredAuthToken();
+      setToken(null);
+      setUser(null);
+
+      return {
+        error: error instanceof Error ? error : new Error("WordPress login failed."),
+      };
+    }
+  };
 
   const signOut = async () => {
-    await supabase.auth.signOut()
-  }
+    clearStoredAuthToken();
+    setToken(null);
+    setUser(null);
+  };
 
-  const value = {
-    user,
-    session,
-    loading,
-    signIn,
-    signOut,
-  }
-
-  return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>
+  return (
+    <AuthContext.Provider
+      value={{
+        user,
+        token,
+        loading,
+        signIn,
+        signOut,
+      }}
+    >
+      {children}
+    </AuthContext.Provider>
+  );
 }
 
 export function useAuth() {
-  const context = useContext(AuthContext)
+  const context = useContext(AuthContext);
+
   if (context === undefined) {
-    throw new Error('useAuth must be used within an AuthProvider')
+    throw new Error("useAuth must be used within an AuthProvider");
   }
-  return context
+
+  return context;
 }

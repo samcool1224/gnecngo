@@ -1,88 +1,30 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Newspaper, Mail, Calendar, Users, ExternalLink, FileText, Globe, Award } from "lucide-react";
+import { fetchNgoReporterIssues } from "@/lib/ngo-reporter-api";
+import { hardcodedNgoReporterIssues, mergeNgoReporterIssues } from "@/lib/ngo-reporter-data";
 
 export default function NGOReporter() {
+  const [recentIssues, setRecentIssues] = useState(hardcodedNgoReporterIssues);
+
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, []);
+    const load = async () => {
+      try {
+        const dynamicIssues = await fetchNgoReporterIssues();
+        setRecentIssues(mergeNgoReporterIssues(dynamicIssues));
+      } catch (error) {
+        console.error("Error fetching NGO Reporter issues:", error);
+      }
+    };
 
-  const recentIssues = [
-    {
-      title: "NGO Reporter Vol 47",
-      date: "2025",
-      description: "Latest developments in NGO/CSO-UN partnerships, featuring updates from GNEC board activities and global civil society initiatives.",
-      topics: ["Board Updates", "Partnership News", "Event Highlights"],
-      url: "https://conta.cc/47A7zW7"
-    },
-    {
-      title: "NGO Reporter Vol 46",
-      date: "2025",
-      description: "Focus on digital advocacy strategies and emerging technologies for NGO/CSO communications and outreach.",
-      topics: ["Digital Advocacy", "Tech Innovation", "Communication Tools"],
-      url: "https://conta.cc/42f3XHg"
-    },
-    {
-      title: "NGO Reporter Vol 45",
-      date: "2025",
-      description: "Special coverage of the UN Civil Society Conference and its impact on global NGO/CSO collaboration.",
-      topics: ["Conference Coverage", "Global Collaboration", "Policy Updates"],
-      url: "https://conta.cc/4fhKMBH"
-    },
-    {
-      title: "NGO Reporter Vol 44",
-      date: "2025",
-      description: "Highlighting successful NGO/CSO campaigns and their contributions to Sustainable Development Goals achievement.",
-      topics: ["Success Stories", "SDG Progress", "Campaign Analysis"],
-      url: "https://conta.cc/4kBCIxL"
-    },
-    {
-      title: "NGO Reporter Vol 43",
-      date: "2025",
-      description: "Exploring innovative approaches to global challenges through NGO/CSO and UN partnerships.",
-      topics: ["Innovation", "Partnerships", "Global Challenges"],
-      url: "https://conta.cc/4cWUPuH"
-    },
-    {
-      title: "NGO Reporter Vol 42",
-      date: "2025",
-      description: "Focus on youth engagement and leadership development in the NGO/CSO sector.",
-      topics: ["Youth Engagement", "Leadership", "Capacity Building"],
-      url: "https://conta.cc/4icmE3v"
-    },
-    {
-      title: "NGO Reporter Vol 41",
-      date: "2025",
-      description: "Special edition on climate action and environmental sustainability initiatives by NGOs/CSOs.",
-      topics: ["Climate Action", "Sustainability", "Environmental Policy"],
-      url: "https://conta.cc/3DkYLYQ"
-    },
-    {
-      title: "NGO Reporter Vol 40",
-      date: "2025",
-      description: "Humanitarian response and crisis management strategies from leading NGOs/CSOs.",
-      topics: ["Humanitarian Aid", "Crisis Response", "Disaster Relief"],
-      url: "https://conta.cc/42vXBEe"
-    },
-    {
-      title: "NGO Reporter Vol 39",
-      date: "2025",
-      description: "Advancing gender equality and women's empowerment through NGO/CSO initiatives.",
-      topics: ["Gender Equality", "Women's Empowerment", "Inclusion"],
-      url: "https://conta.cc/3BePPTP"
-    },
-    {
-      title: "NGO Reporter Vol 38",
-      date: "2025",
-      description: "Strengthening global health partnerships and pandemic response through NGO/CSO collaboration.",
-      topics: ["Global Health", "Pandemic Response", "Healthcare Access"],
-      url: "https://myemail.constantcontact.com/NGO-Reporter-Vol-38--1.html?soid=1118608394243&aid=rNkpqJuyR70"
-    }
-  ];
+    load();
+  }, []);
 
   const features = [
     {
@@ -130,9 +72,17 @@ export default function NGOReporter() {
                 <Mail className="h-4 w-4 mr-2" />
                 Subscribe Free
               </Button>
-              <Button size="lg" variant="outline">
-                <FileText className="h-4 w-4 mr-2" />
-                Browse Archives
+              <Button size="lg" variant="outline" asChild>
+                <Link to="/news/ngo-reporter-archive">
+                  <FileText className="h-4 w-4 mr-2" />
+                  Browse Archives
+                </Link>
+              </Button>
+              <Button size="lg" variant="outline" asChild>
+                <Link to="/login">
+                  <FileText className="h-4 w-4 mr-2" />
+                  Editorial Login
+                </Link>
               </Button>
             </div>
           </div>
@@ -211,7 +161,7 @@ export default function NGOReporter() {
             </div>
             
             <div className="grid md:grid-cols-2 gap-6">
-              {recentIssues.map((issue, index) => (
+              {recentIssues.slice(0, 10).map((issue, index) => (
                 <Card key={index} className="p-6">
                   <CardContent className="p-0">
                     <div className="flex items-center gap-2 mb-3">
@@ -235,7 +185,7 @@ export default function NGOReporter() {
                     </div>
                     
                     <Button variant="outline" className="w-full" asChild>
-                      <a href={(issue as any).url} target="_blank" rel="noopener noreferrer">
+                      <a href={issue.url} target="_blank" rel="noopener noreferrer">
                         <ExternalLink className="h-4 w-4 mr-2" />
                         Read More
                       </a>
@@ -322,8 +272,8 @@ export default function NGOReporter() {
                   Browse through our online archives with issues dating back to January 2012, documenting the evolution of global civil society engagement with the United Nations.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <Button size="lg">
-                    Browse Full Archive
+                  <Button size="lg" asChild>
+                    <Link to="/news/ngo-reporter-archive">Browse Full Archive</Link>
                   </Button>
                   <Button size="lg" variant="outline">
                     Search by Topic

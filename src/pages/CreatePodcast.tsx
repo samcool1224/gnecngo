@@ -10,7 +10,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Upload, CheckCircle } from "lucide-react";
 import { useAuth } from "@/contexts/AuthContext";
 import ProtectedRoute from "@/components/ProtectedRoute";
-import { supabase } from "@/lib/supabase";
+import { createPodcastEpisode } from "@/lib/podcast-api";
 
 export default function CreatePodcast() {
   const [episodeNumber, setEpisodeNumber] = useState("");
@@ -41,61 +41,16 @@ export default function CreatePodcast() {
     setError("");
 
     try {
-      // Upload audio file to Supabase storage
-      const fileExt = file.name.split('.').pop();
-      const fileName = `${user.id}/${episodeNumber}-${Date.now()}.${fileExt}`;
-
-      const { data: uploadData, error: uploadError } = await supabase.storage
-        .from('podcast-audio')
-        .upload(fileName, file);
-
-      if (uploadError) {
-        throw new Error(`File upload failed: ${uploadError.message}`);
-      }
-
-      // Get public URL for the uploaded file
-      const { data: { publicUrl } } = supabase.storage
-        .from('podcast-audio')
-        .getPublicUrl(fileName);
-
-      // Optionally upload cover image to the same bucket
-      let imagePublicUrl: string | null = null;
-      if (imageFile) {
-        const imageExt = imageFile.name.split('.').pop();
-        const imageFileName = `${user.id}/${episodeNumber}-${Date.now()}-cover.${imageExt}`;
-        const { error: imageUploadError } = await supabase.storage
-          .from('podcast-audio')
-          .upload(imageFileName, imageFile);
-        if (imageUploadError) {
-          throw new Error(`Image upload failed: ${imageUploadError.message}`);
-        }
-        const { data: { publicUrl: imageUrl } } = supabase.storage
-          .from('podcast-audio')
-          .getPublicUrl(imageFileName);
-        imagePublicUrl = imageUrl;
-      }
-
-      // Parse tags into array
-      const tagsArray = tags.split(',').map(tag => tag.trim()).filter(tag => tag.length > 0);
-
-      // Insert episode data into database
-      const { error: insertError } = await supabase
-        .from('podcast_episodes')
-        .insert({
-          episode_number: parseInt(episodeNumber),
-          title,
-          description,
-          features,
-          tags: tagsArray,
-          audio_file_path: publicUrl,
-          category,
-          created_by: user.id,
-          image_file_path: imagePublicUrl
-        });
-
-      if (insertError) {
-        throw new Error(`Database insert failed: ${insertError.message}`);
-      }
+      await createPodcastEpisode({
+        episodeNumber,
+        title,
+        description,
+        features,
+        tags,
+        category,
+        audioFile: file,
+        imageFile,
+      });
 
       setSuccess(true);
       // Reset form
@@ -142,7 +97,7 @@ export default function CreatePodcast() {
                 <div>
                   <h1 className="text-4xl font-bold mb-3">Create Podcast Episode</h1>
                   <p className="text-muted-foreground">
-                    Welcome, {user?.email}. Create a new podcast episode.
+                    Welcome, {user?.email || user?.name || user?.username}. Create a new podcast episode.
                   </p>
                 </div>
                 <Button
@@ -159,7 +114,7 @@ export default function CreatePodcast() {
                   {success && (
                     <div className="mb-6 p-4 rounded-md bg-green-50 border border-green-200 flex items-center gap-2">
                       <CheckCircle className="h-5 w-5 text-green-600" />
-                      <p className="text-sm text-green-600">Episode created successfully! It will appear on the podcast page.</p>
+                      <p className="text-sm text-green-600">Episode created successfully. WordPress should now expose it through the podcast API and store the files in Cloudinary.</p>
                     </div>
                   )}
                   

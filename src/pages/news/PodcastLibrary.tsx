@@ -6,54 +6,40 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Search, ExternalLink } from "lucide-react";
-import { supabase } from "@/lib/supabase";
-
-interface SupabaseEpisode {
-  id: string;
-  episode_number: number;
-  title: string;
-  description: string;
-  features: string;
-  tags: string[];
-  audio_file_path: string;
-  category: string;
-  created_at: string;
-}
+import { PodcastEpisode, fetchPodcastEpisodes } from "@/lib/podcast-api";
 
 export default function PodcastLibrary() {
   const [searchQuery, setSearchQuery] = useState("");
-  const [supabaseEpisodes, setSupabaseEpisodes] = useState<SupabaseEpisode[]>([]);
+  const [episodes, setEpisodes] = useState<PodcastEpisode[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    fetchSupabaseEpisodes();
+    loadEpisodes();
   }, []);
 
-  const fetchSupabaseEpisodes = async () => {
+  const loadEpisodes = async () => {
     try {
-      const { data, error } = await supabase
-        .from('podcast_episodes')
-        .select('*')
-        .order('episode_number', { ascending: false });
-
-      if (!error) setSupabaseEpisodes(data || []);
+      const data = await fetchPodcastEpisodes();
+      setEpisodes(data);
+    } catch (error) {
+      console.error("Error fetching episodes:", error);
     } finally {
       setLoading(false);
     }
   };
 
-  const episodes = supabaseEpisodes.map(ep => ({
+  const libraryEpisodes = episodes.map(ep => ({
     episode: ep.episode_number,
     title: ep.title,
     guest: ep.features || "GNEC Team",
     description: ep.description,
-    audioUrl: ep.audio_file_path,
-    category: ep.category,
+    audioUrl: ep.audio_file_url,
+    category: ep.category || "General",
     tags: ep.tags || [],
   }));
 
-  const filtered = episodes.filter(episode =>
+  const filtered = libraryEpisodes.filter(episode =>
     episode.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
     episode.guest.toLowerCase().includes(searchQuery.toLowerCase()) ||
     episode.description.toLowerCase().includes(searchQuery.toLowerCase()) ||

@@ -1,78 +1,55 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
-import { Mic, ExternalLink, Award, Users, Search, LogIn } from "lucide-react";
-import { supabase } from "@/lib/supabase";
-
-interface SupabaseEpisode {
-  id: string;
-  episode_number: number;
-  title: string;
-  description: string;
-  features: string;
-  tags: string[];
-  audio_file_path: string;
-  category: string;
-  created_at: string;
-  image_file_path?: string | null;
-}
+import { Mic, Award, Users, Search, LogIn } from "lucide-react";
+import { PodcastEpisode, fetchPodcastEpisodes } from "@/lib/podcast-api";
 
 export default function Podcast() {
+  const location = useLocation();
   const [searchQuery, setSearchQuery] = useState("");
-  const [supabaseEpisodes, setSupabaseEpisodes] = useState<SupabaseEpisode[]>([]);
+  const [episodes, setEpisodes] = useState<PodcastEpisode[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    fetchSupabaseEpisodes();
+    loadEpisodes();
   }, []);
 
-  const fetchSupabaseEpisodes = async () => {
+  const loadEpisodes = async () => {
     try {
-      const { data, error } = await supabase
-        .from('podcast_episodes')
-        .select('*')
-        .order('episode_number', { ascending: false });
-
-      if (error) {
-        console.error('Error fetching episodes:', error);
-      } else {
-        setSupabaseEpisodes(data || []);
-      }
+      const data = await fetchPodcastEpisodes();
+      setEpisodes(data);
     } catch (error) {
-      console.error('Error fetching episodes:', error);
+      console.error("Error fetching episodes:", error);
     } finally {
       setLoading(false);
     }
   };
 
-  // Convert Supabase episodes to the display format used in this page
-  const convertSupabaseEpisodes = (episodes: SupabaseEpisode[]) => {
-    return episodes.map(ep => ({
+  const convertEpisodes = (items: PodcastEpisode[]) => {
+    return items.map(ep => ({
       episode: ep.episode_number,
       title: ep.title,
       guest: ep.features || "GNEC Team",
       description: ep.description,
-      category: ep.category || 'General',
+      category: ep.category || "General",
       tags: ep.tags || [],
       id: ep.id,
-      imageUrl: ep.image_file_path || null,
+      imageUrl: ep.image_file_url || null,
     }));
   };
 
-  const convertedSupabaseEpisodes = convertSupabaseEpisodes(supabaseEpisodes)
+  const convertedEpisodes = convertEpisodes(episodes)
     .sort((a, b) => b.episode - a.episode);
 
-  // Latest three episodes only from Supabase
-  const latestThree = convertedSupabaseEpisodes.slice(0, 3);
+  const latestThree = convertedEpisodes.slice(0, 3);
 
-  // Searchable list uses all from Supabase
-  const filteredEpisodes = convertedSupabaseEpisodes.filter(episode =>
+  const filteredEpisodes = convertedEpisodes.filter(episode =>
     episode.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
     episode.guest.toLowerCase().includes(searchQuery.toLowerCase()) ||
     episode.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -87,6 +64,11 @@ export default function Podcast() {
     { label: "Countries Reached", value: "50+" },
     { label: "NGOs Featured", value: "40+" }
   ];
+
+  const podcastBasePath = location.pathname.startsWith("/podcast") ? "/podcast" : "/news/podcast";
+  const podcastLibraryPath = location.pathname.startsWith("/podcast")
+    ? "/podcast-library"
+    : "/news/podcast-library";
 
   const getCategoryColor = (category: string) => {
     switch (category) {
@@ -298,7 +280,7 @@ export default function Podcast() {
                       </div>
                       <div className="text-center space-y-3 pt-2">
                         <Button size="lg" className="rounded-full px-8 py-6 text-base" asChild>
-                          <a href={`/news/podcast/${episode.episode}`}>Listen Now!</a>
+                          <Link to={`${podcastBasePath}/${episode.episode}`}>Listen Now!</Link>
                         </Button>
                       </div>
                     </div>
@@ -336,7 +318,7 @@ export default function Podcast() {
               </div>
               <div className="mt-6">
                 <Button asChild>
-                  <a href="/news/podcast-library">Open Podcast Library</a>
+                  <Link to={podcastLibraryPath}>Open Podcast Library</Link>
                 </Button>
               </div>
             </div>
@@ -378,7 +360,7 @@ export default function Podcast() {
                         <div className="text-center space-y-3 pt-2">
                           <div className="text-xl font-bold">Listen Now!</div>
                           <Button size="lg" variant="outline" className="rounded-full px-8 py-5" asChild>
-                            <a href={`/news/podcast/${episode.episode}`}>Listen to podcast</a>
+                            <Link to={`${podcastBasePath}/${episode.episode}`}>Listen to podcast</Link>
                           </Button>
                         </div>
                       </div>

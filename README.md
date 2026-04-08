@@ -7,7 +7,8 @@ This repository powers the public web experience for the Global NGO Executive Co
 - **Stor landing experience** – Hero, featured programs, and testimonial sections use content from `src/locales/en.ts` to communicate impact with motion and imagery.
 - **Information-rich routing** – React Router drives dedicated About, Services & Events, and News & Media sections so every initiative has a permanent home.
 - **Engagement funnels** – Contact, Donate, Login, and Create Podcast pages use shadcn-ui components for responsive, WCAG-friendly forms and CTAs.
-- **Supabase-powered auth** – `AuthProvider` exposes Supabase user/session state, enabling authenticated flows such as podcast management.
+- **WordPress-powered auth** – `AuthProvider` manages a WordPress JWT-backed session for the protected podcast workflow.
+- **Cloudinary-backed podcast workflow** – Podcast creation and retrieval now flow through WordPress REST endpoints that are expected to upload media to Cloudinary and return episode records to the frontend using Cloudinary context for episode details.
 - **Reusable design system** – Tailwind CSS, shadcn primitives, lucide-react icons, and utility hooks keep typography, spacing, and interactions consistent.
 - **Production-ready tooling** – Vite, TypeScript, ESLint, and React Query provide fast feedback, data fetching, and code quality automation.
 
@@ -17,7 +18,8 @@ This repository powers the public web experience for the Global NGO Executive Co
 - React Router DOM for client-side routing
 - Tailwind CSS + shadcn-ui component library
 - @tanstack/react-query for async data
-- Supabase JavaScript client for authentication
+- WordPress REST API for authentication and podcast management
+- Cloudinary for podcast media storage and context-backed asset management
 - PostCSS, Autoprefixer, Lucide Icons, Recharts, date-fns, etc.
 
 ## Prerequisites
@@ -54,7 +56,7 @@ The dev server defaults to `http://localhost:5173` and reloads automatically as 
 │   ├── components/        # Shared UI pieces, layout primitives, sections
 │   ├── contexts/          # Auth + Language providers
 │   ├── hooks/             # Custom hooks
-│   ├── lib/               # Supabase client + helpers
+│   ├── lib/               # WordPress auth + podcast API helpers
 │   ├── locales/           # Text copy (currently English)
 │   ├── pages/             # Route-level screens (Home, Contact, News, etc.)
 │   ├── App.tsx            # Router + providers
@@ -66,14 +68,23 @@ The dev server defaults to `http://localhost:5173` and reloads automatically as 
 
 ## Configuration Notes
 
-- **Supabase credentials** – Update `src/lib/supabase.ts` with your project URL and anon key. Consider moving them to environment variables for deployment:
+- **WordPress environment variables** – Copy `.env.example` to `.env` and provide your WordPress API values:
 
-  ```ts
-  const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
-  const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
+  ```bash
+  VITE_WORDPRESS_URL=https://your-wordpress-site.com
+  VITE_WORDPRESS_JWT_TOKEN_PATH=/wp-json/jwt-auth/v1/token
+  VITE_WORDPRESS_CURRENT_USER_PATH=/wp-json/wp/v2/users/me?context=edit
+  VITE_WORDPRESS_PODCAST_ENDPOINT_PATH=/wp-json/gnec/v1/podcast-episodes
   ```
 
-  Then create a `.env` file with matching `VITE_*` variables (Vite exposes only variables prefixed with `VITE_`).
+  The frontend assumes WordPress exposes:
+  - `POST {VITE_WORDPRESS_JWT_TOKEN_PATH}` for login with `username` and `password`
+  - `GET {VITE_WORDPRESS_CURRENT_USER_PATH}` for the authenticated user
+  - `GET {VITE_WORDPRESS_PODCAST_ENDPOINT_PATH}` for all episodes
+  - `GET {VITE_WORDPRESS_PODCAST_ENDPOINT_PATH}/{episode_number}` for one episode
+  - `POST {VITE_WORDPRESS_PODCAST_ENDPOINT_PATH}` as a protected multipart endpoint that uploads to Cloudinary and returns the created episode
+
+- **Migration guide** – See `docs/wordpress-cloudinary-migration.md` for the WordPress and Cloudinary setup contract that this frontend now expects.
 
 - **Brand content & copy** – Edit `src/locales/en.ts` for text, and drop images/PDFs into `public/`.
 
@@ -83,7 +94,7 @@ The dev server defaults to `http://localhost:5173` and reloads automatically as 
 
 1. `npm run build`
 2. Deploy the generated `dist/` directory to your host of choice.
-3. For Vercel, import the repo, set the Supabase environment variables, keep the framework preset on Vite, and the included rewrite config will serve the SPA correctly.
+3. For Vercel, import the repo, set the WordPress environment variables, keep the framework preset on Vite, and the included rewrite config will serve the SPA correctly.
 
 ## Contributing & Quality
 

@@ -28,12 +28,15 @@ import Podcast from "./pages/news/Podcast";
 import PodcastLibrary from "./pages/news/PodcastLibrary";
 import PodcastEpisode from "./pages/news/PodcastEpisode";
 import NGOReporter from "./pages/news/NGOReporter";
+import NGOReporterArchive from "./pages/news/NGOReporterArchive";
 import Media from "./pages/news/Media";
 import { LanguageProvider } from "./contexts/LanguageContext";
 import { AuthProvider } from "./contexts/AuthContext";
 import Login from "./pages/Login";
 import Donate from "./pages/Donate";
 import CreatePodcast from "./pages/CreatePodcast";
+import CreateNgoReporter from "./pages/CreateNgoReporter";
+import UploadSelection from "./pages/UploadSelection";
 
 // Create a react-query client
 const queryClient = new QueryClient();
@@ -51,7 +54,9 @@ const App = () => (
             <Route path="/contact" element={<Contact />} />
             <Route path="/login" element={<Login />} />
             <Route path="/donate" element={<Donate />} />
+            <Route path="/upload-selection" element={<UploadSelection />} />
             <Route path="/create-podcast" element={<CreatePodcast />} />
+            <Route path="/create-ngo-reporter" element={<CreateNgoReporter />} />
             
             {/* About Us Routes */}
             <Route path="/about/who-we-are" element={<WhoWeAre />} />
@@ -72,7 +77,13 @@ const App = () => (
             <Route path="/news/podcast" element={<Podcast />} />
             <Route path="/news/podcast/:episode" element={<PodcastEpisode />} />
             <Route path="/news/podcast-library" element={<PodcastLibrary />} />
+            <Route path="/podcast" element={<Podcast />} />
+            <Route path="/podcast/:episode" element={<PodcastEpisode />} />
+            <Route path="/podcast-library" element={<PodcastLibrary />} />
             <Route path="/news/ngo-reporter" element={<NGOReporter />} />
+            <Route path="/news/ngo-reporter-archive" element={<NGOReporterArchive />} />
+            <Route path="/ngo-reporter" element={<NGOReporter />} />
+            <Route path="/ngo-reporter-archive" element={<NGOReporterArchive />} />
             <Route path="/news/media" element={<Media />} />
             
             {/* Catch-all route */}

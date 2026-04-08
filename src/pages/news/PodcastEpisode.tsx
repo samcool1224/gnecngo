@@ -1,29 +1,18 @@
 import { useEffect, useState } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate, useLocation } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft } from "lucide-react";
-import { supabase } from "@/lib/supabase";
-
-interface Episode {
-  id: string;
-  episode_number: number;
-  title: string;
-  description: string;
-  features: string | null;
-  tags: string[] | null;
-  audio_file_path: string | null;
-  category: string | null;
-  image_file_path: string | null;
-}
+import { PodcastEpisode as PodcastEpisodeRecord, fetchPodcastEpisodeByNumber } from "@/lib/podcast-api";
 
 export default function PodcastEpisode() {
   const { episode } = useParams<{ episode: string }>();
   const navigate = useNavigate();
-  const [data, setData] = useState<Episode | null>(null);
+  const location = useLocation();
+  const [data, setData] = useState<PodcastEpisodeRecord | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -41,13 +30,8 @@ export default function PodcastEpisode() {
         return;
       }
       try {
-        const { data, error } = await supabase
-          .from("podcast_episodes")
-          .select("*")
-          .eq("episode_number", epNum)
-          .single();
-        if (error) throw error;
-        setData(data as Episode);
+        const episodeData = await fetchPodcastEpisodeByNumber(epNum);
+        setData(episodeData);
       } catch (e: any) {
         setError(e.message ?? "Failed to load episode");
       } finally {
@@ -71,6 +55,8 @@ export default function PodcastEpisode() {
     }
   };
 
+  const podcastBasePath = location.pathname.startsWith("/podcast") ? "/podcast" : "/news/podcast";
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-background to-muted/20">
       <Navbar />
@@ -78,7 +64,7 @@ export default function PodcastEpisode() {
       <section className="pt-32 pb-8">
         <div className="container">
           <div className="max-w-4xl mx-auto">
-            <Button variant="ghost" className="mb-4" onClick={() => navigate("/news/podcast") }>
+            <Button variant="ghost" className="mb-4" onClick={() => navigate(podcastBasePath) }>
               <ArrowLeft className="h-4 w-4 mr-2" /> Back to Podcast
             </Button>
 
@@ -108,8 +94,8 @@ export default function PodcastEpisode() {
                     <div className="space-y-6">
                       {/* Banner Image Below Title */}
                       <div className="w-full">
-                        {data.image_file_path ? (
-                          <img src={data.image_file_path} alt={data.title} className="w-full h-64 md:h-80 object-cover rounded-md" />
+                        {data.image_file_url ? (
+                          <img src={data.image_file_url} alt={data.title} className="w-full h-64 md:h-80 object-cover rounded-md" />
                         ) : (
                           <div className="w-full h-64 md:h-80 bg-muted rounded-md flex items-center justify-center text-muted-foreground">
                             No cover image
@@ -119,9 +105,9 @@ export default function PodcastEpisode() {
 
                       {/* Audio Player */}
                       <div className="w-full">
-                        {data.audio_file_path ? (
+                        {data.audio_file_url ? (
                           <audio controls className="w-full">
-                            <source src={data.audio_file_path} type="audio/mpeg" />
+                            <source src={data.audio_file_url} type="audio/mpeg" />
                             Your browser does not support the audio element.
                           </audio>
                         ) : (
